@@ -53,8 +53,8 @@ export default function InvitedLayout({
             {/* Brand Wordmark Logo */}
             <div className="flex">
               {/* Authentic Serif Wordmark Logo (Stitch Design) */}
-              <Link href="/invited" className="font-serif text-2xl font-medium tracking-[0.15em] text-[#1A1A1A] uppercase">
-                INVITED
+              <Link href="/invited" className="font-serif text-2xl font-medium tracking-tighter text-[#1A1A1A] uppercase">
+                INVITED<span className="text-[#d4af37]">.</span>
               </Link>
               {/* Alternate dot logo kept for custom white-label client branding:
               <Link href="/invited" className="font-serif text-2xl font-semibold tracking-tight text-[#1A1A1A]">
@@ -198,8 +198,8 @@ export default function InvitedLayout({
         <div className="mx-auto max-w-7xl px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-              <h3 className="font-serif text-xl font-bold tracking-tight text-white mb-4">
-                Invited<span className="text-[#d4af37]">.</span>
+              <h3 className="font-serif text-2xl font-medium tracking-tighter text-white uppercase mb-4">
+                INVITED<span className="text-[#d4af37]">.</span>
               </h3>
               <p className="text-xs max-w-xs leading-relaxed text-[#F9F8F6]/60 mx-auto md:mx-0 font-light">
                 Exclusive digital suites for bespoke events. Seamlessly planning attendance, seating codes, and guest registries.
