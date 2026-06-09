@@ -1,0 +1,361 @@
+"use client";
+
+import { useState } from "react";
+import { useQuery, useMutation } from "convex/react";
+import { api } from "../../../../convex/_generated/api";
+import { Plus, Calendar, Users, CheckSquare, XSquare, AlertCircle, ExternalLink, Loader2, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
+import Link from "next/link";
+
+export default function EventsAdminDashboard() {
+  const events = useQuery(api.events.list);
+  const rsvps = useQuery(api.rsvps.list, {});
+  const createEvent = useMutation(api.events.create);
+
+  // Modal open states
+  const [modalOpen, setModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [newEvent, setNewEvent] = useState({
+    title: "",
+    code: "",
+    clientName: "",
+    clientEmail: "",
+    date: "",
+    time: "",
+    location: "",
+  });
+
+  const handleCreateEvent = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newEvent.title || !newEvent.code || !newEvent.clientName || !newEvent.clientEmail || !newEvent.location || !newEvent.date) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await createEvent({
+        title: newEvent.title,
+        code: newEvent.code,
+        clientName: newEvent.clientName,
+        clientEmail: newEvent.clientEmail,
+        date: newEvent.date,
+        time: newEvent.time,
+        location: newEvent.location,
+      });
+
+      toast.success("Event created successfully");
+      setModalOpen(false);
+      setNewEvent({
+        title: "",
+        code: "",
+        clientName: "",
+        clientEmail: "",
+        date: "",
+        time: "",
+        location: "",
+      });
+    } catch (err: any) {
+      toast.error(err.message || "Failed to create event");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Compute analytics
+  const totalEvents = events?.length || 0;
+  const totalAttending = rsvps
+    ? rsvps.filter((r) => r.attending).reduce((sum, r) => sum + 1 + r.guestsCount, 0)
+    : 0;
+  const totalDeclined = rsvps ? rsvps.filter((r) => !r.attending).length : 0;
+  const totalDietary = rsvps ? rsvps.filter((r) => r.attending && r.dietaryRestrictions).length : 0;
+
+  return (
+    <div className="mx-auto max-w-7xl px-8 py-16 space-y-12 bg-[#F9F8F6] text-[#1A1A1A]">
+      
+      {/* Header section */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#1A1A1A]/10 pb-6">
+        <div className="space-y-2">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#d4af37] block">
+            Console
+          </span>
+          <h1 className="font-serif text-3xl md:text-4xl font-medium">
+            Event Management Suite
+          </h1>
+        </div>
+        <button
+          onClick={() => setModalOpen(true)}
+          className="inline-flex items-center gap-1.5 bg-[#1A1A1A] text-white hover:bg-[#d4af37] transition-all px-5 py-2.5 uppercase text-[10px] font-semibold tracking-[0.15em] rounded-[4px] mt-4 md:mt-0"
+        >
+          <Plus className="h-3.5 w-3.5" /> Enlist New Event
+        </button>
+      </div>
+
+      {/* Aggregate Metric Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+        <div className="bg-white p-6 border border-[#1A1A1A]/10 rounded-[4px] shadow-sm flex items-center gap-4">
+          <div className="p-3 bg-[#d4af37]/10 text-[#d4af37] rounded-full">
+            <Calendar className="h-5 w-5" />
+          </div>
+          <div>
+            <span className="block text-[9px] uppercase font-bold tracking-widest text-[#1A1A1A]/50">Total Events</span>
+            <span className="font-serif text-xl font-semibold">{totalEvents} Active</span>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 border border-[#1A1A1A]/10 rounded-[4px] shadow-sm flex items-center gap-4">
+          <div className="p-3 bg-green-50 text-green-600 rounded-full">
+            <Users className="h-5 w-5" />
+          </div>
+          <div>
+            <span className="block text-[9px] uppercase font-bold tracking-widest text-[#1A1A1A]/50">Guests Confirmed</span>
+            <span className="font-serif text-xl font-semibold">{totalAttending} Attending</span>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 border border-[#1A1A1A]/10 rounded-[4px] shadow-sm flex items-center gap-4">
+          <div className="p-3 bg-red-50 text-red-600 rounded-full">
+            <XSquare className="h-5 w-5" />
+          </div>
+          <div>
+            <span className="block text-[9px] uppercase font-bold tracking-widest text-[#1A1A1A]/50">Regrets Logged</span>
+            <span className="font-serif text-xl font-semibold">{totalDeclined} Declined</span>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 border border-[#1A1A1A]/10 rounded-[4px] shadow-sm flex items-center gap-4">
+          <div className="p-3 bg-amber-50 text-amber-600 rounded-full">
+            <AlertCircle className="h-5 w-5" />
+          </div>
+          <div>
+            <span className="block text-[9px] uppercase font-bold tracking-widest text-[#1A1A1A]/50">Dietary Needs</span>
+            <span className="font-serif text-xl font-semibold">{totalDietary} Flagged</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Events List */}
+      <div className="space-y-6">
+        <h3 className="font-serif text-xl font-medium">Client Events Registry</h3>
+        
+        {events === undefined ? (
+          <div className="text-center py-16 bg-white border border-[#1A1A1A]/10 rounded-[4px]">
+            <Loader2 className="h-6 w-6 animate-spin text-[#d4af37] mx-auto mb-2" />
+            <p className="text-xs text-[#1A1A1A]/60 uppercase tracking-widest font-semibold">Loading events list...</p>
+          </div>
+        ) : events.length === 0 ? (
+          <div className="text-center py-16 bg-white border border-[#1A1A1A]/10 rounded-[4px] space-y-4">
+            <p className="text-xs text-[#1A1A1A]/60 font-light">No client events logged in registry yet.</p>
+            <button
+              onClick={() => setModalOpen(true)}
+              className="inline-flex items-center gap-1.5 bg-[#1A1A1A] text-white hover:bg-[#d4af37] transition-all px-4 py-2 uppercase text-[10px] font-semibold tracking-[0.15em] rounded-[4px]"
+            >
+              Enlist Your First Event
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {events.map((event: any) => {
+              // Aggregate event specific RSVPs
+              const eventRsvps = rsvps ? rsvps.filter((r) => r.eventCode === event.code) : [];
+              const attendingCount = eventRsvps.filter((r) => r.attending).reduce((sum, r) => sum + 1 + r.guestsCount, 0);
+              const totalResponses = eventRsvps.length;
+
+              // Check vendor confirmation summary
+              const cateringConfirmed = event.catering?.confirmed ? "Confirmed" : "Pending";
+              const decorConfirmed = event.decor?.confirmed ? "Confirmed" : "Pending";
+              const flowersConfirmed = event.flowers?.confirmed ? "Confirmed" : "Pending";
+
+              return (
+                <div key={event._id} className="bg-white border border-[#1A1A1A]/10 rounded-[4px] p-6 hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6">
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-start gap-4">
+                      <div>
+                        <h4 className="font-serif text-xl font-semibold leading-snug">{event.title}</h4>
+                        <span className="text-[10px] font-semibold text-[#d4af37] uppercase tracking-wider block mt-1">
+                          Code: {event.code}
+                        </span>
+                      </div>
+                      <Link
+                        href={`/invited/e/${event.code}`}
+                        target="_blank"
+                        className="p-1.5 text-[#1A1A1A]/50 hover:text-[#d4af37] transition-colors border border-[#1A1A1A]/10 rounded-[4px]"
+                        title="View Public Invitation Link"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4 text-xs font-light text-[#1A1A1A]/70">
+                      <div>
+                        <span className="font-bold text-[9px] uppercase tracking-wider block text-[#1A1A1A]/50">Date & Location</span>
+                        <p>{event.date} {event.time && `at ${event.time}`}</p>
+                        <p className="truncate max-w-[180px]">{event.location}</p>
+                      </div>
+                      <div>
+                        <span className="font-bold text-[9px] uppercase tracking-wider block text-[#1A1A1A]/50">Client Contact</span>
+                        <p className="font-semibold text-[#1A1A1A]">{event.clientName}</p>
+                        <p className="truncate max-w-[180px]">{event.clientEmail}</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-2 border-t border-[#1A1A1A]/5 pt-4 text-center">
+                      <div className="bg-[#F9F8F6] p-2 rounded">
+                        <span className="block text-[8px] uppercase tracking-wider text-[#1A1A1A]/50">RSVP Confirmed</span>
+                        <span className="font-semibold text-sm">{attendingCount} Guests</span>
+                      </div>
+                      <div className="bg-[#F9F8F6] p-2 rounded">
+                        <span className="block text-[8px] uppercase tracking-wider text-[#1A1A1A]/50">Total Responses</span>
+                        <span className="font-semibold text-sm">{totalResponses} Logged</span>
+                      </div>
+                      <div className="bg-[#F9F8F6] p-2 rounded">
+                        <span className="block text-[8px] uppercase tracking-wider text-[#1A1A1A]/50">Checklist Tasks</span>
+                        <span className="font-semibold text-sm">
+                          {event.checklist ? event.checklist.filter((c: any) => c.status === "completed").length : 0} / {event.checklist?.length || 0}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-[#1A1A1A]/5 pt-4 flex gap-4 text-[9px] font-semibold uppercase tracking-wider text-[#1A1A1A]/60">
+                      <span>Catering: <span className={event.catering?.confirmed ? "text-green-600 font-bold" : "text-amber-600 font-bold"}>{cateringConfirmed}</span></span>
+                      <span>Decor: <span className={event.decor?.confirmed ? "text-green-600 font-bold" : "text-amber-600 font-bold"}>{decorConfirmed}</span></span>
+                      <span>Flowers: <span className={event.flowers?.confirmed ? "text-green-600 font-bold" : "text-amber-600 font-bold"}>{flowersConfirmed}</span></span>
+                    </div>
+                  </div>
+
+                  <Link
+                    href={`/invited/admin/${event.code}`}
+                    className="w-full text-center bg-[#1A1A1A] text-white hover:bg-[#d4af37] transition-all py-3 uppercase text-[9px] font-semibold tracking-[0.2em] rounded-[4px] flex items-center justify-center gap-1.5"
+                  >
+                    Open Planner Console <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* Enlist Event Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white border border-[#1A1A1A]/10 rounded-[4px] max-w-xl w-full p-8 shadow-2xl space-y-6 relative max-h-[90vh] overflow-y-auto">
+            <h3 className="font-serif text-2xl font-medium border-b border-[#1A1A1A]/10 pb-4">
+              Enlist New Client Event
+            </h3>
+
+            <form onSubmit={handleCreateEvent} className="space-y-4 text-xs font-light">
+              <div className="space-y-1">
+                <label className="font-semibold uppercase tracking-[0.1em] text-[10px] text-[#1A1A1A]/60 block">Event Title *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Elena & Julian's Gala Reception"
+                  value={newEvent.title}
+                  onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+                  className="w-full p-2 border border-[#1A1A1A]/20 bg-transparent rounded-[4px] outline-none focus:border-[#d4af37]"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="font-semibold uppercase tracking-[0.1em] text-[10px] text-[#1A1A1A]/60 block">Unique Access Code *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. gala-2026, wedding-rose"
+                  value={newEvent.code}
+                  onChange={(e) => setNewEvent({ ...newEvent, code: e.target.value })}
+                  className="w-full p-2 border border-[#1A1A1A]/20 bg-transparent rounded-[4px] outline-none focus:border-[#d4af37]"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1">
+                  <label className="font-semibold uppercase tracking-[0.1em] text-[10px] text-[#1A1A1A]/60 block">Client Full Name *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Elena Rostova"
+                    value={newEvent.clientName}
+                    onChange={(e) => setNewEvent({ ...newEvent, clientName: e.target.value })}
+                    className="w-full p-2 border border-[#1A1A1A]/20 bg-transparent rounded-[4px] outline-none focus:border-[#d4af37]"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="font-semibold uppercase tracking-[0.1em] text-[10px] text-[#1A1A1A]/60 block">Client Email *</label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="elena@rostova.com"
+                    value={newEvent.clientEmail}
+                    onChange={(e) => setNewEvent({ ...newEvent, clientEmail: e.target.value })}
+                    className="w-full p-2 border border-[#1A1A1A]/20 bg-transparent rounded-[4px] outline-none focus:border-[#d4af37]"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1">
+                  <label className="font-semibold uppercase tracking-[0.1em] text-[10px] text-[#1A1A1A]/60 block">Event Date *</label>
+                  <input
+                    type="date"
+                    required
+                    value={newEvent.date}
+                    onChange={(e) => setNewEvent({ ...newEvent, date: e.target.value })}
+                    className="w-full p-2 border border-[#1A1A1A]/20 bg-transparent rounded-[4px] outline-none focus:border-[#d4af37]"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="font-semibold uppercase tracking-[0.1em] text-[10px] text-[#1A1A1A]/60 block">Event Time (Optional)</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. 18:00"
+                    value={newEvent.time}
+                    onChange={(e) => setNewEvent({ ...newEvent, time: e.target.value })}
+                    className="w-full p-2 border border-[#1A1A1A]/20 bg-transparent rounded-[4px] outline-none focus:border-[#d4af37]"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1">
+                <label className="font-semibold uppercase tracking-[0.1em] text-[10px] text-[#1A1A1A]/60 block">Venue Location Address *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="The Canopy Hall, Highwood Gardens"
+                  value={newEvent.location}
+                  onChange={(e) => setNewEvent({ ...newEvent, location: e.target.value })}
+                  className="w-full p-2 border border-[#1A1A1A]/20 bg-transparent rounded-[4px] outline-none focus:border-[#d4af37]"
+                />
+              </div>
+
+              <div className="flex gap-4 pt-4 border-t border-[#1A1A1A]/10">
+                <button
+                  type="button"
+                  onClick={() => setModalOpen(false)}
+                  className="w-1/2 py-3 border border-[#1A1A1A]/20 text-[#1A1A1A] hover:bg-[#F9F8F6] transition-all uppercase text-[10px] font-semibold tracking-wider rounded-[4px]"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-1/2 py-3 bg-[#1A1A1A] text-white hover:bg-[#d4af37] transition-all uppercase text-[10px] font-semibold tracking-wider rounded-[4px] flex items-center justify-center gap-2"
+                >
+                  {loading ? (
+                    <>
+                      <Loader2 className="h-3 w-3 animate-spin" /> Provisioning...
+                    </>
+                  ) : (
+                    "Create Event"
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

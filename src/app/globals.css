@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-primary: var(--primary, #0F0F11);
+    --color-primary-foreground: var(--primary-foreground, #FFFFFF);
+
+    --color-secondary: var(--secondary, #F5F5F7);
+    --color-secondary-foreground: var(--secondary-foreground, #0F0F11);
+
+    --color-accent: var(--accent, #D4AF37);
+    --color-accent-foreground: var(--accent-foreground, #FFFFFF);
+
+    --color-background: var(--background, #F5F5F7);
+    --color-foreground: var(--foreground, #0F0F11);
+
+    --color-card: var(--card, #FFFFFF);
+    --color-card-foreground: var(--card-foreground, #0F0F11);
+
+    --color-popover: var(--popover, #FFFFFF);
+    --color-popover-foreground: var(--popover-foreground, #0F0F11);
+
+    --color-muted: var(--muted, #F1F5F9);
+    --color-muted-foreground: var(--muted-foreground, #64748B);
+
+    --color-border: var(--border, #E2E8F0);
+    --color-input: var(--input, #E2E8F0);
+
+    --color-destructive: #EF4444;
+    --color-destructive-foreground: #FFFFFF;
+
+    --color-ring: var(--primary, #0F0F11);
+
+    --radius: var(--radius, 0px);
+
+    --font-sans: var(--font-hanken-grotesk), ui-sans-serif, system-ui, sans-serif;
+    --font-serif: var(--font-playfair-display), Georgia, ui-serif, serif;
+
+    /* Animations */
+    --animate-fade-in: fade-in 0.5s ease-out;
+    --animate-slide-up: slide-up 0.5s ease-out;
+}
+
+:root {
+    --background: var(--secondary, #F5F5F7);
+    --foreground: var(--primary, #0F0F11);
+    --card: #FFFFFF;
+    --card-foreground: var(--primary, #0F0F11);
+    --popover: #FFFFFF;
+    --popover-foreground: var(--primary, #0F0F11);
+    --muted: #E5E5EA;
+    --muted-foreground: #8E8E93;
+    --border: #E5E5EA;
+    --input: #E5E5EA;
+    --primary-foreground: #FFFFFF;
+    --secondary-foreground: var(--primary, #0F0F11);
+    --accent-foreground: #FFFFFF;
+}
+
+.dark {
+    --background: var(--primary, #0F0F11);
+    --foreground: var(--secondary, #F5F5F7);
+    --card: #121214;
+    --card-foreground: var(--secondary, #F5F5F7);
+    --popover: #121214;
+    --popover-foreground: var(--secondary, #F5F5F7);
+    --muted: #1E1E22;
+    --muted-foreground: #AEAEB2;
+    --border: #1E1E22;
+    --input: #1E1E22;
+    --primary-foreground: #FFFFFF;
+    --secondary-foreground: var(--secondary, #F5F5F7);
+    --accent-foreground: #FFFFFF;
+}
+
+@layer base {
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    /* Force input text color in dark mode */
+    .dark input,
+    .dark textarea,
+    .dark select {
+        color: #ffffff !important;
+        background-color: #1e293b;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scented: Golden Harmony Elegant Styles */
+.golden-ratio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.618fr;
+    gap: 34px;
+}
+@media (max-width: 768px) {
+    .golden-ratio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ambient-glow {
+    box-shadow: var(--shadow-glow, 0 20px 40px -5px rgba(77, 100, 83, 0.05));
+}
+
+.custom-border {
+    border-width: var(--border-width, 1px) !important;
+}
+
+.card-hover:hover img {
+    transform: scale(1.03);
+}
+.card-hover img {
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Dynamic White-Label Background Textures */
+.mesh-bg {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+}
+:root:not(.dark) .mesh-bg {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+}
+
+.grain-bg {
+    position: relative;
+}
+.grain-bg::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+.dark .grain-bg::before {
+    opacity: 0.03;
+}
+
+/* Storefront Hover VFX Options */
+.hover-vfx-pulse:hover {
+    animation: botanicalPulse 2s infinite ease-in-out;
+}
+.hover-vfx-flash {
+    position: relative;
+    overflow: hidden;
+}
+.hover-vfx-flash::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(30deg);
+    transition: none;
+    opacity: 0;
+}
+.hover-vfx-flash:hover::after {
+    animation: flashGlass 1.2s ease-out;
+}
+
+@keyframes botanicalPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: var(--shadow-glow, none);
+    }
+    50% {
+        transform: scale(1.015);
+        box-shadow: 0 20px 45px 5px rgba(212, 175, 55, 0.25);
+    }
+}
+
+@keyframes flashGlass {
+    0% {
+        left: -60%;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+

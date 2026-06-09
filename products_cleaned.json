@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "6806",
+    "name": "3D Moon Lamp",
+    "type": "simple",
+    "description": "Key Features:\r\\n• Realistic 3D-printed lunar surface• 16 colour options — warm white, cool white, RGB tones• Touch control + remote included• Adjustable brightness levels• USB rechargeable (no wires while it shines)• Battery life: 6–8 hours on a full charge• Includes wooden stand for display• Eco-friendly PLA material• Size: approx. 16cm height x 11cm diameter• Perfect for desks, bedside tables, or gifting someone you moon over",
+    "price": "139",
+    "regularPrice": "139",
+    "salePrice": "",
+    "categories": "Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4_17-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_30-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2_28-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4_17-2.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-1.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6814",
+    "name": "Condere Cordless Kettle",
+    "type": "simple",
+    "description": "Features:\r\\n- 2-litre capacity.\r\\n- Cordless design with 360-degree rotational base.\r\\n- Rapid boiling with a powerful 2200W heating element.\r\\n- Automatic shut-off and boil-dry protection.\r\\n- Easy-grip handle and power indicator light.\r\\nMaterial: Stainless Steel",
+    "price": "165",
+    "regularPrice": "165",
+    "salePrice": "",
+    "categories": "Kitchenware",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-1-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-1.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-2.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6819",
+    "name": "Fluffy cushions",
+    "type": "variable",
+    "description": "Key Features:\r\\n• Ultra-soft faux fur or plush velvet material• Size: ~40x40cm (standard)• Lightweight inner filling for cloud-like comfort• Zipper or stitched closure (model dependent)• Fade-resistant fabric — stays vibrant and clean• Available in neutral and pastel tones to match any space• Machine washable cover (check label)• Perfect for dorms, couches, beds, and IG selfies",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/All-colors-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Assorted-colors.jpg"
+    ],
+    "variations": [
+      {
+        "id": "6820",
+        "name": "Fluffy cushions - Grey",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "color": "Grey"
+        }
+      },
+      {
+        "id": "6821",
+        "name": "Fluffy cushions - Red",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Red.jpg",
+        "attributes": {
+          "color": "Red"
+        }
+      },
+      {
+        "id": "6822",
+        "name": "Fluffy cushions - Pink",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Pink.jpg",
+        "attributes": {
+          "color": "Pink"
+        }
+      },
+      {
+        "id": "6823",
+        "name": "Fluffy cushions - White",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/White.webp",
+        "attributes": {
+          "color": "White"
+        }
+      },
+      {
+        "id": "6824",
+        "name": "Fluffy cushions - Black",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "color": "Black"
+        }
+      },
+      {
+        "id": "6825",
+        "name": "Fluffy cushions - Brown",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Brown-single.jpg",
+        "attributes": {
+          "color": "Brown"
+        }
+      },
+      {
+        "id": "6826",
+        "name": "Fluffy cushions - Orange",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "color": "Orange"
+        }
+      },
+      {
+        "id": "6827",
+        "name": "Fluffy cushions - Blue",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "color": "Blue"
+        }
+      },
+      {
+        "id": "6828",
+        "name": "Fluffy cushions - Green",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "color": "Green"
+        }
+      },
+      {
+        "id": "6829",
+        "name": "Fluffy cushions - Dusty pink",
+        "price": "69",
+        "regularPrice": "69",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "color": "Dusty pink"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "color",
+        "values": "Grey, Red, Pink, White, Black, Brown, Orange, Blue, Green, Dusty pink"
+      }
+    ]
+  },
+  {
+    "id": "6841",
+    "name": "Frosted Cushions",
+    "type": "variable",
+    "description": "Features:\r\\n- Faux fur or boucle texture\r\\n- Available in various colors\r\\n- Typically 100% polyester\r\\n- Standard size: 45cm x 45cm",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Assorted-1.png"
+    ],
+    "variations": [
+      {
+        "id": "6842",
+        "name": "Frosted Cushions - Grey",
+        "price": "99",
+        "regularPrice": "99",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Greyish-white.jpg",
+        "attributes": {
+          "color": "Grey"
+        }
+      },
+      {
+        "id": "6843",
+        "name": "Frosted Cushions - Blue",
+        "price": "99",
+        "regularPrice": "99",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Blue.jpg",
+        "attributes": {
+          "color": "Blue"
+        }
+      },
+      {
+        "id": "6844",
+        "name": "Frosted Cushions - Orange",
+        "price": "99",
+        "regularPrice": "99",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Orange.jpg",
+        "attributes": {
+          "color": "Orange"
+        }
+      },
+      {
+        "id": "6845",
+        "name": "Frosted Cushions - Pink",
+        "price": "99",
+        "regularPrice": "99",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Pink-1.jpg",
+        "attributes": {
+          "color": "Pink"
+        }
+      },
+      {
+        "id": "6846",
+        "name": "Frosted Cushions - Purple",
+        "price": "99",
+        "regularPrice": "99",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Purple.jpg",
+        "attributes": {
+          "color": "Purple"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "color",
+        "values": "Grey, Blue, Orange, Pink, Purple"
+      }
+    ]
+  },
+  {
+    "id": "6854",
+    "name": "Golden Cushions",
+    "type": "variable",
+    "description": "Features:\r\\n- Shaggy, sequin, or crushed velvet styles\r\\n- Embedded with glitter or metallic threads\r\\n- Adds a glamorous touch\r\\n- Standard size: 45cm x 45cm\r\\nMaterials: Polyester, Faux Fur, Velvet, Satin",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Cream-1.png"
+    ],
+    "variations": [
+      {
+        "id": "6855",
+        "name": "Golden Cushions - Black",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/bG.jpg",
+        "attributes": {
+          "Color": "Black"
+        }
+      },
+      {
+        "id": "6856",
+        "name": "Golden Cushions - Beige",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Beige.jpg",
+        "attributes": {
+          "Color": "Beige"
+        }
+      },
+      {
+        "id": "6857",
+        "name": "Golden Cushions - Brown",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/BrownGold.jpg",
+        "attributes": {
+          "Color": "Brown"
+        }
+      },
+      {
+        "id": "6858",
+        "name": "Golden Cushions - Cream",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Cream.jpg",
+        "attributes": {
+          "Color": "Cream"
+        }
+      },
+      {
+        "id": "6859",
+        "name": "Golden Cushions - Dusty Pink",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Dusty-pink.jpg",
+        "attributes": {
+          "Color": "Dusty Pink"
+        }
+      },
+      {
+        "id": "6860",
+        "name": "Golden Cushions - Grey",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/GreyGold.jpg",
+        "attributes": {
+          "Color": "Grey"
+        }
+      },
+      {
+        "id": "6861",
+        "name": "Golden Cushions - Maroon",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Maroon.jpg",
+        "attributes": {
+          "Color": "Maroon"
+        }
+      },
+      {
+        "id": "6862",
+        "name": "Golden Cushions - Red",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/RedGold.jpg",
+        "attributes": {
+          "Color": "Red"
+        }
+      },
+      {
+        "id": "6863",
+        "name": "Golden Cushions - White",
+        "price": "114",
+        "regularPrice": "114",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/WhiteGold.jpg",
+        "attributes": {
+          "Color": "White"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Color",
+        "values": "Black, Beige, Brown, Cream, Dusty Pink, Grey, Maroon, Red, White"
+      }
+    ]
+  },
+  {
+    "id": "6873",
+    "name": "Fast Wireless Charging Stand",
+    "type": "simple",
+    "description": "Features:\r\\n- Up to 15W of power for fast charging.\r\\n- Charges in portrait or landscape mode.\r\\n- Universal compatibility with Qi-enabled devices.\r\\n- LED indicator light for charging status.\r\\n- Can charge through lightweight cases (up to 3mm).\r\\n- 2-coil\r\\nCompatibility: Qi-enabled devices (iPhones, Android phones, etc.)",
+    "price": "198",
+    "regularPrice": "198",
+    "salePrice": "",
+    "categories": "Desk Essentials, Electronics",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_28-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2.webp",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3.webp",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4.webp",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/6.webp",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/5.webp"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6880",
+    "name": "Fluffy Rug",
+    "type": "variable",
+    "description": "Features:\r\\n- Deep, plush pile for a soft and comfortable feel.\r\\n- Adds warmth and insulation to floors.\r\\n- Helps to reduce noise.\r\\n- Non-slip backing for safety.\r\\nMaterials: Faux fur, Polyester\r\\nSizes: 120cm x 180cm",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/08/1753998444910-scaled.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/My-room-scaled.jpg"
+    ],
+    "variations": [
+      {
+        "id": "6881",
+        "name": "Fluffy Rug - Black",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Black.jpg",
+        "attributes": {
+          "Color": "Black"
+        }
+      },
+      {
+        "id": "6882",
+        "name": "Fluffy Rug - Grey",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/G-B-W.jpg",
+        "attributes": {
+          "Color": "Grey"
+        }
+      },
+      {
+        "id": "6883",
+        "name": "Fluffy Rug - Blue",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Blue-1.jpg",
+        "attributes": {
+          "Color": "Blue"
+        }
+      },
+      {
+        "id": "6885",
+        "name": "Fluffy Rug - White",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/White.jpg",
+        "attributes": {
+          "Color": "White"
+        }
+      },
+      {
+        "id": "6889",
+        "name": "Fluffy Rug - Brown",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/Dark-brown.jpg",
+        "attributes": {
+          "Color": "Brown"
+        }
+      },
+      {
+        "id": "7337",
+        "name": "Fluffy Rug - Pink",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/08/1753998444910-scaled.jpg",
+        "attributes": {
+          "Color": "Pink"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Color",
+        "values": "Black, Grey, Blue, Navy, White, Grey-plain, Pink, Red, Brown, Rainbow, Cream, Brown-dark, Orange, Purple"
+      }
+    ]
+  },
+  {
+    "id": "6906",
+    "name": "Foldable Phone Stand",
+    "type": "simple",
+    "description": "Features:\r\\n- Foldable and portable design.\r\\n- Adjustable viewing angle to reduce neck strain.\r\\n- Non-slip silicone pads to protect your device.\r\\n- Universal compatibility with most smartphones.\r\\n- Cutout for charging cable.\r\\nMaterials: Aluminum alloy, ABS plastic",
+    "price": "44",
+    "regularPrice": "65",
+    "salePrice": "44",
+    "categories": "Desk Essentials, Electronics",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3_20-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-2.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-2.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-1.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/5-1.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6912",
+    "name": "Tabletop Air Hockey",
+    "type": "simple",
+    "description": "Features:\r\\n- Portable and lightweight design.\r\\n- Battery-powered fan for puck gliding action.\r\\n- Includes two paddles and two pucks.\r\\n- Sliding scorers to keep track of the score.\r\\nPlayers: 2",
+    "price": "449",
+    "regularPrice": "449",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_8-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-3.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6915",
+    "name": "Connect 4 Spin",
+    "type": "simple",
+    "description": "Features:\r\\n- Spinning game grid.\r\\n- Includes a weighted disc for strategic play.\r\\n- Two game modes: Beginner and Expert.\r\\nPlayers: 2\r\\nAges: 8+",
+    "price": "155",
+    "regularPrice": "155",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_5-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-2.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-4.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6921",
+    "name": "Do or Drink",
+    "type": "simple",
+    "description": "Features:\r\\n- 350 cards with a variety of dares and challenges.\r\\n- Simple to learn and play.\r\\n- Perfect for parties and game nights.\r\\nPlayers: 2+\r\\nAges: 21+ (Keep the kids away;)",
+    "price": "124",
+    "regularPrice": "124",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_18-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-5.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-5.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6926",
+    "name": "LED Mood Lights",
+    "type": "simple",
+    "description": "Key Features:\r\\n• Length: 5 meters• Control: Bluetooth app for Android & iOS, and a remote as well.• Colours: 16 million RGB colour options• Modes: Static, strobe, fade, dynamic, and music sync• Brightness & speed adjustable from app• Music sync feature using phone microphone• USB-powered or 12V adapter compatible• Flexible, cuttable, and easy to mount with adhesive backing• Energy-efficient and long-lasting LEDs• Works great for res, bedrooms, TVs, desks, and headboards",
+    "price": "149",
+    "regularPrice": "149",
+    "salePrice": "",
+    "categories": "Electronics, Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-6.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-6.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-6.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "6930",
+    "name": "Neon Strip Lights",
+    "type": "simple",
+    "description": "Key Features:• Length: 5 meters of flexible neon-style strip• Waterproof (IP65 rating) — safe for bathrooms or outdoor use• Ultra-bright SMD 5050 RGB LEDs• Works with 12V power supply• Bendable silicone coating for easy shaping• Neon glow with no harsh LED dots• Remote control or app-controlled (depending on model)• Multiple lighting modes: static, strobe, fade, music sync• Easy peel-and-stick adhesive back• Cuttable every few inches for custom installs",
+    "price": "219",
+    "regularPrice": "219",
+    "salePrice": "",
+    "categories": "Electronics, Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/5-3.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/7.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/6.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/10.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/9.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-3.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-7.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-7.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7058",
+    "name": "Dominoes (Double Six, Colour Dot)",
+    "type": "simple",
+    "description": "Key Features:\r\\n\r\\n\r\\n \t\r\\n28 precision-crafted tiles with eye-catching coloured dots for instant recognition\r\\n\r\\n \t\r\\n2-4 player capacity – ideal for dorm rooms and small gatherings\r\\n\r\\n \t\r\\nCompact storage box fits perfectly in any backpack or study space\r\\n\r\\n \t\r\\nDurable resin construction survives countless epic battles\r\\n\r\\n \t\r\\nMemory & strategy boost – sharpen your mind while having fun\r\\n\r\\n",
+    "price": "86",
+    "regularPrice": "86",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_1-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-8.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-8.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7073",
+    "name": "Custom Leather Notebook",
+    "type": "variable",
+    "description": "Whether you're taking notes, planning your day, or sketching ideas, this stylish leather journal adds a touch of class to every page. Wrapped in a stylish faux leather hardcover, it combines practicality with timeless design. The notebook includes includes an outer leather cover, making it perfect for long-term use. Great for journaling, note-taking, or as a thoughtful gift.",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Room Decor",
+    "images": [],
+    "variations": [
+      {
+        "id": "7074",
+        "name": "Custom Leather Notebook - A4",
+        "price": "",
+        "regularPrice": "",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1.avif",
+        "attributes": {
+          "Size": "A4"
+        }
+      },
+      {
+        "id": "7075",
+        "name": "Custom Leather Notebook - A5",
+        "price": "",
+        "regularPrice": "",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "Size": "A5"
+        }
+      },
+      {
+        "id": "7076",
+        "name": "Custom Leather Notebook - A6",
+        "price": "",
+        "regularPrice": "",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "Size": "A6"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "values": "A4, A5, A6"
+      }
+    ]
+  },
+  {
+    "id": "7084",
+    "name": "Sandwich Maker",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\nNon-stick coated plates for easy cleaning.\r\\n\r\\n \t\r\\nHeats up quickly for fast meal prep.\r\\n\r\\n \t\r\\nCompact design with upright storage option.\r\\n\r\\n \t\r\\nPower and ready indicator lights.\r\\n\r\\n \t\r\\nCool-touch handle for safe operation.\r\\n\r\\n",
+    "price": "185",
+    "regularPrice": "185",
+    "salePrice": "",
+    "categories": "Kitchenware",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-1.webp",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-1.webp",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-1.webp"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7090",
+    "name": "Electric Coffee Pot",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\nFast and efficient electric brewing.\r\\n\r\\n \t\r\\nIdeal for Turkish or stovetop-style coffee.\r\\n\r\\n \t\r\\nErgonomic heat-resistant handle.\r\\n\r\\n \t\r\\nPrecision spout for drip-free pouring.\r\\n\r\\n \t\r\\nPower indicator light and easy one-button operation.\r\\n\r\\n\r\\nCapacity: 0.5LPower: 600WMaterial: Heat-resistant plastic and stainless steel heating plate",
+    "price": "229",
+    "regularPrice": "229",
+    "salePrice": "",
+    "categories": "Kitchenware",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/6-1.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-9.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-9.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-9.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-4.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/5-4.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7097",
+    "name": "Luminous Mouse Pad",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\nVibrant RGB lighting with multiple color modes\r\\n\r\\n \t\r\\nOne-touch button to cycle through effects (wave, breathing, static, etc.)\r\\n\r\\n \t\r\\nLarge surface fits keyboard and mouse\r\\n\r\\n \t\r\\nSmooth micro-textured surface for precision and speed\r\\n\r\\n \t\r\\nAnti-slip rubber base for grip on any desk\r\\n\r\\n \t\r\\nUSB powered — plug and play, no software needed\r\\n\r\\n\r\\nSize: 80cm x 30cmCable: Detachable USB, approx. 1.8m",
+    "price": "185",
+    "regularPrice": "185",
+    "salePrice": "",
+    "categories": "Desk Essentials, Electronics",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_27-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/5-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-10.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-10.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4.png"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7103",
+    "name": "Jiageng JG758 Mini DC UPS",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\nRobust 8 800 mAh lithium battery — plenty of juice for your essentials\r\\n\r\\n \t\r\\nSelectable DC output (5 V, 9 V, 12 V, 15 V, 24 V) + POE port — versatile for routers, modems, cams\r\\n\r\\n \t\r\\nUSB port to charge your phone or tablet\r\\n\r\\n \t\r\\nSmart circuit protection: over‑charge, short‑circuit safeguards\r\\n\r\\n \t\r\\nInput voltage 100–240 V AC — works anywhere\r\\n\r\\n \t\r\\nSilent operation—no annoying buzz during study time\r\\n\r\\n\r\\nSpecs:\r\\n\r\\n\r\\n \t\r\\nCapacity: 8 800 mAh\r\\n\r\\n \t\r\\nOutputs: DC (5/9/12/15/24 V), POE, USB\r\\n\r\\n \t\r\\nWeight/Size: Mini form-factor—easily slides next to your router or under your monitor\r\\n\r\\n",
+    "price": "290",
+    "regularPrice": "290",
+    "salePrice": "",
+    "categories": "Electronics",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_29-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-11.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7106",
+    "name": "Do You Really Know Your Family?",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\n200+ thought-provoking and fun question/challenge cards\r\\n\r\\n \t\r\\nMix of conversation starters, dares, and “who’s most likely” vibes\r\\n\r\\n \t\r\\nQuick to set up, easy to play — no learning curve\r\\n\r\\n \t\r\\nGreat for bonding with family or resmates\r\\n\r\\n \t\r\\nEncourages laughter, storytelling, and surprising reveals\r\\n\r\\n",
+    "price": "109",
+    "regularPrice": "109",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_13-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-5.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-11.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-12.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7111",
+    "name": "Do You Really Know Your Friends?",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\nQuick setup and intuitive play—jump right into the fun\r\\n\r\\n \t\r\\nTrivia + interactive challenges keep energy levels high\r\\n\r\\n \t\r\\nHilarious prompts that uncover quirky facts or hidden truths\r\\n\r\\n \t\r\\nCompact card set easily stored in your backpack\r\\n\r\\n \t\r\\nSuitable for teens and adults—roomies included\r\\n\r\\n",
+    "price": "115",
+    "regularPrice": "115",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_15-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/5-5.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-13.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-12.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-6.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7117",
+    "name": "Drinking Roulette Set (16‑Shot Spinner)",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\nFull roulette set: wooden/plastic wheel, two steel balls, and 16 shot glasses in red and black.\r\\n\r\\n \t\r\\nSimple rules: match the number, take the shot, and spin again.\r\\n\r\\n \t\r\\nDesigned for groups of 2–8 players—great for roommate seshes or pre‑night-out warm‑ups\r\\n\r\\n \t\r\\nCompact footprint (~30 cm diameter) fits snugly on res desktops or dorm tables.\r\\n\r\\n \t\r\\nNo assembly—just fill, spin, sip, and go.\r\\n\r\\n\r\\nSpecs:\r\\n\r\\n\r\\n \t\r\\nShot Glasses: 16 pieces, numbered\r\\n\r\\n \t\r\\nWheel Diameter: approx. 30 cm\r\\n\r\\n \t\r\\nMaterial: mix of glass (shot glasses), plastic/wood (wheel), and metal.\r\\n\r\\n \t\r\\nDesigned for beverages of choice—sip responsibly.\r\\n\r\\n",
+    "price": "169",
+    "regularPrice": "169",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3_14-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-7.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7122",
+    "name": "I Should’ve Known That!",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\n110 sturdy cards with 400+ questions on basic but surprising facts\r\\n\r\\n \t\r\\nUnique scoring: lose points for wrong answers, not gain them\r\\n\r\\n \t\r\\nQuick setup—jump in within seconds\r\\n\r\\n \t\r\\nNo batteries or extra gear—just pure trivia fun\r\\n\r\\n",
+    "price": "77",
+    "regularPrice": "77",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_12-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-14.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-8.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-14.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7127",
+    "name": "Let's Get Deep - Friends Edition",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\n300 beautifully illustrated prompt cards, grouped into three levels of depth\r\\n\r\\n \t\r\\nMix of lighthearted and thoughtful questions—grow from basic chit-chat to meaningful convos\r\\n\r\\n \t\r\\nCompact, sturdy box ideal for tossing in your backpack\r\\n\r\\n \t\r\\nFast gameplay: pick a level, draw a card, answer—repeat\r\\n\r\\n\r\\nPlayers: 2+Ages: 14+ / teens & Uni crowdPlaytime: 20–60 mins, depending on squad energy",
+    "price": "173",
+    "regularPrice": "173",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-2-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-9.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/5-6.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7135",
+    "name": "Live Laugh Lose",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\n300 Joke Cards packed with cheesy, cringe-ready one-liners\r\\n\r\\n \t\r\\n100 Delivery Cards that add hilarious twists: Siri voice, whisper, over-the-top drama, and more\r\\n\r\\n \t\r\\nEasy rules: draw, joke, deliver, and watch the reactions fly\r\\n\r\\n \t\r\\nSupports 2–20 players, so it’s great for squads or larger res parties\r\\n\r\\n",
+    "price": "99",
+    "regularPrice": "99",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_14-1.png"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7137",
+    "name": "Never Have I Ever",
+    "type": "simple",
+    "description": "Ready to spill all your funniest, wildest, or most cringeworthy life experiences? Never Have I Ever is the classic drinking or storytelling game that gets honest truths flowing. Each prompt starts with \"Never have I ever…\", and anyone who has done it takes a sip—or shares the story. Perfect for res living rooms, flatmate game nights, or braais with your squad. It’s equal parts hilarious confession, memory lane, and truth serum—all packed into one card box.",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7152",
+    "name": "Risk It Or Drink It",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\n150+ challenge cards across four escalating difficulty levels\r\\n\r\\n \t\r\\nDraw a card, complete the dare—or drink if you chicken out\r\\n\r\\n \t\r\\nSimple rules, fast setup—play starts instantly\r\\n\r\\n \t\r\\nDesigned for groups: 2–10 players fits any res corridor or lounge\r\\n\r\\n \t\r\\nCompact deck, easy to stash in a backpack or res drawer\r\\n\r\\n\r\\nPlayers: 2+Ages: 18+ (some dares may be a bit extreme)Playtime: 15–45 minutes, depending on crew energy",
+    "price": "85",
+    "regularPrice": "85",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_9-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-16.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-16.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-10.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7157",
+    "name": "Sh*t Happens",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\n200 irreverent and witty \"Situation Cards\"\r\\n\r\\n \t\r\\nMisery Index rankings from 1–100, all vetted by professional counselors—yes, really\r\\n\r\\n \t\r\\nEasy-to-follow gameplay: guess the ranking, win cards—first to 10 wins\r\\n\r\\n \t\r\\nSupports 2+ players, ages 18+\r\\n\r\\n \t\r\\nCompact box (approx. 16 cm × 11 cm) that’s easy to stash in a backpack or dorm drawer\r\\n\r\\n",
+    "price": "110",
+    "regularPrice": "110",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2_3-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-17.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7161",
+    "name": "Spank The Yeti",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n\r\\n \t\r\\nHuge deck: 436 cards (Action + Object) plus ABC/123 guess cards\r\\n\r\\n \t\r\\nEasy setup, intuitive play—no app, no fuss\r\\n\r\\n \t\r\\nFor 2–10 players, adults only (17+)\r\\n\r\\n \t\r\\nHilarious combinations: endless replay potential\r\\n\r\\n",
+    "price": "170",
+    "regularPrice": "170",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2_6-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-18.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7165",
+    "name": "These Cards Will Get You Drunk Too",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\n100 unique challenge cards—screw your mates or get screwed\r\\n\r\\n \t\r\\nCompact, portable deck fits easily in res drawers or backpacks\r\\n\r\\n \t\r\\nFast-paced play: no setup, no app, just raw fun\r\\n\r\\n \t\r\\nSupports 2–8 players, ages 21+—great for squad hangouts\r\\n\r\\n \t\r\\nCan be played alone or paired with the original deck\r\\n\r\\n",
+    "price": "65",
+    "regularPrice": "65",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_17-1.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-19.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7168",
+    "name": "Things They Didn't Teach You In School",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\n110 cards packed with over 400 trivia questions and answers\r\\n\r\\n \t\r\\nQuick and easy gameplay—no app, no setup, instant fun\r\\n\r\\n \t\r\\nCompact and bag-friendly: 14.5 cm square by 4.5 cm thick\r\\n\r\\n \t\r\\n2+ players—great for squad nights or family gatherings\r\\n\r\\n",
+    "price": "76",
+    "regularPrice": "76",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2_11-1.png"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7171",
+    "name": "Top Of Mind",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\n110 prompt cards that each include multiple categories (400+ possible topics)\r\\n\r\\n \t\r\\nSimultaneous answering—no one sits out\r\\n\r\\n \t\r\\nSimple mechanics—pick a category, write an answer, compare—and bam, you’re in the game\r\\n\r\\n \t\r\\nGame rounds last 15–45 minutes, great for tight res schedules\r\\n\r\\n \t\r\\nIdeal for groups of 3 to 99 players (more minds, more matches!)\r\\n\r\\n \t\r\\nCompact size (~14.5 cm square box), perfect for tossing into your backpack or stash spot\r\\n\r\\n",
+    "price": "49",
+    "regularPrice": "49",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1_10-1.png"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7175",
+    "name": "Twister",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\nLarge vinyl Twister mat with iconic red, blue, yellow, and green circles\r\\n\r\\n \t\r\\nClassic spinner board with easy-to-follow instructions\r\\n\r\\n \t\r\\nFor 2 or more players—no limit if your res crew wants to rotate in\r\\n\r\\n \t\r\\nFolds up neatly for storage under a bed, in a cupboard, or in your backpack\r\\n\r\\n \t\r\\nGreat for icebreakers, pre-games, or flexing your yoga skills (or lack thereof)\r\\n\r\\n",
+    "price": "135",
+    "regularPrice": "135",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-21.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-11.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7178",
+    "name": "What Do You Meme?",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\n435 premium cards: 75 Photo Cards + 360 Caption Cards\r\\n\r\\n \t\r\\nDurable gloss-finish cards and display easel included\r\\n\r\\n \t\r\\nFast rules—only minutes to learn, hours of meme battles\r\\n\r\\n \t\r\\nSupports 3 to 20 players, ages 17+\r\\n\r\\n \t\r\\nPerfect for squad game nights, party preludes, or post-exam relaxation\r\\n\r\\n",
+    "price": "137",
+    "regularPrice": "137",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-19.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-22.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/4-12.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-22.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7183",
+    "name": "You Laugh You Drink",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n• 150 hilarious action cards\r\\n• Fast-paced gameplay for 3+ players• Perfect for pre-games, afters, and res parties• No complicated rules — read, act, laugh, drink• Ages 21+ (or whenever you're vibing with soft drinks)• Portable deck size — take it anywhere• Combine with other card games for an ultimate party night",
+    "price": "79",
+    "regularPrice": "79",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-23.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7185",
+    "name": "You Lie You Drink",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\n150 prompt cards invite you to share real stories or bluff creatively (e.g., “I once kissed a celebrity” or “I’ve never broken a bone”)\r\\n\r\\n \t\r\\nSimple turn-based gameplay: pick a card, make your statement, face the verdict—no setup hassles\r\\n\r\\n \t\r\\nFor 3+ players, suitable for ages 21+—guaranteed laugh fuel for adult groups\r\\n\r\\n \t\r\\nBox includes prompt deck and clear “truth/lies” voting cards to keep everyone in the game flow\r\\n\r\\n",
+    "price": "69",
+    "regularPrice": "69",
+    "salePrice": "",
+    "categories": "Gamenight",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/1-24.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/2-23.jpg",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/3-20.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7217",
+    "name": "Non-stick Frying Pan",
+    "type": "variable",
+    "description": "Features:\r\\n\r\\n \t\r\\nMarble-textured non-stick coating lets you cook with minimal oil—and scrubbing is nearly a thing of the past.\r\\n\r\\n \t\r\\nThick forged base ensures even heat distribution and lowers risk of burnt food or hotspot disasters.\r\\n\r\\n \t\r\\nWooden handle stays cool under pressure, so no oven mitts or burns.\r\\n\r\\n \t\r\\nLightweight and compact—slides under the res-room bed or stacks with other pans easily.\r\\n\r\\n\r\\nSpecs:\r\\n\r\\n \tMaterial: Forged aluminum with marble non-stick coating; wood‑style handle (heat-resistant)\r\\n \t\r\\nCare: Best hand-washed to preserve coating (recommend silicone/nylon utensils only)\r\\n\r\\n",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Kitchenware",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/frying-pan1.png"
+    ],
+    "variations": [
+      {
+        "id": "7218",
+        "name": "Non-stick Frying Pan - 24cm",
+        "price": "105",
+        "regularPrice": "105",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250729_110023.png",
+        "attributes": {
+          "Size": "24cm"
+        }
+      },
+      {
+        "id": "7219",
+        "name": "Non-stick Frying Pan - 26cm",
+        "price": "120",
+        "regularPrice": "120",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250729_110042.png",
+        "attributes": {
+          "Size": "26cm"
+        }
+      },
+      {
+        "id": "7220",
+        "name": "Non-stick Frying Pan - 28cm",
+        "price": "140",
+        "regularPrice": "140",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250729_110107.png",
+        "attributes": {
+          "Size": "28cm"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "values": "24cm, 26cm, 28cm"
+      }
+    ]
+  },
+  {
+    "id": "7221",
+    "name": "Nova Luxury Soft - Toilet Tissue",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\nUltra-soft double-ply tissue for comfort without sacrificing durability\r\\n\r\\n \t\r\\n350 sheets per roll (9-roll pack) for long-lasting use\r\\n\r\\n \t\r\\nMade from FSC‑certified sugarcane waste fibre using chlorine-free processing\r\\n\r\\n \t\r\\nBiodegradable and recyclable—kind to the planet and your conscience\r\\n\r\\n",
+    "price": "59",
+    "regularPrice": "59",
+    "salePrice": "",
+    "categories": "Hygiene, Self-care",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_130058.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_130108.png"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7222",
+    "name": "Perfecto Dishwashing Liquid",
+    "type": "variable",
+    "description": "Features:\r\\n\r\\n \t\r\\nPowerful degreasing action easily breaks down oil and stuck-on food\r\\n\r\\n \t\r\\nRefreshing scent that leaves dishes sparkling and your kitchen smelling clean\r\\n\r\\n \t\r\\nHand-friendly formula—won’t dry out your skin after dish duty\r\\n\r\\n \t\r\\nCompact bottle size—great for tight res cupboards or shelf space\r\\n\r\\n \t\r\\nBudget-friendly—big value in one smart purchase\r\\n\r\\n",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Hygiene",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_130338.png"
+    ],
+    "variations": [
+      {
+        "id": "7327",
+        "name": "Perfecto Dishwashing Liquid - 400ml, Lemon",
+        "price": "19",
+        "regularPrice": "19",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_130250.png",
+        "attributes": {
+          "Size": "400ml"
+        }
+      },
+      {
+        "id": "7328",
+        "name": "Perfecto Dishwashing Liquid - 400ml, Exotic Berries",
+        "price": "19",
+        "regularPrice": "19",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "Size": "400ml"
+        }
+      },
+      {
+        "id": "7329",
+        "name": "Perfecto Dishwashing Liquid - 750ml, Lemon",
+        "price": "24",
+        "regularPrice": "24",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_130338.png",
+        "attributes": {
+          "Size": "750ml"
+        }
+      },
+      {
+        "id": "7330",
+        "name": "Perfecto Dishwashing Liquid - 750ml, Exotic Berries",
+        "price": "24",
+        "regularPrice": "24",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_130357.png",
+        "attributes": {
+          "Size": "750ml"
+        }
+      },
+      {
+        "id": "7331",
+        "name": "Perfecto Dishwashing Liquid - 1.5l, Lemon",
+        "price": "39",
+        "regularPrice": "39",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_130322.png",
+        "attributes": {
+          "Size": "1.5l"
+        }
+      },
+      {
+        "id": "7332",
+        "name": "Perfecto Dishwashing Liquid - 1.5l, Exotic Berries",
+        "price": "39",
+        "regularPrice": "39",
+        "salePrice": "",
+        "image": "",
+        "attributes": {
+          "Size": "1.5l"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "values": "400ml, 750ml, 1.5l"
+      }
+    ]
+  },
+  {
+    "id": "7230",
+    "name": "Donut Pan (12‑Hole)",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\nHolds 12 donut cavities—perfect for sharing or single‑batch runs\r\\n\r\\n \t\r\\nNon‑stick carbon steel means donuts pop out easily and cleaning is quick\r\\n\r\\n \t\r\\nSturdy construction—designed to take repeated oven use without warping\r\\n\r\\n \t\r\\nSlim profile (~40 cm x 28 cm footprint with ~2 cm depth) so it tucks into cabinets or res-room draws effortlessly\r\\n\r\\n \t\r\\nMulti-use: double as muffin pan, cake pops tray, mini quiche mould—perfect for crowd cooking\r\\n\r\\n",
+    "price": "119",
+    "regularPrice": "119",
+    "salePrice": "",
+    "categories": "Kitchenware",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250730_125807.png"
+    ],
+    "variations": [],
+    "attributes": []
+  },
+  {
+    "id": "7232",
+    "name": "Spy x Family Tote Bag",
+    "type": "variable",
+    "description": "Features:\r\\n\r\\n \t\r\\nBold design featuring the Forger family in full color\r\\n\r\\n \t\r\\nDurable 100% polyester shell or heavyweight canvas options available\r\\n\r\\n \t\r\\nWide cotton straps (approx. 2.5 cm) — comfy on the shoulder, even when top‑heavy with books or a laptop\r\\n\r\\n \t\r\\nAvailable in multiple sizes, from compact (21″ strap) to extra large (29″ strap), so you pick what works for your daily haul\r\\n\r\\n \t\r\\nEasy-care, machine-wash light cycle—just air dry or tumble low\r\\n\r\\n",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Lifestyle",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250720_144759-3.png"
+    ],
+    "variations": [
+      {
+        "id": "7233",
+        "name": "Spy x Family Tote Bag - White",
+        "price": "",
+        "regularPrice": "",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250720_144759-2.png",
+        "attributes": {
+          "Color": "White"
+        }
+      },
+      {
+        "id": "7234",
+        "name": "Spy x Family Tote Bag - Black",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250720_144803.png",
+        "attributes": {
+          "Color": "Black"
+        }
+      },
+      {
+        "id": "7235",
+        "name": "Spy x Family Tote Bag - Beige",
+        "price": "150",
+        "regularPrice": "150",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250720_144809.png",
+        "attributes": {
+          "Color": "Beige"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Color",
+        "values": "White, Black, Beige"
+      }
+    ]
+  },
+  {
+    "id": "7313",
+    "name": "Inflatable Sofa",
+    "type": "variable",
+    "description": "Features:\r\\n\r\\n \t\r\\nSoft flocked surface for added comfort when seated or napping\r\\n\r\\n \t\r\\nMultiple inflation/deflation valves (fast fill and release)\r\\n\r\\n \t\r\\nIntegrated backrest and armrests: lounge vibe guaranteed\r\\n\r\\n \t\r\\nFolds down flat—easy to stash under beds or in cupboards when not in use \r\\n\r\\n",
+    "price": "",
+    "regularPrice": "",
+    "salePrice": "",
+    "categories": "Lifestyle, Room Decor",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250719_133100.png"
+    ],
+    "variations": [
+      {
+        "id": "7314",
+        "name": "Inflatable Sofa - Single, One piece",
+        "price": "399",
+        "regularPrice": "399",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250719_133135.png",
+        "attributes": {
+          "Size": "Single"
+        }
+      },
+      {
+        "id": "7315",
+        "name": "Inflatable Sofa - Single, Two piece",
+        "price": "369",
+        "regularPrice": "369",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250719_133100.png",
+        "attributes": {
+          "Size": "Single"
+        }
+      },
+      {
+        "id": "7316",
+        "name": "Inflatable Sofa - Multifunctional, One piece",
+        "price": "465",
+        "regularPrice": "465",
+        "salePrice": "",
+        "image": "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250719_133232.png",
+        "attributes": {
+          "Size": "Multifunctional"
+        }
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Size",
+        "values": "Single, Multifunctional"
+      }
+    ]
+  },
+  {
+    "id": "7321",
+    "name": "Fast-Charge Cable",
+    "type": "simple",
+    "description": "Features:\r\\n\r\\n \t\r\\nLightning Fast charging support up to 2.4 A with 480 Mbps data transfer speed — quicker than most campus café USB ports.\r\\n\r\\n \t\r\\nHigh-quality construction: anti-oxidation aluminum alloy heads and high-density braided nylon body resist fraying and tangling.\r\\n\r\\n \tWattage: 12W fast charging\r\\n \t\r\\n1 m length gives you just enough reach for desk setup or bedside charging without the clutter.\r\\n\r\\n \t\r\\nSleek & tough: light yet sturdy (~25 g), packed compactly for easy tuck into bags.\r\\n\r\\n",
+    "price": "59",
+    "regularPrice": "59",
+    "salePrice": "",
+    "categories": "Electronics",
+    "images": [
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/IMG_20250719_132627.png",
+      "https://jozistudenthub.co.za/wp-content/uploads/2025/07/ba75275ab42ba555a92271314659690b.jpg"
+    ],
+    "variations": [],
+    "attributes": []
+  }
+]
