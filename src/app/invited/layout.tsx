@@ -4,7 +4,7 @@ import { Bodoni_Moda, Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Calendar, Menu, X, Shield } from "lucide-react";
+import { Home, Info, Image as ImageIcon, Mail, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const bodoni = Bodoni_Moda({
@@ -26,7 +26,6 @@ export default function InvitedLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -36,7 +35,7 @@ export default function InvitedLayout({
   return (
     <div
       className={cn(
-        "min-h-screen bg-[#F9F8F6] text-[#1A1A1A] font-sans antialiased flex flex-col selection:bg-[#d4af37]/20 selection:text-[#1a1a1a]",
+        "min-h-screen bg-[#F9F8F6] text-[#1A1A1A] font-sans antialiased flex flex-col selection:bg-[#d4af37]/20 selection:text-[#1a1a1a] pb-24 md:pb-0",
         bodoni.variable,
         montserrat.variable
       )}
@@ -52,15 +51,9 @@ export default function InvitedLayout({
           <div className="flex h-20 items-center justify-between">
             {/* Brand Wordmark Logo */}
             <div className="flex">
-              {/* Authentic Serif Wordmark Logo (Stitch Design) */}
               <Link href="/invited" className="font-serif text-2xl font-medium tracking-tighter text-[#1A1A1A] uppercase">
                 INVITED<span className="text-[#d4af37]">.</span>
               </Link>
-              {/* Alternate dot logo kept for custom white-label client branding:
-              <Link href="/invited" className="font-serif text-2xl font-semibold tracking-tight text-[#1A1A1A]">
-                Invited<span className="text-[#d4af37]">.</span>
-              </Link>
-              */}
             </div>
 
             {/* Desktop Nav Links */}
@@ -72,7 +65,7 @@ export default function InvitedLayout({
                   pathname === "/invited" ? "text-[#d4af37]" : "text-[#1A1A1A]"
                 )}
               >
-                The Gala
+                Home
               </Link>
               <Link
                 href="/invited/about"
@@ -93,15 +86,6 @@ export default function InvitedLayout({
                 Gallery
               </Link>
               <Link
-                href="/invited/rsvp"
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
-                  pathname === "/invited/rsvp" ? "text-[#d4af37]" : "text-[#1A1A1A]"
-                )}
-              >
-                RSVP
-              </Link>
-              <Link
                 href="/invited/contact"
                 className={cn(
                   "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
@@ -114,117 +98,134 @@ export default function InvitedLayout({
                 href="/invited/admin"
                 className={cn(
                   "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
-                  pathname === "/invited/admin" ? "text-[#d4af37]" : "text-[#1A1A1A]"
+                  pathname.startsWith("/invited/admin") ? "text-[#d4af37]" : "text-[#1A1A1A]"
                 )}
               >
-                Guest List
+                Admin
               </Link>
             </nav>
 
-            {/* Calendar Icon CTA */}
-            <div className="flex items-center gap-4">
-              <Link
-                href="/invited/rsvp"
-                className="hidden sm:flex items-center gap-2 border border-[#d4af37] px-4 py-2 text-[10px] uppercase tracking-[0.15em] font-semibold hover:bg-[#1A1A1A] hover:text-white transition-all duration-300"
-              >
-                <Calendar className="h-3.5 w-3.5 text-[#d4af37]" /> Reserve Seat
-              </Link>
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 md:hidden text-[#1A1A1A] hover:text-[#d4af37] transition-colors"
-              >
-                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </button>
+            {/* Subtle branding or action placeholder for balanced flexbox spacing */}
+            <div className="hidden md:flex items-center">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A]/40 font-semibold font-sans">
+                Showcase Suite
+              </span>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-20 z-30 bg-[#F9F8F6] border-b border-[#1A1A1A]/10 py-6 px-8 shadow-lg animate-fade-in">
-          <nav className="flex flex-col space-y-4">
+      {/* Main Contents */}
+      <main className="flex-grow">{children}</main>
+
+      {/* Floating App-like Bottom Navigation for Mobile */}
+      {mounted && (
+        <div className="md:hidden fixed bottom-6 inset-x-4 z-50 flex justify-center">
+          <nav className="flex items-center justify-around w-full max-w-md bg-[#1A1A1A]/95 backdrop-blur-xl border border-white/10 px-4 py-3.5 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.3)] text-white">
             <Link
               href="/invited"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] hover:text-[#d4af37]"
+              className={cn(
+                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                pathname === "/invited" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
             >
-              The Gala
+              <Home className="h-5 w-5" />
+              <span className="text-[9px] uppercase tracking-wider font-medium">Home</span>
+              {pathname === "/invited" && (
+                <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
+              )}
             </Link>
+            
             <Link
               href="/invited/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] hover:text-[#d4af37]"
+              className={cn(
+                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                pathname === "/invited/about" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
             >
-              About
+              <Info className="h-5 w-5" />
+              <span className="text-[9px] uppercase tracking-wider font-medium">About</span>
+              {pathname === "/invited/about" && (
+                <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
+              )}
             </Link>
+
             <Link
               href="/invited/gallery"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] hover:text-[#d4af37]"
+              className={cn(
+                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                pathname === "/invited/gallery" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
             >
-              Gallery
+              <ImageIcon className="h-5 w-5" />
+              <span className="text-[9px] uppercase tracking-wider font-medium">Gallery</span>
+              {pathname === "/invited/gallery" && (
+                <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
+              )}
             </Link>
-            <Link
-              href="/invited/rsvp"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] hover:text-[#d4af37]"
-            >
-              RSVP
-            </Link>
+
             <Link
               href="/invited/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] hover:text-[#d4af37]"
+              className={cn(
+                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                pathname === "/invited/contact" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
             >
-              Contact
+              <Mail className="h-5 w-5" />
+              <span className="text-[9px] uppercase tracking-wider font-medium">Contact</span>
+              {pathname === "/invited/contact" && (
+                <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
+              )}
             </Link>
+
             <Link
               href="/invited/admin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1A1A1A] hover:text-[#d4af37]"
+              className={cn(
+                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                pathname.startsWith("/invited/admin") ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
             >
-              Guest List
+              <Shield className="h-5 w-5" />
+              <span className="text-[9px] uppercase tracking-wider font-medium">Admin</span>
+              {pathname.startsWith("/invited/admin") && (
+                <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
+              )}
             </Link>
           </nav>
         </div>
       )}
 
-      {/* Main Contents */}
-      <main className="flex-grow">{children}</main>
-
       {/* Luxury Event Footer */}
-      <footer className="bg-[#1A1A1A] text-[#F9F8F6]/80 py-16 border-t border-[#1A1A1A]/10">
+      <footer className="bg-[#1A1A1A] text-[#F9F8F6]/80 py-16 border-t border-[#1A1A1A]/10 pb-32 md:pb-16">
         <div className="mx-auto max-w-7xl px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
               <h3 className="font-serif text-2xl font-medium tracking-tighter text-white uppercase mb-4">
                 INVITED<span className="text-[#d4af37]">.</span>
               </h3>
-              <p className="text-xs max-w-xs leading-relaxed text-[#F9F8F6]/60 mx-auto md:mx-0 font-light">
+              <p className="text-xs max-w-xs leading-relaxed text-[#F9F8F6]/60 mx-auto md:mx-0 font-light font-sans">
                 Exclusive digital suites for bespoke events. Seamlessly planning attendance, seating codes, and guest registries.
               </p>
             </div>
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white mb-4">The Events</h4>
               <ul className="space-y-2 text-xs font-light">
-                <li><Link href="/invited" className="hover:text-white transition-colors">The Ivory Gala 2026</Link></li>
-                <li><Link href="/invited/about" className="hover:text-white transition-colors">About the Gala</Link></li>
-                <li><Link href="/invited/gallery" className="hover:text-white transition-colors">Event Gallery</Link></li>
-                <li><Link href="/invited/rsvp" className="hover:text-white transition-colors">Attendance RSVP</Link></li>
-                <li><Link href="/invited/contact" className="hover:text-white transition-colors">Concierge Inquiry</Link></li>
-                <li><Link href="/invited/admin" className="hover:text-white transition-colors">Guest Register</Link></li>
+                <li><Link href="/invited" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/invited/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/invited/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+                <li><Link href="/invited/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/invited/admin" className="hover:text-white transition-colors">Admin Console</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white mb-4">Concierge</h4>
-              <p className="text-xs leading-relaxed text-[#F9F8F6]/60 font-light">
+              <p className="text-xs leading-relaxed text-[#F9F8F6]/60 font-light font-sans">
                 All details governed by the Ivory Committee. For assistance, contact the Gala organizers directly.
               </p>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-[#F9F8F6]/10 text-center text-[10px] uppercase tracking-[0.2em] text-[#F9F8F6]/40">
-            © {new Date().getFullYear()} Invited Suite. Managed by Ivory Committee.
+          <div className="mt-12 pt-8 border-t border-[#F9F8F6]/10 text-center text-[10px] uppercase tracking-[0.2em] text-[#F9F8F6]/40 font-sans">
+            © {new Date().getFullYear()} INVITED. Managed by Ivory Committee.
           </div>
         </div>
       </footer>

@@ -8,7 +8,7 @@ import Link from "next/link";
 import { 
   MoveLeft, Users, Calendar, Clock, MapPin, CheckCircle, 
   Trash2, UserPlus, ListTodo, Plus, Trash, Utensils, 
-  Paintbrush, Flower, Loader2, Check, AlertCircle 
+  Paintbrush, Flower, Loader2, Check, AlertCircle, Menu, X
 } from "lucide-react";
 
 export default function EventAdminConsolePage({
@@ -29,6 +29,7 @@ export default function EventAdminConsolePage({
 
   // Tab state
   const [activeTab, setActiveTab] = useState<"guests" | "programme" | "vendors" | "roadmap">("guests");
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   // Local Form states
   const [guestForm, setGuestForm] = useState({ name: "", email: "", attending: true, guestsCount: 0, dietary: "" });
@@ -355,7 +356,7 @@ export default function EventAdminConsolePage({
       </div>
 
       {/* Tabs Selection Bar */}
-      <div className="flex border-b border-[#1A1A1A]/10 gap-8">
+      <div className="hidden md:flex border-b border-[#1A1A1A]/10 gap-8">
         {(["guests", "programme", "vendors", "roadmap"] as const).map((tab) => (
           <button
             key={tab}
@@ -1105,6 +1106,115 @@ export default function EventAdminConsolePage({
                 </div>
               );
             })}
+          </div>
+        </div>
+      )}
+
+      {/* Mobile Floating Admin Menu Button */}
+      <button
+        onClick={() => setMobileDrawerOpen(true)}
+        className="md:hidden fixed bottom-24 right-6 z-40 bg-[#1A1A1A] text-[#d4af37] border border-[#d4af37]/30 p-3.5 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:scale-105 active:scale-95 transition-all"
+        title="Open Submenu"
+      >
+        <Menu className="h-5.5 w-5.5" />
+      </button>
+
+      {/* Mobile Admin Drawer Sheet */}
+      {mobileDrawerOpen && (
+        <div className="md:hidden fixed inset-0 z-50 flex justify-end">
+          {/* Backdrop blur overlay */}
+          <div
+            onClick={() => setMobileDrawerOpen(false)}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+          />
+
+          {/* Drawer Panel */}
+          <div className="relative w-80 max-w-full bg-[#F9F8F6] border-l border-[#1A1A1A]/10 h-full p-8 shadow-2xl flex flex-col justify-between z-10">
+            <div className="space-y-8">
+              {/* Drawer Header */}
+              <div className="flex justify-between items-center border-b border-[#1A1A1A]/10 pb-4">
+                <div>
+                  <span className="text-[8px] font-bold text-[#d4af37] uppercase tracking-[0.2em] block">PLANNER</span>
+                  <h4 className="font-serif text-lg font-semibold">Console Menu</h4>
+                </div>
+                <button
+                  onClick={() => setMobileDrawerOpen(false)}
+                  className="p-1.5 text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors border border-[#1A1A1A]/10 rounded"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+
+              {/* Sub-navigation buttons */}
+              <div className="flex flex-col gap-3 font-sans">
+                <button
+                  onClick={() => {
+                    setActiveTab("guests");
+                    setMobileDrawerOpen(false);
+                  }}
+                  className={`flex items-center gap-3 px-4 py-3.5 rounded text-xs font-semibold uppercase tracking-[0.15em] transition-all text-left ${
+                    activeTab === "guests"
+                      ? "bg-[#1A1A1A] text-[#d4af37]"
+                      : "bg-white border border-[#1A1A1A]/5 text-[#1A1A1A]/60 hover:text-[#1A1A1A]"
+                  }`}
+                >
+                  <Users className="h-4 w-4" />
+                  <span>Guest Register</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveTab("programme");
+                    setMobileDrawerOpen(false);
+                  }}
+                  className={`flex items-center gap-3 px-4 py-3.5 rounded text-xs font-semibold uppercase tracking-[0.15em] transition-all text-left ${
+                    activeTab === "programme"
+                      ? "bg-[#1A1A1A] text-[#d4af37]"
+                      : "bg-white border border-[#1A1A1A]/5 text-[#1A1A1A]/60 hover:text-[#1A1A1A]"
+                  }`}
+                >
+                  <Calendar className="h-4 w-4" />
+                  <span>Itinerary Sequence</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveTab("vendors");
+                    setMobileDrawerOpen(false);
+                  }}
+                  className={`flex items-center gap-3 px-4 py-3.5 rounded text-xs font-semibold uppercase tracking-[0.15em] transition-all text-left ${
+                    activeTab === "vendors"
+                      ? "bg-[#1A1A1A] text-[#d4af37]"
+                      : "bg-white border border-[#1A1A1A]/5 text-[#1A1A1A]/60 hover:text-[#1A1A1A]"
+                  }`}
+                >
+                  <Utensils className="h-4 w-4" />
+                  <span>Vendor Sourcing</span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setActiveTab("roadmap");
+                    setMobileDrawerOpen(false);
+                  }}
+                  className={`flex items-center gap-3 px-4 py-3.5 rounded text-xs font-semibold uppercase tracking-[0.15em] transition-all text-left ${
+                    activeTab === "roadmap"
+                      ? "bg-[#1A1A1A] text-[#d4af37]"
+                      : "bg-white border border-[#1A1A1A]/5 text-[#1A1A1A]/60 hover:text-[#1A1A1A]"
+                  }`}
+                >
+                  <ListTodo className="h-4 w-4" />
+                  <span>Roadmap Checklist</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Footer inside drawer */}
+            <div className="border-t border-[#1A1A1A]/10 pt-4 text-center font-sans">
+              <span className="text-[8px] uppercase tracking-widest text-[#1A1A1A]/40 font-semibold block">
+                INVITED. SHOWCASE
+              </span>
+            </div>
           </div>
         </div>
       )}
