@@ -4,7 +4,7 @@ import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X, Trash2, Plus, Minus } from "lucide-react";
+import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 
@@ -40,7 +40,7 @@ export default function FoodCoLayout({
   return (
     <div
       className={cn(
-        "min-h-screen bg-[#f9f9f9] text-[#1A1A1A] font-sans antialiased flex flex-col selection:bg-[#7D8C7C]/20 selection:text-[#1a1a1a]",
+        "min-h-screen bg-[#f9f9f9] text-[#1A1A1A] font-sans antialiased flex flex-col selection:bg-[#7D8C7C]/20 selection:text-[#1a1a1a] pb-24 md:pb-0",
         bodoni.variable,
         hanken.variable
       )}
@@ -70,7 +70,7 @@ export default function FoodCoLayout({
                   pathname === "/food-co" ? "text-[#7D8C7C]" : "text-[#1A1A1A]"
                 )}
               >
-                Pantry
+                Home
               </Link>
               <Link
                 href="/food-co/shop"
@@ -79,9 +79,8 @@ export default function FoodCoLayout({
                   pathname?.startsWith("/food-co/shop") ? "text-[#7D8C7C]" : "text-[#1A1A1A]"
                 )}
               >
-                Gourmet
+                Shop
               </Link>
-
             </nav>
 
             {/* Utilitarian Actions */}
@@ -119,14 +118,14 @@ export default function FoodCoLayout({
               onClick={() => setMobileMenuOpen(false)}
               className="text-xs font-semibold uppercase tracking-widest text-[#1A1A1A] hover:text-[#7D8C7C]"
             >
-              Pantry
+              Home
             </Link>
             <Link
               href="/food-co/shop"
               onClick={() => setMobileMenuOpen(false)}
               className="text-xs font-semibold uppercase tracking-widest text-[#1A1A1A] hover:text-[#7D8C7C]"
             >
-              Gourmet
+              Shop
             </Link>
 
           </nav>
@@ -135,6 +134,58 @@ export default function FoodCoLayout({
 
       {/* Main Contents */}
       <main className="flex-grow">{children}</main>
+
+      {/* Floating App-like Bottom Navigation for Mobile */}
+      {mounted && (
+        <div className="md:hidden fixed bottom-6 inset-x-4 z-45 flex justify-center">
+          <nav className="flex items-center justify-around w-full max-w-md bg-[#7D8C7C]/95 backdrop-blur-md border border-white/20 px-6 py-2.5 rounded-[24px] shadow-[0_8px_32px_rgba(125,140,124,0.35)] text-white">
+            <Link
+              href="/food-co"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname === "/food-co" ? "text-white" : "text-white/60 hover:text-white"
+              )}
+            >
+              <Home className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-wider font-semibold">Home</span>
+              {pathname === "/food-co" && (
+                <span className="absolute -bottom-1 w-1 h-1 bg-white rounded-full" />
+              )}
+            </Link>
+
+            <Link
+              href="/food-co/shop"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname?.startsWith("/food-co/shop") ? "text-white" : "text-white/60 hover:text-white"
+              )}
+            >
+              <ShoppingBag className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-wider font-semibold">Shop</span>
+              {pathname?.startsWith("/food-co/shop") && (
+                <span className="absolute -bottom-1 w-1 h-1 bg-white rounded-full" />
+              )}
+            </Link>
+
+            <button
+              onClick={() => setIsOpen(true)}
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full text-white/60 hover:text-white"
+              )}
+            >
+              <div className="relative">
+                <ShoppingBag className="h-[20px] w-[20px] stroke-[1.5]" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1.5 -right-2 flex h-4 w-4 items-center justify-center bg-white text-[8px] font-bold text-[#7D8C7C] rounded-full">
+                    {cartCount}
+                  </span>
+                )}
+              </div>
+              <span className="text-[8px] uppercase tracking-wider font-semibold">Cart</span>
+            </button>
+          </nav>
+        </div>
+      )}
 
       {/* Luxury Culinary Footer */}
       <footer className="bg-[#1A1A1A] text-white/80 py-16 border-t border-[#1A1A1A]/10 rounded-none">

@@ -35,11 +35,22 @@ export function BottomNav() {
 
   if (!mounted) return null;
 
+  // Determine dynamic Home link based on subdomain vs subdirectory
+  const [homeHref, setHomeHref] = useState("/scented");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hostname = window.location.hostname;
+      if (hostname.startsWith("scented.") || hostname === "scented") {
+        setHomeHref("/");
+      }
+    }
+  }, []);
+
   // Setup navigation items
   const navItems = [
     {
       label: "Home",
-      href: "/scented",
+      href: homeHref,
       icon: Home,
       action: null
     },
@@ -74,16 +85,16 @@ export function BottomNav() {
     <>
       <div 
         className={cn(
-          "fixed bottom-0 left-0 right-0 z-[49] bg-background/80 backdrop-blur-xl border-t border-border/40 md:hidden transition-transform duration-300", 
-          isCartOpen && "translate-y-full"
+          "fixed bottom-6 inset-x-4 z-[49] bg-background/80 backdrop-blur-md border border-accent/20 px-2 py-1 rounded-[1.5rem_0.5rem_1.5rem_0.5rem] shadow-[0_8px_32px_rgba(212,175,55,0.15)] md:hidden transition-transform duration-300", 
+          isCartOpen && "translate-y-24"
         )}
       >
-        <div className="flex items-center justify-around h-16 relative">
+        <div className="flex items-center justify-around h-14 relative">
           {navItems.map((item) => {
             const Icon = item.icon;
             // Determine active state
             const isActive = item.href === "/" 
-              ? pathname === "/" 
+              ? pathname === "/" || pathname === "/scented"
               : item.href !== "#" && pathname?.startsWith(item.href);
 
             const handleClick = (e: React.MouseEvent) => {
@@ -99,7 +110,7 @@ export function BottomNav() {
                 href={item.href}
                 onClick={handleClick}
                 className={cn(
-                  "flex flex-col items-center justify-center w-full h-full space-y-1 relative focus:outline-none transition-colors",
+                  "flex flex-col items-center justify-center w-full h-full space-y-0.5 relative focus:outline-none transition-colors",
                   isActive
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
@@ -110,14 +121,14 @@ export function BottomNav() {
                   {isActive && isNativeBottomNav && (
                     <motion.span
                       layoutId="navBubble"
-                      className="absolute -top-2 w-6 h-1 bg-accent rounded-full"
+                      className="absolute -top-1 w-6 h-0.5 bg-accent rounded-full"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
                   
                   <Icon 
                     className={cn(
-                      "h-[22px] w-[22px] transition-transform duration-300 ease-out", 
+                      "h-[20px] w-[20px] transition-transform duration-300 ease-out", 
                       isActive && isNativeBottomNav && "scale-110 text-accent"
                     )} 
                   />
@@ -128,7 +139,7 @@ export function BottomNav() {
                   ) : null}
                 </div>
                 <span className={cn(
-                  "text-[9px] font-medium tracking-wide transition-all duration-300",
+                  "text-[8px] font-medium tracking-wide transition-all duration-300",
                   isActive && isNativeBottomNav && "text-foreground font-semibold"
                 )}>
                   {item.label}
@@ -137,8 +148,6 @@ export function BottomNav() {
             );
           })}
         </div>
-        {/* Safe area padding for iPhones with home indicator */}
-        <div className="h-safe-area-bottom w-full bg-background/80 backdrop-blur-xl" />
       </div>
 
       {/* Dynamic Native Fullscreen Search Sheet */}

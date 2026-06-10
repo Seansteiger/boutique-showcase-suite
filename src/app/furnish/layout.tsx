@@ -4,7 +4,7 @@ import { Bodoni_Moda, Manrope } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X, Trash2, Plus, Minus } from "lucide-react";
+import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 
@@ -40,7 +40,7 @@ export default function FurnishLayout({
   return (
     <div
       className={cn(
-        "min-h-screen bg-[#F9F7F2] text-[#121212] font-sans antialiased flex flex-col selection:bg-[#d4af37]/20 selection:text-[#121212]",
+        "min-h-screen bg-[#F9F7F2] text-[#121212] font-sans antialiased flex flex-col selection:bg-[#d4af37]/20 selection:text-[#121212] pb-24 md:pb-0",
         bodoni.variable,
         manrope.variable
       )}
@@ -70,7 +70,7 @@ export default function FurnishLayout({
                   pathname === "/furnish" ? "text-[#d4af37] border-b border-[#d4af37]" : "text-[#121212]"
                 )}
               >
-                Showroom
+                Home
               </Link>
               <Link
                 href="/furnish/shop"
@@ -79,7 +79,7 @@ export default function FurnishLayout({
                   pathname?.startsWith("/furnish/shop") ? "text-[#d4af37] border-b border-[#d4af37]" : "text-[#121212]"
                 )}
               >
-                Collection
+                Shop
               </Link>
             </nav>
 
@@ -118,14 +118,14 @@ export default function FurnishLayout({
               onClick={() => setMobileMenuOpen(false)}
               className="text-xs font-semibold uppercase tracking-widest text-[#121212] hover:text-[#d4af37]"
             >
-              Showroom
+              Home
             </Link>
             <Link
               href="/furnish/shop"
               onClick={() => setMobileMenuOpen(false)}
               className="text-xs font-semibold uppercase tracking-widest text-[#121212] hover:text-[#d4af37]"
             >
-              Collection
+              Shop
             </Link>
 
           </nav>
@@ -134,6 +134,52 @@ export default function FurnishLayout({
 
       {/* Main Contents */}
       <main className="flex-grow">{children}</main>
+
+      {/* Floating App-like Bottom Navigation for Mobile */}
+      {mounted && (
+        <div className="md:hidden fixed bottom-6 inset-x-4 z-45 flex justify-center">
+          <nav className="flex items-center justify-around w-full max-w-md bg-[#121212]/95 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-none shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-white">
+            <Link
+              href="/furnish"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname === "/furnish" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
+            >
+              <Home className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-widest font-bold">Home</span>
+            </Link>
+
+            <Link
+              href="/furnish/shop"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname?.startsWith("/furnish/shop") ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
+            >
+              <ShoppingBag className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-widest font-bold">Shop</span>
+            </Link>
+
+            <button
+              onClick={() => setIsOpen(true)}
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full text-white/60 hover:text-white"
+              )}
+            >
+              <div className="relative">
+                <ShoppingBag className="h-[20px] w-[20px] stroke-[1.5]" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1.5 -right-2 flex h-4 w-4 items-center justify-center bg-[#d4af37] text-[8px] font-bold text-[#121212] rounded-none">
+                    {cartCount}
+                  </span>
+                )}
+              </div>
+              <span className="text-[8px] uppercase tracking-widest font-bold">Cart</span>
+            </button>
+          </nav>
+        </div>
+      )}
 
       {/* Luxury Footer */}
       <footer className="bg-[#121212] text-[#F9F7F2]/80 py-16 border-t border-[#121212]/10 rounded-none">

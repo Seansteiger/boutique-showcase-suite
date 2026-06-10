@@ -153,6 +153,7 @@ export default function EventAdminConsolePage({
   const attendingGuests = rsvps.filter((r) => r.attending).reduce((sum, r) => sum + 1 + r.guestsCount, 0);
   const regretsResponses = rsvps.filter((r) => !r.attending).length;
   const totalResponses = rsvps.length;
+  const dietaryCount = rsvps.filter((r) => r.attending && r.dietaryRestrictions && r.dietaryRestrictions.trim().toLowerCase() !== "none" && r.dietaryRestrictions.trim() !== "").length;
 
   // Manual Guest RSVP Submit
   const handleAddGuest = async (e: React.FormEvent) => {
@@ -382,7 +383,7 @@ export default function EventAdminConsolePage({
           <div className="lg:col-span-8 space-y-6">
             
             {/* Metric Overview */}
-            <div className="grid grid-cols-3 gap-4 border-b border-[#1A1A1A]/10 pb-6 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-b border-[#1A1A1A]/10 pb-6 text-center">
               <div className="bg-white p-4 border border-[#1A1A1A]/10 rounded shadow-sm">
                 <span className="block text-[8px] uppercase tracking-wider text-[#1A1A1A]/50">Guests Confirmed</span>
                 <span className="font-serif text-xl font-semibold text-green-600">{attendingGuests}</span>
@@ -390,6 +391,10 @@ export default function EventAdminConsolePage({
               <div className="bg-white p-4 border border-[#1A1A1A]/10 rounded shadow-sm">
                 <span className="block text-[8px] uppercase tracking-wider text-[#1A1A1A]/50">Regrets Responses</span>
                 <span className="font-serif text-xl font-semibold text-red-600">{regretsResponses}</span>
+              </div>
+              <div className="bg-white p-4 border border-[#1A1A1A]/10 rounded shadow-sm">
+                <span className="block text-[8px] uppercase tracking-wider text-[#1A1A1A]/50">Dietary Needs</span>
+                <span className="font-serif text-xl font-semibold text-[#d4af37]">{dietaryCount}</span>
               </div>
               <div className="bg-white p-4 border border-[#1A1A1A]/10 rounded shadow-sm">
                 <span className="block text-[8px] uppercase tracking-wider text-[#1A1A1A]/50">Total Responses</span>

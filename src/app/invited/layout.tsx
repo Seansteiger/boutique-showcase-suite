@@ -50,50 +50,54 @@ export default function InvitedLayout({
         <div className="mx-auto max-w-7xl px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Brand Wordmark Logo */}
-            <div className="flex">
+            <div className="flex items-center gap-8">
               <Link href="/invited" className="font-serif text-2xl font-medium tracking-tighter text-[#1A1A1A] uppercase">
                 INVITED<span className="text-[#d4af37]">.</span>
               </Link>
+
+              {/* Desktop Nav Links */}
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link
+                  href="/invited"
+                  className={cn(
+                    "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
+                    pathname === "/invited" ? "text-[#d4af37]" : "text-[#1A1A1A]"
+                  )}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/invited/about"
+                  className={cn(
+                    "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
+                    pathname === "/invited/about" ? "text-[#d4af37]" : "text-[#1A1A1A]"
+                  )}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/invited/gallery"
+                  className={cn(
+                    "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
+                    pathname === "/invited/gallery" ? "text-[#d4af37]" : "text-[#1A1A1A]"
+                  )}
+                >
+                  Gallery
+                </Link>
+                <Link
+                  href="/invited/contact"
+                  className={cn(
+                    "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
+                    pathname === "/invited/contact" ? "text-[#d4af37]" : "text-[#1A1A1A]"
+                  )}
+                >
+                  Contact
+                </Link>
+              </nav>
             </div>
 
-            {/* Desktop Nav Links */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link
-                href="/invited"
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
-                  pathname === "/invited" ? "text-[#d4af37]" : "text-[#1A1A1A]"
-                )}
-              >
-                Home
-              </Link>
-              <Link
-                href="/invited/about"
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
-                  pathname === "/invited/about" ? "text-[#d4af37]" : "text-[#1A1A1A]"
-                )}
-              >
-                About
-              </Link>
-              <Link
-                href="/invited/gallery"
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
-                  pathname === "/invited/gallery" ? "text-[#d4af37]" : "text-[#1A1A1A]"
-                )}
-              >
-                Gallery
-              </Link>
-              <Link
-                href="/invited/contact"
-                className={cn(
-                  "text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:text-[#d4af37]",
-                  pathname === "/invited/contact" ? "text-[#d4af37]" : "text-[#1A1A1A]"
-                )}
-              >
-                Contact
-              </Link>
+            {/* Header Actions: Admin & Purchase Website (Visible everywhere) */}
+            <div className="flex items-center gap-4">
               <Link
                 href="/invited/admin"
                 className={cn(
@@ -103,13 +107,15 @@ export default function InvitedLayout({
               >
                 Admin
               </Link>
-            </nav>
-
-            {/* Subtle branding or action placeholder for balanced flexbox spacing */}
-            <div className="hidden md:flex items-center">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A]/40 font-semibold font-sans">
-                Showcase Suite
-              </span>
+              
+              <a
+                href="https://wa.me/27699751347"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-flex items-center justify-center px-3.5 py-2 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.1em] md:tracking-[0.15em] text-[#1A1A1A] bg-[#d4af37] border border-[#d4af37] rounded-[4px] hover:bg-black hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.4)] animate-pulse hover:animate-none"
+              >
+                Purchase Website
+              </a>
             </div>
           </div>
         </div>
@@ -121,16 +127,16 @@ export default function InvitedLayout({
       {/* Floating App-like Bottom Navigation for Mobile */}
       {mounted && (
         <div className="md:hidden fixed bottom-6 inset-x-4 z-50 flex justify-center">
-          <nav className="flex items-center justify-around w-full max-w-md bg-[#1A1A1A]/95 backdrop-blur-xl border border-white/10 px-4 py-3.5 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.3)] text-white">
+          <nav className="flex items-center justify-around w-full max-w-md bg-[#1A1A1A]/75 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-white">
             <Link
               href="/invited"
               className={cn(
-                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                "flex flex-col items-center gap-1 transition-all duration-300 relative",
                 pathname === "/invited" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
               )}
             >
-              <Home className="h-5 w-5" />
-              <span className="text-[9px] uppercase tracking-wider font-medium">Home</span>
+              <Home className="h-4.5 w-4.5" />
+              <span className="text-[8px] uppercase tracking-wider font-semibold">Home</span>
               {pathname === "/invited" && (
                 <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
               )}
@@ -139,12 +145,12 @@ export default function InvitedLayout({
             <Link
               href="/invited/about"
               className={cn(
-                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                "flex flex-col items-center gap-1 transition-all duration-300 relative",
                 pathname === "/invited/about" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
               )}
             >
-              <Info className="h-5 w-5" />
-              <span className="text-[9px] uppercase tracking-wider font-medium">About</span>
+              <Info className="h-4.5 w-4.5" />
+              <span className="text-[8px] uppercase tracking-wider font-semibold">About</span>
               {pathname === "/invited/about" && (
                 <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
               )}
@@ -153,12 +159,12 @@ export default function InvitedLayout({
             <Link
               href="/invited/gallery"
               className={cn(
-                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                "flex flex-col items-center gap-1 transition-all duration-300 relative",
                 pathname === "/invited/gallery" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
               )}
             >
-              <ImageIcon className="h-5 w-5" />
-              <span className="text-[9px] uppercase tracking-wider font-medium">Gallery</span>
+              <ImageIcon className="h-4.5 w-4.5" />
+              <span className="text-[8px] uppercase tracking-wider font-semibold">Gallery</span>
               {pathname === "/invited/gallery" && (
                 <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
               )}
@@ -167,27 +173,13 @@ export default function InvitedLayout({
             <Link
               href="/invited/contact"
               className={cn(
-                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
+                "flex flex-col items-center gap-1 transition-all duration-300 relative",
                 pathname === "/invited/contact" ? "text-[#d4af37]" : "text-white/60 hover:text-white"
               )}
             >
-              <Mail className="h-5 w-5" />
-              <span className="text-[9px] uppercase tracking-wider font-medium">Contact</span>
+              <Mail className="h-4.5 w-4.5" />
+              <span className="text-[8px] uppercase tracking-wider font-semibold">Contact</span>
               {pathname === "/invited/contact" && (
-                <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
-              )}
-            </Link>
-
-            <Link
-              href="/invited/admin"
-              className={cn(
-                "flex flex-col items-center gap-1.5 transition-all duration-300 relative",
-                pathname.startsWith("/invited/admin") ? "text-[#d4af37]" : "text-white/60 hover:text-white"
-              )}
-            >
-              <Shield className="h-5 w-5" />
-              <span className="text-[9px] uppercase tracking-wider font-medium">Admin</span>
-              {pathname.startsWith("/invited/admin") && (
                 <span className="absolute -bottom-1 w-1.5 h-1.5 bg-[#d4af37] rounded-full" />
               )}
             </Link>
@@ -225,7 +217,7 @@ export default function InvitedLayout({
             </div>
           </div>
           <div className="mt-12 pt-8 border-t border-[#F9F8F6]/10 text-center text-[10px] uppercase tracking-[0.2em] text-[#F9F8F6]/40 font-sans">
-            © {new Date().getFullYear()} INVITED. Managed by Ivory Committee.
+            © {new Date().getFullYear()} INVITED. Steiger.Online
           </div>
         </div>
       </footer>

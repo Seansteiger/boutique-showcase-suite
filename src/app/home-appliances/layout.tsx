@@ -4,7 +4,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X, Trash2, Plus, Minus } from "lucide-react";
+import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 import { Button } from "@/components/ui/button";
@@ -40,7 +40,7 @@ export default function HomeLayout({
   return (
     <div
       className={cn(
-        "min-h-screen bg-[#fbf9f9] text-[#1b1c1c] font-sans antialiased flex flex-col",
+        "min-h-screen bg-[#fbf9f9] text-[#1b1c1c] font-sans antialiased flex flex-col pb-24 md:pb-0",
         playfair.variable,
         inter.variable
       )}
@@ -70,7 +70,7 @@ export default function HomeLayout({
                   pathname === "/home-appliances" ? "text-[#d4af37]" : "text-[#1b1c1c]"
                 )}
               >
-                Collection
+                Home
               </Link>
               <Link
                 href="/home-appliances/shop"
@@ -79,7 +79,7 @@ export default function HomeLayout({
                   pathname?.startsWith("/home-appliances/shop") ? "text-[#d4af37]" : "text-[#1b1c1c]"
                 )}
               >
-                Catalog
+                Shop
               </Link>
             </nav>
 
@@ -118,14 +118,14 @@ export default function HomeLayout({
               onClick={() => setMobileMenuOpen(false)}
               className="text-xs font-semibold uppercase tracking-widest text-[#1b1c1c] hover:text-[#d4af37]"
             >
-              Collection
+              Home
             </Link>
             <Link
               href="/home-appliances/shop"
               onClick={() => setMobileMenuOpen(false)}
               className="text-xs font-semibold uppercase tracking-widest text-[#1b1c1c] hover:text-[#d4af37]"
             >
-              Catalog
+              Shop
             </Link>
           </nav>
         </div>
@@ -133,6 +133,52 @@ export default function HomeLayout({
 
       {/* Main Contents */}
       <main className="flex-1">{children}</main>
+
+      {/* Floating App-like Bottom Navigation for Mobile */}
+      {mounted && (
+        <div className="md:hidden fixed bottom-6 inset-x-4 z-45 flex justify-center">
+          <nav className="flex items-center justify-around w-full max-w-md bg-[#1b1c1c]/95 backdrop-blur-md border border-[#e5e2e1]/20 px-4 py-2.5 rounded-[4px] shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-white">
+            <Link
+              href="/home-appliances"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname === "/home-appliances" ? "text-[#ffe088]" : "text-white/60 hover:text-white"
+              )}
+            >
+              <Home className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-widest font-bold">Home</span>
+            </Link>
+
+            <Link
+              href="/home-appliances/shop"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname?.startsWith("/home-appliances/shop") ? "text-[#ffe088]" : "text-white/60 hover:text-white"
+              )}
+            >
+              <ShoppingBag className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-widest font-bold">Shop</span>
+            </Link>
+
+            <button
+              onClick={() => setIsOpen(true)}
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full text-white/60 hover:text-white"
+              )}
+            >
+              <div className="relative">
+                <ShoppingBag className="h-[20px] w-[20px] stroke-[1.5]" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1.5 -right-2 flex h-4 w-4 items-center justify-center bg-[#ffe088] text-[8px] font-bold text-[#1b1c1c] rounded-full">
+                    {cartCount}
+                  </span>
+                )}
+              </div>
+              <span className="text-[8px] uppercase tracking-widest font-bold">Cart</span>
+            </button>
+          </nav>
+        </div>
+      )}
 
       {/* Luxury Footer */}
       <footer className="bg-[#1c1b1b] text-[#ffe088]/80 py-16 border-t border-[#e5e2e1]/10">

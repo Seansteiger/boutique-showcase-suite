@@ -26,6 +26,8 @@ import { getStoreSettings } from "@/lib/settings";
 import { PreviewBadge } from "@/components/PreviewBadge";
 
 
+export const dynamic = "force-dynamic";
+
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
@@ -43,16 +45,12 @@ const hankenGrotesk = Hanken_Grotesk({
 
 // 1. Dynamic Server-Side Meta Generation
 export async function generateMetadata(): Promise<Metadata> {
-  const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL || "";
   let brandName = "White-Label Store";
   
   try {
-    if (convexUrl && convexUrl.startsWith("http")) {
-      const convexHttp = new ConvexHttpClient(convexUrl);
-      const settings = await convexHttp.query(api.settings.get);
-      if (settings) {
-        brandName = settings.brandName;
-      }
+    const settings = await getStoreSettings();
+    if (settings) {
+      brandName = settings.brandName;
     }
   } catch (e) {
     // Fallback if not configured
