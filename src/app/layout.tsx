@@ -21,7 +21,7 @@ import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../convex/_generated/api";
 import ConvexClientProvider from "@/components/ConvexClientProvider";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { getStoreSettings } from "@/lib/settings";
 import { PreviewBadge } from "@/components/PreviewBadge";
 
@@ -56,13 +56,23 @@ export async function generateMetadata(): Promise<Metadata> {
     // Fallback if not configured
   }
 
+  const defaultTitle = brandName === "Invited"
+    ? "Invited | Exclusive Events & RSVPs"
+    : `${brandName} | Quality Essentials`;
+
+  const defaultDesc = brandName === "Invited"
+    ? "Exclusive digital suites for bespoke events. Seamlessly planning attendance, seating codes, and guest registries."
+    : `Shop the best home and room essentials at ${brandName}. Top quality selection delivered to your door.`;
+
   return {
     title: {
-      default: `${brandName} | Quality Essentials`,
+      default: defaultTitle,
       template: `%s | ${brandName}`,
     },
-    description: `Shop the best home and room essentials at ${brandName}. Top quality selection delivered to your door.`,
-    keywords: ["online shopping", brandName, "store essentials", "appliances", "lifestyle catalog"],
+    description: defaultDesc,
+    keywords: brandName === "Invited"
+      ? ["event planning", "bespoke RSVPs", "Ivory Committee", "guest registries", "digital invitations"]
+      : ["online shopping", brandName, "store essentials", "appliances", "lifestyle catalog"],
     authors: [{ name: brandName }],
     creator: brandName,
     icons: {
@@ -79,6 +89,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const categories = await getCategories();
+
+  // Fetch headers to resolve the server-side request pathname
+  const headersList = await headers();
+  const requestPathname = headersList.get("x-pathname") || "";
 
   // 2. Fetch Convex Settings on the server and resolve active preview override
   const cookieStore = await cookies();
@@ -109,6 +123,9 @@ export default async function RootLayout({
         "--shadow-glow": shadowValue,
       } as React.CSSProperties}
     >
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      </head>
       <body className={cn(
         "min-h-full bg-background font-sans antialiased flex flex-col",
         (settings.theme as any).pageTexture === "mesh"
@@ -127,22 +144,22 @@ export default async function RootLayout({
             <CartProvider>
               <CartSync />
               <AnalyticsTracker />
-              <StoreLayout hideOnCheckout>
+              <StoreLayout hideOnCheckout pathname={requestPathname}>
                 <Navbar initialCategories={categories} />
               </StoreLayout>
               <div className="flex-grow pb-24 md:pb-0">
                 {children}
               </div>
-              <StoreLayout showOnlyOnHome>
+              <StoreLayout showOnlyOnHome pathname={requestPathname}>
                 <Footer />
               </StoreLayout>
-              <StoreLayout hideOnCheckout>
+              <StoreLayout hideOnCheckout pathname={requestPathname}>
                 <BottomNav />
                 <AIAssistant />
                 <WhatsAppWidget />
               </StoreLayout>
               <PreviewBadge />
-              <StoreLayout hideOnCheckout>
+              <StoreLayout hideOnCheckout pathname={requestPathname}>
                 <CartSheet />
               </StoreLayout>
               <Toaster />

@@ -4,7 +4,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home } from "lucide-react";
+import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 import { Button } from "@/components/ui/button";
@@ -85,6 +85,14 @@ export default function HomeLayout({
 
             {/* Utilitarian Actions */}
             <div className="flex items-center gap-4">
+              <Link
+                href="/home-appliances/account"
+                className="hidden md:flex p-2.5 text-[#1b1c1c] hover:text-[#d4af37] transition-colors"
+                aria-label="Account Profile"
+              >
+                <User className="h-5 w-5 stroke-[1.5]" />
+              </Link>
+
               <button
                 onClick={() => setIsOpen(true)}
                 className="relative p-2.5 text-[#1b1c1c] hover:text-[#d4af37] transition-colors"
@@ -126,6 +134,13 @@ export default function HomeLayout({
               className="text-xs font-semibold uppercase tracking-widest text-[#1b1c1c] hover:text-[#d4af37]"
             >
               Shop
+            </Link>
+            <Link
+              href="/home-appliances/account"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-xs font-semibold uppercase tracking-widest text-[#1b1c1c] hover:text-[#d4af37]"
+            >
+              Profile
             </Link>
           </nav>
         </div>
@@ -176,6 +191,17 @@ export default function HomeLayout({
               </div>
               <span className="text-[8px] uppercase tracking-widest font-bold">Cart</span>
             </button>
+
+            <Link
+              href="/home-appliances/account"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname?.startsWith("/home-appliances/account") || pathname?.startsWith("/home-appliances/login") || pathname?.startsWith("/home-appliances/register") ? "text-[#ffe088]" : "text-white/60 hover:text-white"
+              )}
+            >
+              <User className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-widest font-bold">Profile</span>
+            </Link>
           </nav>
         </div>
       )}
@@ -195,8 +221,8 @@ export default function HomeLayout({
             <div>
               <h4 className="text-xs font-black uppercase tracking-widest text-white mb-4">Marketplace</h4>
               <ul className="space-y-2 text-xs">
-                <li><Link href="/home-appliances" className="hover:text-white transition-colors">Collection</Link></li>
-                <li><Link href="/home-appliances/shop" className="hover:text-white transition-colors">Catalog</Link></li>
+                <li><Link href="/home-appliances" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/home-appliances/shop" className="hover:text-white transition-colors">Shop</Link></li>
               </ul>
             </div>
             <div>

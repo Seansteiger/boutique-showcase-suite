@@ -7,12 +7,8 @@ export const revalidate = 60;
 export default async function FoodCoShopPage() {
   const allProducts = await getProducts();
 
-  const keywords = ["pan", "pot", "liquid", "tissue", "kettle", "coffee", "maker"];
-  const foodProducts = allProducts.filter(p =>
-    keywords.some(k => p.name.toLowerCase().includes(k)) ||
-    p.categorySlug === "kitchenware" ||
-    p.categorySlug === "hygiene"
-  );
+  // Filter products belonging to the Food.co brand
+  const foodProducts = allProducts.filter(p => p.brand === "Food.co");
 
   const displayProducts = foodProducts.length > 0 ? foodProducts : allProducts;
 

@@ -59,10 +59,10 @@ export default function CheckoutPage() {
         </p>
         <div className="pt-6">
           <Link
-            href="/food-co"
+            href="/food-co/shop"
             className="inline-block bg-[#1A1A1A] text-white hover:bg-[#7D8C7C] transition-all px-8 py-4 uppercase text-[10px] font-semibold tracking-widest rounded-lg"
           >
-            Back to Pantry
+            Back to Shop
           </Link>
         </div>
       </div>
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
         href="/food-co/shop"
         className="text-xs font-semibold uppercase tracking-widest text-[#1A1A1A]/60 hover:text-[#7D8C7C] transition-colors flex items-center gap-1.5"
       >
-        <MoveLeft className="h-4 w-4" /> Back to Pantry
+        <MoveLeft className="h-4 w-4" /> Back to Shop
       </Link>
 
       <h1 className="font-serif text-3xl md:text-5xl font-bold tracking-tight">Gourmet Checkout</h1>

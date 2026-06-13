@@ -10,12 +10,8 @@ export default async function ShopPage() {
     getCategories()
   ]);
 
-  // Keep only relevant appliances
-  const applianceKeywords = ["kettle", "maker", "coffee", "pan", "pot", "cooker", "blender"];
-  const appliances = products.filter(p => 
-    applianceKeywords.some(keyword => p.name.toLowerCase().includes(keyword)) ||
-    p.categorySlug === "kitchenware"
-  );
+  // Filter products belonging to the Home. brand
+  const appliances = products.filter(p => p.brand === "Home.");
   
   const displayProducts = appliances.length > 0 ? appliances : products;
 

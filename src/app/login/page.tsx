@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { loginUser, requestWhatsAppOtp, verifyWhatsAppOtp } from "@/app/actions/auth";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff, MessageSquare, ShieldCheck, Smartphone } from "lucide-react";
@@ -15,6 +15,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function LoginPage() {
     const router = useRouter();
+    const pathname = usePathname();
+    const prefix = pathname.startsWith("/food-co") ? "/food-co" :
+                   pathname.startsWith("/furnish") ? "/furnish" :
+                   pathname.startsWith("/home-appliances") ? "/home-appliances" : "";
     const settings = useStoreSettings();
     
     // Auth method state: "email" | "whatsapp"
@@ -69,10 +73,10 @@ export default function LoginPage() {
                 if (res.user.role === 'admin' || res.user.role === 'manager') {
                     router.push('/admin');
                 } else {
-                    router.push('/');
+                    router.push(`${prefix}/`);
                 }
             } else {
-                router.push('/');
+                router.push(`${prefix}/`);
             }
 
             router.refresh();
@@ -144,14 +148,14 @@ export default function LoginPage() {
                 // If cart recovery token exists in session, route back to checkout
                 const recoveryCart = typeof window !== "undefined" ? sessionStorage.getItem("recovery_cart_trigger") : null;
                 if (recoveryCart) {
-                    router.push('/checkout');
+                    router.push(`${prefix}/checkout`);
                 } else if (res.user.role === 'admin' || res.user.role === 'manager') {
                     router.push('/admin');
                 } else {
-                    router.push('/');
+                    router.push(`${prefix}/`);
                 }
             } else {
-                router.push('/');
+                router.push(`${prefix}/`);
             }
 
             router.refresh();
@@ -226,7 +230,7 @@ export default function LoginPage() {
                         Welcome back
                     </h1>
                     <p className="text-xs text-muted-foreground tracking-wide font-sans">
-                        Access your luxury perfume shopping account
+                        Access your {settings?.brandName || "SCENTED"} customer account
                     </p>
                 </div>
 
@@ -300,7 +304,7 @@ export default function LoginPage() {
                             <div className="space-y-2">
                                 <div className="flex items-center justify-between">
                                     <Label htmlFor="password" className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Password</Label>
-                                    <Link href="/forgot-password" className="text-[10px] font-bold text-accent hover:underline uppercase tracking-wider">Forgot password?</Link>
+                                    <Link href={`${prefix}/forgot-password`} className="text-[10px] font-bold text-accent hover:underline uppercase tracking-wider">Forgot password?</Link>
                                 </div>
                                 <div className="relative">
                                     <Input
@@ -423,7 +427,7 @@ export default function LoginPage() {
 
                 <div className="text-center text-[10px] uppercase tracking-wider text-muted-foreground font-sans pt-2">
                     Don&apos;t have an account?{" "}
-                    <Link href="/register" className="underline text-accent hover:text-primary font-bold">
+                    <Link href={`${prefix}/register`} className="underline text-accent hover:text-primary font-bold">
                         Sign up
                     </Link>
                 </div>

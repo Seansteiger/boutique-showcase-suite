@@ -1,0 +1,348 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style="scroll-behavior: smooth;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Hotel Hope Store</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "earth-brown": "#6F4E37",
+                        "surface-dim": "#e9d6cd",
+                        "inverse-on-surface": "#ffede5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5f402a",
+                        "primary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed": "#1d1b16",
+                        "secondary-fixed": "#ffdcc6",
+                        "charcoal-text": "#332F2C",
+                        "surface-container-high": "#f8e4da",
+                        "on-surface-variant": "#564338",
+                        "outline": "#897266",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff1ea",
+                        "inverse-primary": "#ffb689",
+                        "hope-orange": "#E87D2E",
+                        "on-background": "#231914",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dcc1b2",
+                        "tertiary-fixed-dim": "#cbc6bd",
+                        "tertiary-container": "#9d9991",
+                        "primary": "#984800",
+                        "secondary-container": "#ffd1b3",
+                        "surface-container": "#feeae0",
+                        "on-primary-fixed": "#321300",
+                        "surface-bright": "#fff8f5",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#f2dfd5",
+                        "surface-tint": "#984800",
+                        "on-primary-container": "#532400",
+                        "secondary": "#79573f",
+                        "secondary-fixed-dim": "#eabda0",
+                        "background": "#fff8f5",
+                        "heart-pink": "#E19BB9",
+                        "on-tertiary-container": "#34312c",
+                        "primary-container": "#e87d2e",
+                        "tertiary-fixed": "#e7e2d9",
+                        "primary-fixed-dim": "#ffb689",
+                        "on-secondary-container": "#7a5840",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f2dfd5",
+                        "inverse-surface": "#392e28",
+                        "surface": "#fff8f5",
+                        "cream-surface": "#FFF9F0",
+                        "on-primary-fixed-variant": "#743500",
+                        "on-error": "#ffffff",
+                        "tertiary": "#615e57",
+                        "on-tertiary-fixed-variant": "#494640",
+                        "on-secondary-fixed": "#2d1604",
+                        "on-surface": "#231914"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-xl": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .organic-shape {
+            border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+        }
+        .organic-shape-2 {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(232, 125, 46, 0.08);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(111, 78, 55, 0.1);
+        }
+        
+        .gsap-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    </style>
+</head>
+<body class="bg-cream-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-cream-surface shadow-sm w-full transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2 group" href="#">
+<span class="material-symbols-outlined text-hope-orange group-hover:scale-110 transition-transform">favorite</span>
+                Hotel Hope Store
+            </a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-hope-orange font-bold border-b-2 border-hope-orange pb-1 font-label-lg text-label-lg transition-colors duration-200" href="#">Shop</a>
+
+<a class="text-on-surface-variant hover:text-earth-brown font-label-lg text-label-lg transition-colors duration-200" href="#">About</a>
+<a class="text-on-surface-variant hover:text-earth-brown font-label-lg text-label-lg transition-colors duration-200" href="#">Donate</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary hover:text-hope-orange transition-colors duration-200 relative group p-2">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">shopping_cart</span>
+<span class="absolute top-0 right-0 bg-hope-orange text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+<button class="text-primary hover:text-hope-orange transition-colors duration-200 hidden md:block p-2 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">person</span>
+</button>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden py-20">
+<!-- Animation Background -->
+<div class="absolute inset-0 z-0 opacity-40">
+
+</div>
+<!-- Soft gradient overlay to ensure text legibility -->
+<div class="absolute inset-0 z-0 bg-gradient-to-r from-cream-surface via-cream-surface/80 to-transparent"></div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 lg:col-span-6 gsap-hero-stagger">
+<span class="inline-block px-4 py-1.5 rounded-full bg-surface-container-high text-earth-brown font-label-lg text-label-lg mb-6 border border-earth-brown/10" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                        Hope lives here
+                    </span>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-charcoal-text mb-6" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                        Shopping with a <span class="text-hope-orange italic">Story.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                        Every item in our shop creates a second chance for abandoned babies and at-risk mothers. Welcome to a place where love becomes action.
+                    </p>
+<div class="flex flex-wrap gap-4" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<a class="inline-flex items-center justify-center bg-hope-orange text-white px-8 py-4 rounded-full font-label-lg text-label-lg hover:bg-primary transition-colors shadow-lg shadow-hope-orange/20 hover:-translate-y-1 duration-300" href="#shop">
+                            Shop the Collection
+                            <span class="material-symbols-outlined ml-2 text-[20px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center bg-transparent border-2 border-earth-brown/30 text-earth-brown px-8 py-4 rounded-full font-label-lg text-label-lg hover:border-earth-brown hover:bg-earth-brown/5 transition-all duration-300" href="#mission">
+                            Our Mission
+                        </a>
+</div>
+</div>
+<div class="md:col-span-5 lg:col-span-6 relative mt-12 md:mt-0 hidden md:block">
+<div class="relative w-full aspect-square max-w-[500px] mx-auto">
+<!-- Decorative blob behind image -->
+<div class="absolute inset-0 bg-surface-container-high organic-shape scale-105 opacity-50 blur-xl"></div>
+<div class="absolute inset-0 bg-hope-orange/10 organic-shape-2 transform rotate-12 scale-95"></div>
+<div class="relative h-full w-full organic-shape overflow-hidden border-4 border-white shadow-xl">
+<img alt="Cozy interior room setting featuring warm sunlight, a plush cream armchair, and an earthy textured rug, evoking a sense of home and comfort." class="w-full h-full object-cover" data-alt="A warm, inviting living room corner bathed in soft, natural sunlight. A cozy, textured cream armchair sits prominently next to a small wooden side table. The room features light, neutral tones with earthy accents, a woven rug, and a healthy green potted plant, creating a feeling of safety, comfort, and a fresh start." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC11bHzEoN3P0p55LUZ0cqotvSvYAZdKSpjklqhtVnfNlf_edevCkEt2ojjWBHNIOYC6Z3F3mZ5mSh15o-EOatnd7a7dScBtnaJBzliCFwHiZEp-5lAqHBNGUX13EVq_hAWonPS-i6xOBoNCYyQOKQDRz3m6GgwUzo-LlgQCwBb_JbCAJuXrW5Ef23U5m_szMHgRUQeZQv8ck61SDB5ttmc6klyyzWUoG3jeAjYYZVPLdwAfmBQzRyLpEt65Cz_mXeaGpciNcKT3SsI">
+</div>
+<!-- Floating Glass Badge -->
+<div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+<div class="bg-heart-pink/20 p-2 rounded-full text-heart-pink">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">volunteer_activism</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-earth-brown leading-tight">100% Proceeds</p>
+<p class="text-xs text-on-surface-variant">Go to our mission</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Stats -->
+<section class="py-16 bg-surface-container-high relative border-y border-earth-brown/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-gutter divide-y md:divide-y-0 md:divide-x divide-earth-brown/20 text-center"><div class="p-6 gsap-reveal flex flex-col items-center" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="mb-4 w-10 h-10 text-hope-orange">Add Icon</div>
+    
+    <h3 class="font-headline-lg text-headline-lg text-charcoal-text mb-2">300+</h3>
+    <p class="font-label-lg text-label-lg text-earth-brown">Little Lives Transformed</p>
+</div>
+<div class="p-6 pt-10 md:pt-6 gsap-reveal flex flex-col items-center" style="transition-delay: 100ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+    <span class="material-symbols-outlined text-[40px] text-hope-orange mb-4" style="font-variation-settings: &quot;FILL&quot; 1;">diversity_1</span>
+    <h3 class="font-headline-lg text-headline-lg text-charcoal-text mb-2">50+</h3>
+    <p class="font-label-lg text-label-lg text-earth-brown">Families Restored</p>
+</div>
+<div class="p-6 pt-10 md:pt-6 gsap-reveal flex flex-col items-center" style="transition-delay: 200ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+    <span class="material-symbols-outlined text-[40px] text-hope-orange mb-4" style="font-variation-settings: &quot;FILL&quot; 1;">potted_plant</span>
+    <h3 class="font-headline-lg text-headline-lg text-charcoal-text mb-2">100%</h3>
+    <p class="font-label-lg text-label-lg text-earth-brown">Dedicated to Renewal</p>
+</div></div>
+</div>
+</section>
+<!-- Featured Collections (Bento Grid) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="shop">
+<div class="text-center mb-16 gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<h2 class="font-headline-md text-headline-xl-mobile md:text-headline-md text-charcoal-text mb-4">Curated for a Cause</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Discover unique finds that give items a second life and vulnerable families a second chance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+<!-- Large Feature -->
+<a class="group block md:col-span-8 relative rounded-2xl overflow-hidden ambient-shadow h-[400px] md:h-full gsap-reveal" href="#" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<img alt="Handpicked Furniture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuT9IYxmrBcH1G7VXNvkYHNErdL8enk7WAN2gpAT3_Shu66GifxEdF3UVW3ZxbnYz_wOwvfas7aG5CxuWAr1vMW5pKij21mY_v9HPSsBZ0fZHAoxeIC3jUMTcxA6k_db67XA12RD_-ZED2kSCKOOLQJC3tE9G0uxQKLNOriEWw_Tj-81r98xP9I3j3gxrM7XkLSjvy95ymHy8im00YSDUy7swEuI7zsnDEMYIggUFK1CFHucdhruQ6HxIlC">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold rounded-full mb-3 border border-white/30 uppercase tracking-wider">Top Category</span>
+<h3 class="font-headline-lg text-white mb-2">Handpicked Furniture</h3>
+<p class="text-white/80 font-body-md">Quality pieces looking for a new home.</p>
+</div>
+<div class="bg-white p-3 rounded-full text-hope-orange group-hover:bg-hope-orange group-hover:text-white transition-colors duration-300 transform group-hover:translate-x-2">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Side Stack -->
+<div class="md:col-span-4 flex flex-col gap-gutter h-[800px] md:h-full">
+<a class="group block flex-1 relative rounded-2xl overflow-hidden ambient-shadow gsap-reveal" href="#" style="transition-delay: 100ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<img alt="Curated Home Decor items" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully styled composition of curated home decor items resting on a rustic wooden table. The arrangement includes handmade ceramic vases, a softly glowing candle, and woven baskets. The lighting is warm and natural, casting soft shadows, conveying a sense of artisanal quality and cozy, dignified living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATSt8bVP7uGAwnQCnr6w-QCmIrWp7ntVKa5QMEaD98diO9j4ucXD2Nu7tZIrGloitvO4ItXVfvtoOPYZP0Cya4N6mkwBwPXnVAYZgT9fSgC2BH46SUw9Aj3PadvVUXJNW2SD3ORhs_F99G-v2ncamJGE0NCvYx4pGhGYMrCKjqohUzNWFgSwkwO2cYFuptHdYatP-p0GQNRn9D7Cd8awmvOp4Hhj4A74MErDEOZRApYyJDkJjxpF18HialLir-mvYcQf4ka0J09Xmt">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="font-headline-md text-white mb-1">Curated Decor</h3>
+<p class="text-white/80 font-label-lg text-sm group-hover:underline">Shop Now</p>
+</div>
+</a>
+<a class="group block flex-1 relative rounded-2xl overflow-hidden ambient-shadow bg-surface-container-highest p-6 flex flex-col justify-between gsap-reveal" href="#" style="transition-delay: 200ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-earth-brown w-2/3 leading-tight">Gifts of Hope</h3>
+<span class="material-symbols-outlined text-hope-orange text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">redeem</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-body-md mb-4 text-sm">Meaningful gifts that support our on-site Montessori and mothers in crisis.</p>
+<span class="inline-flex items-center text-hope-orange font-bold font-label-lg group-hover:gap-2 transition-all">
+                                Explore
+                                <span class="material-symbols-outlined text-sm ml-1">chevron_right</span>
+</span>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-10 -right-10 bg-hope-orange/10 w-32 h-32 rounded-full blur-2xl"></div>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high border-t border-earth-brown border-opacity-10 mt-20">
+<div class="w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-gutter max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<span class="font-headline-md text-headline-md text-earth-brown mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-hope-orange">favorite</span>
+                    Hotel Hope Ministries
+                </span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm max-w-sm">
+                    © 2024 Hotel Hope Ministries. Restoring dignity, one home at a time.
+                </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-hope-orange hover:underline transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-hope-orange hover:underline transition-all duration-200" href="#">Shipping Info</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-hope-orange hover:underline transition-all duration-200" href="#">Contact Us</a>
+<a class="text-on-surface-variant font-label-lg text-label-lg hover:text-hope-orange hover:underline transition-all duration-200" href="#">Volunteer</a>
+</nav>
+</div>
+</footer>
+<!-- Init GSAP -->
+<script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Hero Stagger
+            gsap.fromTo(".gsap-hero-stagger > *", 
+                { y: 30, opacity: 0 }, 
+                { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power2.out", delay: 0.2 }
+            );
+
+            // Scroll Reveals
+            gsap.utils.toArray('.gsap-reveal').forEach(element => {
+                gsap.to(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    },
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            });
+
+            // Sticky Header Shadow transition
+            const header = document.getElementById('main-nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md');
+                    header.classList.remove('shadow-sm');
+                } else {
+                    header.classList.add('shadow-sm');
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body></html>

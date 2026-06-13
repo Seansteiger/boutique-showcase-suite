@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { requestWhatsAppOtp, verifyWhatsAppOtp } from "@/app/actions/auth";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Eye, EyeOff, MessageSquare, ShieldCheck, Smartphone, User } from "lucide-react";
@@ -15,6 +15,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function RegisterPage() {
     const router = useRouter();
+    const pathname = usePathname();
+    const prefix = pathname.startsWith("/food-co") ? "/food-co" :
+                   pathname.startsWith("/furnish") ? "/furnish" :
+                   pathname.startsWith("/home-appliances") ? "/home-appliances" : "";
     const settings = useStoreSettings();
     
     // Auth method state: "email" | "whatsapp"
@@ -55,7 +59,7 @@ export default function RegisterPage() {
             if (res.error) throw new Error(res.error);
             localStorage.setItem("white_label_user", JSON.stringify(res.user));
             alert("Simulated Google Sign-in successful!");
-            router.push("/account");
+            router.push(`${prefix}/account`);
         } catch (err: any) {
             setError(err.message || "Failed to sign in with Google");
             setIsLoading(false);
@@ -81,7 +85,7 @@ export default function RegisterPage() {
             if (result.message) {
                 setSuccess(result.message + " Redirecting to login...");
                 setTimeout(() => {
-                    router.push("/login");
+                    router.push(`${prefix}/login`);
                 }, 1500);
             }
         } catch (err: any) {
@@ -155,12 +159,12 @@ export default function RegisterPage() {
                 // If cart recovery token exists in session, route back to checkout
                 const recoveryCart = typeof window !== "undefined" ? sessionStorage.getItem("recovery_cart_trigger") : null;
                 if (recoveryCart) {
-                    router.push('/checkout');
+                    router.push(`${prefix}/checkout`);
                 } else {
-                    router.push('/');
+                    router.push(`${prefix}/`);
                 }
             } else {
-                router.push('/');
+                router.push(`${prefix}/`);
             }
 
             router.refresh();
@@ -235,7 +239,7 @@ export default function RegisterPage() {
                         Create an account
                     </h1>
                     <p className="text-xs text-muted-foreground tracking-wide font-sans">
-                        Register to start your luxury fragrance collection
+                        Register to start shopping at {settings?.brandName || "SCENTED"}
                     </p>
                 </div>
 
@@ -471,7 +475,7 @@ export default function RegisterPage() {
 
                 <div className="text-center text-[10px] uppercase tracking-wider text-muted-foreground font-sans pt-2">
                     Already have an account?{" "}
-                    <Link href="/login" className="underline text-accent hover:text-primary font-bold">
+                    <Link href={`${prefix}/login`} className="underline text-accent hover:text-primary font-bold">
                         Sign in
                     </Link>
                 </div>

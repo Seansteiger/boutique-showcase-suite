@@ -276,5 +276,41 @@ export const themePresets: Record<string, ThemeSettings> = {
       whatsappNumber: "+27821234567",
       whatsappMessage: "Hi, I need support with Ocean Mist cosmetics.",
     }
+  },
+  hhm: {
+    brandName: "Hotel Hope Store",
+    theme: {
+      primaryColor: "28 100% 30%", // #984800
+      secondaryColor: "36 100% 97%", // #FFF9F0
+      accentColor: "25 81% 54%", // #E87D2E
+      fontFamily: "var(--font-libre-caslon), Georgia, serif",
+      buttonRadius: "9999px",
+      cardStyle: "curved",
+      borderWidth: "1px",
+      shadowStyle: "ambient",
+      navbarStyle: "minimal",
+      pageTexture: "flat",
+      hoverEffect: "zoom",
+    },
+    enabledWidgets: [],
+    layoutOrder: [],
+    currency: "ZAR",
+    currencySymbol: "R",
+    currencyMultiplier: 1.0,
+    freeShippingThreshold: 1000,
+    footerCopyright: "© 2024 Hotel Hope Ministries. Restoring dignity, one home at a time.",
+    showPaymentsAccepted: true,
+    socialInstagram: "",
+    socialFacebook: "",
+    socialPinterest: "",
+    socialWhatsapp: "",
+    customTexts: {
+      heroTitle: "Be the Hero of Their Story.",
+      heroSubtitle: "Your contribution provides a second chance for families and a foundation for vulnerable children.",
+      heroCtaText: "Shop with Purpose",
+      announcementBarText: "Every purchase directly supports abandoned and at-risk babies",
+      whatsappNumber: "",
+      whatsappMessage: "",
+    }
   }
 };

@@ -8,12 +8,8 @@ export const revalidate = 60; // Cache for 1 minute
 export default async function HomeAppliancesPage() {
   const allProducts = await getProducts();
   
-  // Filter products that look like premium appliances/kitchenware
-  const applianceKeywords = ["kettle", "maker", "coffee", "pan", "pot", "cooker", "blender"];
-  const appliances = allProducts.filter(p => 
-    applianceKeywords.some(keyword => p.name.toLowerCase().includes(keyword)) ||
-    p.categorySlug === "kitchenware"
-  );
+  // Filter products belonging to the Home. brand
+  const appliances = allProducts.filter(p => p.brand === "Home.");
 
   // Fallback to featured ones if list is short
   const displayProducts = appliances.length > 0 ? appliances : allProducts.slice(0, 4);

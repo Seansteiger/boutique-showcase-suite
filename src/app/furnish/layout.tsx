@@ -4,7 +4,7 @@ import { Bodoni_Moda, Manrope } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home } from "lucide-react";
+import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 
@@ -85,6 +85,14 @@ export default function FurnishLayout({
 
             {/* Utilitarian Actions */}
             <div className="flex items-center gap-4">
+              <Link
+                href="/furnish/account"
+                className="hidden md:flex p-2.5 text-[#121212] hover:text-[#d4af37] transition-colors rounded-none"
+                aria-label="Account Profile"
+              >
+                <User className="h-5 w-5 stroke-[1.5]" />
+              </Link>
+
               <button
                 onClick={() => setIsOpen(true)}
                 className="relative p-2.5 text-[#121212] hover:text-[#d4af37] transition-colors rounded-none"
@@ -126,6 +134,13 @@ export default function FurnishLayout({
               className="text-xs font-semibold uppercase tracking-widest text-[#121212] hover:text-[#d4af37]"
             >
               Shop
+            </Link>
+            <Link
+              href="/furnish/account"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-xs font-semibold uppercase tracking-widest text-[#121212] hover:text-[#d4af37]"
+            >
+              Profile
             </Link>
 
           </nav>
@@ -177,6 +192,17 @@ export default function FurnishLayout({
               </div>
               <span className="text-[8px] uppercase tracking-widest font-bold">Cart</span>
             </button>
+
+            <Link
+              href="/furnish/account"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname?.startsWith("/furnish/account") || pathname?.startsWith("/furnish/login") || pathname?.startsWith("/furnish/register") ? "text-[#d4af37]" : "text-white/60 hover:text-white"
+              )}
+            >
+              <User className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-widest font-bold">Profile</span>
+            </Link>
           </nav>
         </div>
       )}
@@ -196,8 +222,8 @@ export default function FurnishLayout({
             <div>
               <h4 className="text-xs font-black uppercase tracking-widest text-white mb-4">Showrooms</h4>
               <ul className="space-y-2 text-xs">
-                <li><Link href="/furnish" className="hover:text-white transition-colors">Showroom Gallery</Link></li>
-                <li><Link href="/furnish/shop" className="hover:text-white transition-colors">Furniture Catalog</Link></li>
+                <li><Link href="/furnish" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/furnish/shop" className="hover:text-white transition-colors">Shop</Link></li>
               </ul>
             </div>
             <div>

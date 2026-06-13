@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
 export interface Product {
     id: string;
@@ -32,6 +32,36 @@ interface CartStore {
     setIsOpen: (open: boolean) => void;
     setItems: (items: CartItem[]) => void;
 }
+
+function getCartStorageKey(defaultName: string): string {
+    if (typeof window === 'undefined') return defaultName;
+    const path = window.location.pathname.toLowerCase();
+    const host = window.location.hostname.toLowerCase();
+    
+    if (host.includes('hhm') || path.startsWith('/hhm')) return 'hhm-cart-storage';
+    if (host.includes('scented') || path.startsWith('/scented')) return 'scented-cart-storage';
+    if (host.includes('furnish') || path.startsWith('/furnish')) return 'furnish-cart-storage';
+    if (host.includes('foodco') || host.includes('food-co') || path.startsWith('/food-co')) return 'foodco-cart-storage';
+    if (host.includes('home-appliances') || path.startsWith('/home-appliances')) return 'homeappliances-cart-storage';
+    if (host.includes('invited') || path.startsWith('/invited')) return 'invited-cart-storage';
+    
+    return defaultName;
+}
+
+const customStateStorage = {
+    getItem: (name: string): string | null => {
+        const key = getCartStorageKey(name);
+        return localStorage.getItem(key);
+    },
+    setItem: (name: string, value: string): void => {
+        const key = getCartStorageKey(name);
+        localStorage.setItem(key, value);
+    },
+    removeItem: (name: string): void => {
+        const key = getCartStorageKey(name);
+        localStorage.removeItem(key);
+    }
+};
 
 export const useCartStore = create<CartStore>()(
     persist(
@@ -90,6 +120,7 @@ export const useCartStore = create<CartStore>()(
         }),
         {
             name: 'jsh-cart-storage',
+            storage: createJSONStorage(() => customStateStorage),
             partialize: (state) => {
                 const { isOpen, setIsOpen, ...rest } = state;
                 return rest;

@@ -6,14 +6,18 @@ interface StoreLayoutProps {
     children: React.ReactNode;
     hideOnCheckout?: boolean;
     showOnlyOnHome?: boolean;
+    pathname?: string;
 }
 
-export function StoreLayout({ children, hideOnCheckout = false, showOnlyOnHome = false }: StoreLayoutProps) {
-    const pathname = usePathname();
+export function StoreLayout({ children, hideOnCheckout = false, showOnlyOnHome = false, pathname: serverPathname }: StoreLayoutProps) {
+    const clientPathname = usePathname();
+    const pathname = clientPathname || serverPathname;
+
     const isIsolatedBrand = pathname?.startsWith("/home-appliances") ||
                             pathname?.startsWith("/furnish") ||
                             pathname?.startsWith("/invited") ||
                             pathname?.startsWith("/food-co") ||
+                            pathname?.startsWith("/hhm") ||
                             pathname === "/";
 
     if (isIsolatedBrand) return null;

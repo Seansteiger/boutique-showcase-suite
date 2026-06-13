@@ -33,8 +33,6 @@ export function BottomNav() {
     }
   }, []);
 
-  if (!mounted) return null;
-
   // Determine dynamic Home link based on subdomain vs subdirectory
   const [homeHref, setHomeHref] = useState("/scented");
   useEffect(() => {
@@ -45,6 +43,8 @@ export function BottomNav() {
       }
     }
   }, []);
+
+  if (!mounted) return null;
 
   // Setup navigation items
   const navItems = [
@@ -85,9 +85,12 @@ export function BottomNav() {
     <>
       <div 
         className={cn(
-          "fixed bottom-6 inset-x-4 z-[49] bg-background/80 backdrop-blur-md border border-accent/20 px-2 py-1 rounded-[1.5rem_0.5rem_1.5rem_0.5rem] shadow-[0_8px_32px_rgba(212,175,55,0.15)] md:hidden transition-transform duration-300", 
+          "fixed bottom-6 inset-x-4 z-[49] bg-background/80 backdrop-blur-md border border-accent/20 px-2 py-1 shadow-[0_8px_32px_rgba(0,0,0,0.15)] md:hidden transition-transform duration-300", 
           isCartOpen && "translate-y-24"
         )}
+        style={{
+          borderRadius: settings?.theme?.buttonRadius || "var(--radius, 1rem)"
+        }}
       >
         <div className="flex items-center justify-around h-14 relative">
           {navItems.map((item) => {

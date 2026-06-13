@@ -7,12 +7,8 @@ export const revalidate = 60;
 export default async function FurnishShopPage() {
   const allProducts = await getProducts();
 
-  const keywords = ["sofa", "rug", "cushion", "lamp", "notebook", "tote"];
-  const furnishProducts = allProducts.filter(p =>
-    keywords.some(k => p.name.toLowerCase().includes(k)) ||
-    p.categorySlug === "room-decor" || 
-    p.categorySlug === "lifestyle"
-  );
+  // Filter products belonging to the Furnish. brand
+  const furnishProducts = allProducts.filter(p => p.brand === "Furnish.");
 
   const displayProducts = furnishProducts.length > 0 ? furnishProducts : allProducts;
 

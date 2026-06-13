@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shop | Hotel Hope Interiors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "earth-brown": "#6F4E37",
+                        "surface-dim": "#e9d6cd",
+                        "inverse-on-surface": "#ffede5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5f402a",
+                        "primary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed": "#1d1b16",
+                        "secondary-fixed": "#ffdcc6",
+                        "charcoal-text": "#332F2C",
+                        "surface-container-high": "#f8e4da",
+                        "on-surface-variant": "#564338",
+                        "outline": "#897266",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff1ea",
+                        "inverse-primary": "#ffb689",
+                        "hope-orange": "#E87D2E",
+                        "on-background": "#231914",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dcc1b2",
+                        "tertiary-fixed-dim": "#cbc6bd",
+                        "tertiary-container": "#9d9991",
+                        "primary": "#984800",
+                        "secondary-container": "#ffd1b3",
+                        "surface-container": "#feeae0",
+                        "on-primary-fixed": "#321300",
+                        "surface-bright": "#fff8f5",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#f2dfd5",
+                        "surface-tint": "#984800",
+                        "on-primary-container": "#532400",
+                        "secondary": "#79573f",
+                        "secondary-fixed-dim": "#eabda0",
+                        "background": "#fff8f5",
+                        "heart-pink": "#E19BB9",
+                        "on-tertiary-container": "#34312c",
+                        "primary-container": "#e87d2e",
+                        "tertiary-fixed": "#e7e2d9",
+                        "primary-fixed-dim": "#ffb689",
+                        "on-secondary-container": "#7a5840",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f2dfd5",
+                        "inverse-surface": "#392e28",
+                        "surface": "#fff8f5",
+                        "cream-surface": "#FFF9F0",
+                        "on-primary-fixed-variant": "#743500",
+                        "on-error": "#ffffff",
+                        "tertiary": "#615e57",
+                        "on-tertiary-fixed-variant": "#494640",
+                        "on-secondary-fixed": "#2d1604",
+                        "on-surface": "#231914"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "headline-xl-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-xl": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-xl-mobile": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .group:hover .impact-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .impact-overlay {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar Shared Component -->
+<header class="bg-cream-surface dark:bg-on-background shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="#">
+                    Hotel Hope Store
+                </a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-hope-orange font-bold border-b-2 border-hope-orange pb-1 font-label-lg text-label-lg transition-colors duration-200" href="#">Shop</a>
+
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-earth-brown hover:text-hope-orange transition-colors duration-200 font-label-lg text-label-lg" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-earth-brown hover:text-hope-orange transition-colors duration-200 font-label-lg text-label-lg" href="#">Donate</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed hover:text-hope-orange transition-colors duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+<button class="text-primary dark:text-primary-fixed hover:text-hope-orange transition-colors duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="mb-12 text-center md:text-left">
+<h1 class="font-headline-xl text-headline-xl text-earth-brown mb-4">Curated for Change</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Every purchase from Hotel Hope Interiors breathes new life into beautiful items and supports our mission to provide safe, loving care for abandoned and surrendered infants.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-1/4 flex-shrink-0">
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_20px_rgba(232,125,46,0.05)] border border-earth-brown/10">
+<h2 class="font-headline-md text-headline-md text-charcoal-text mb-6">Filters</h2>
+<div class="mb-8">
+<h3 class="font-label-lg text-label-lg text-earth-brown mb-3 uppercase tracking-wider">Category</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-5 w-5 text-hope-orange border-outline rounded focus:ring-hope-orange focus:ring-offset-surface-container-lowest bg-cream-surface" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-hope-orange transition-colors">Furniture</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-hope-orange border-outline rounded focus:ring-hope-orange focus:ring-offset-surface-container-lowest bg-cream-surface" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-hope-orange transition-colors">Decor</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-hope-orange border-outline rounded focus:ring-hope-orange focus:ring-offset-surface-container-lowest bg-cream-surface" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-hope-orange transition-colors">Apparel</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-hope-orange border-outline rounded focus:ring-hope-orange focus:ring-offset-surface-container-lowest bg-cream-surface" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-hope-orange transition-colors">Books</span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<h3 class="font-label-lg text-label-lg text-earth-brown mb-3 uppercase tracking-wider">Condition</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-hope-orange border-outline rounded focus:ring-hope-orange focus:ring-offset-surface-container-lowest bg-cream-surface" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-hope-orange transition-colors">Like New</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-5 w-5 text-hope-orange border-outline rounded focus:ring-hope-orange focus:ring-offset-surface-container-lowest bg-cream-surface" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-hope-orange transition-colors">Gently Used</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-hope-orange border-outline rounded focus:ring-hope-orange focus:ring-offset-surface-container-lowest bg-cream-surface" type="checkbox">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-hope-orange transition-colors">Vintage / Antique</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-earth-brown mb-3 uppercase tracking-wider">Price Range</h3>
+<div class="flex items-center gap-2">
+<input class="w-full bg-cream-surface border border-earth-brown/30 rounded-lg px-3 py-2 font-body-md focus:outline-none focus:border-hope-orange focus:ring-1 focus:ring-hope-orange transition-colors" placeholder="Min" type="number">
+<span class="text-on-surface-variant">-</span>
+<input class="w-full bg-cream-surface border border-earth-brown/30 rounded-lg px-3 py-2 font-body-md focus:outline-none focus:border-hope-orange focus:ring-1 focus:ring-hope-orange transition-colors" placeholder="Max" type="number">
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Product Grid -->
+<div class="w-full md:w-3/4">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(111,78,55,0.05)] border border-earth-brown/10 overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgba(232,125,46,0.15)] hover:-translate-y-1">
+<div class="relative aspect-square overflow-hidden bg-surface-variant rounded-t-lg">
+<img alt="Vintage Oak Sideboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuT9IYxmrBcH1G7VXNvkYHNErdL8enk7WAN2gpAT3_Shu66GifxEdF3UVW3ZxbnYz_wOwvfas7aG5CxuWAr1vMW5pKij21mY_v9HPSsBZ0fZHAoxeIC3jUMTcxA6k_db67XA12RD_-ZED2kSCKOOLQJC3tE9G0uxQKLNOriEWw_Tj-81r98xP9I3j3gxrM7XkLSjvy95ymHy8im00YSDUy7swEuI7zsnDEMYIggUFK1CFHucdhruQ6HxIlC">
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded-full border border-earth-brown/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-hope-orange" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-lg text-[12px] text-earth-brown">Supports 2 Nights of Care</span>
+</div>
+<!-- Hover Impact Overlay -->
+<div class="impact-overlay absolute inset-0 bg-earth-brown/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+<span class="material-symbols-outlined text-[48px] text-hope-orange mb-3" style="font-variation-settings: 'FILL' 0;">volunteer_activism</span>
+<p class="font-headline-md text-on-tertiary text-xl mb-2">Quick Impact</p>
+<p class="font-body-md text-surface-container-highest">Buying this provides 2 weeks of diapers for our nursery.</p>
+<button class="mt-6 bg-hope-orange text-on-tertiary font-label-lg px-6 py-2 rounded-full hover:bg-primary transition-colors">View Details</button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2 gap-2">
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-xl leading-tight">Vintage Oak Sideboard</h3>
+<span class="font-headline-md text-hope-orange text-lg whitespace-nowrap">$450</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">Beautifully restored mid-century oak sideboard with brass hardware.</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Furniture</span>
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Vintage</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(111,78,55,0.05)] border border-earth-brown/10 overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgba(232,125,46,0.15)] hover:-translate-y-1">
+<div class="relative aspect-square overflow-hidden bg-surface-variant rounded-t-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully crafted throw blanket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn81XAIw6ATdHS8W2yRzO9sLhcEhgrcRRf-8XV0xLqW4QcdbOGqouA42dseEBiTwn-rwDu6yghOqH_42kD7ooi8gDHOaUBEuXRoHf04aniF7qx3yVHkySba8EhA4w42ImbqIt2bREMHGHuZyd4PKF33CZAIPbzgqT7Y0uJ_CDujaV04KYll9kEW0V-QR2RghfD40jtDBXJ_3gep6LOi_46AkelNGCFEXccdxE0tEU9y1oZ0co_NQMc1ADfLwEsYms5vThRcOjkHYTK">
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded-full border border-earth-brown/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-hope-orange" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-lg text-[12px] text-earth-brown">Supports 1 Night of Care</span>
+</div>
+<!-- Hover Impact Overlay -->
+<div class="impact-overlay absolute inset-0 bg-earth-brown/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+<span class="material-symbols-outlined text-[48px] text-hope-orange mb-3" style="font-variation-settings: 'FILL' 0;">restaurant</span>
+<p class="font-headline-md text-on-tertiary text-xl mb-2">Quick Impact</p>
+<p class="font-body-md text-surface-container-highest">Buying this provides 5 nutritious meals for a toddler.</p>
+<button class="mt-6 bg-hope-orange text-on-tertiary font-label-lg px-6 py-2 rounded-full hover:bg-primary transition-colors">View Details</button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2 gap-2">
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-xl leading-tight">Handwoven Throw Blanket</h3>
+<span class="font-headline-md text-hope-orange text-lg whitespace-nowrap">$65</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">Locally sourced, organic cotton throw in warm earth tones.</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Decor</span>
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Handmade</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(111,78,55,0.05)] border border-earth-brown/10 overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgba(232,125,46,0.15)] hover:-translate-y-1">
+<div class="relative aspect-square overflow-hidden bg-surface-variant rounded-t-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Classic literature set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFo_1VkwivgNOKeTVjVq1T2zd4X33FiPm8tqJj5U9xXNzropcwVXkslW3H-q0gxpqWtuG4_dNsZPIx1SItPmw22RFWpn0-4YFbU89KNL2oSdvHWUgieX0rUPqIasOtVhWucvetLXUVfEQdMjOSREG_Fv11m-of-Dz3bli4CeEPjhtzi7xc19MWtbgpHElD3X_jApM_bwdGOU98LWl4PtFZtYolTmiCbeawE_bBSlM7umSCI7yydTInbiIZCFUIybPK2wvDqC8E7yZ2">
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded-full border border-earth-brown/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-hope-orange" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-lg text-[12px] text-earth-brown">Supports Educational Play</span>
+</div>
+<!-- Hover Impact Overlay -->
+<div class="impact-overlay absolute inset-0 bg-earth-brown/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+<span class="material-symbols-outlined text-[48px] text-hope-orange mb-3" style="font-variation-settings: 'FILL' 0;">menu_book</span>
+<p class="font-headline-md text-on-tertiary text-xl mb-2">Quick Impact</p>
+<p class="font-body-md text-surface-container-highest">Buying this funds 1 hour of specialized early childhood education.</p>
+<button class="mt-6 bg-hope-orange text-on-tertiary font-label-lg px-6 py-2 rounded-full hover:bg-primary transition-colors">View Details</button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2 gap-2">
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-xl leading-tight">Antique Classic Literature Set</h3>
+<span class="font-headline-md text-hope-orange text-lg whitespace-nowrap">$120</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">A beautiful 5-piece collection of classic literature with leather bindings.</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Books</span>
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Antique</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(111,78,55,0.05)] border border-earth-brown/10 overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgba(232,125,46,0.15)] hover:-translate-y-1">
+<div class="relative aspect-square overflow-hidden bg-surface-variant rounded-t-lg">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Ceramic table lamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFv2gfLRvdQ9K-bFkM1rpXDc3mUZreZoJTWibOz5cDEAnUdTICq_IgzJVMkwRe8zjgF1x7RfCsO1rsTCYchDLHpvPf0v6uhR0J4OPXWR3PFdSMWdlCgxys0mWI5inzzZcsI_wmm_Q3VNtlyUgrArG7IoXLPowEWbgdu055Vw5h4fJH6h-SpX2GSvgXux0cqiwd-QpxdgvyoYlFVCp7APdu5d5cDOHmVNCqSgC18wVw5jfKFT_9-tsdOakEmaPImoBzNeObQopaZa97">
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded-full border border-earth-brown/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-hope-orange" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-lg text-[12px] text-earth-brown">Supports 1 Night of Care</span>
+</div>
+<!-- Hover Impact Overlay -->
+<div class="impact-overlay absolute inset-0 bg-earth-brown/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+<span class="material-symbols-outlined text-[48px] text-hope-orange mb-3" style="font-variation-settings: 'FILL' 0;">crib</span>
+<p class="font-headline-md text-on-tertiary text-xl mb-2">Quick Impact</p>
+<p class="font-body-md text-surface-container-highest">Buying this helps maintain a safe, warm nursery environment.</p>
+<button class="mt-6 bg-hope-orange text-on-tertiary font-label-lg px-6 py-2 rounded-full hover:bg-primary transition-colors">View Details</button>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2 gap-2">
+<h3 class="font-headline-md text-headline-md text-charcoal-text text-xl leading-tight">Ceramic Table Lamp</h3>
+<span class="font-headline-md text-hope-orange text-lg whitespace-nowrap">$85</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">Hand-glazed ceramic lamp providing a warm, ambient glow.</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Decor</span>
+<span class="bg-surface-dim text-earth-brown px-2 py-1 rounded text-xs font-label-lg">Like New</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-high dark:bg-inverse-surface border-t border-earth-brown border-opacity-10 mt-auto">
+<div class="w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-earth-brown dark:text-surface-dim">Hotel Hope Ministries</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-hope-orange hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-hope-orange hover:underline transition-all" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-hope-orange hover:underline transition-all" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-hope-orange hover:underline transition-all" href="#">Volunteer</a>
+</nav>
+<div class="text-center md:text-right">
+<p class="font-body-md text-body-md text-earth-brown dark:text-surface-dim">© 2024 Hotel Hope Ministries. Restoring dignity, one home at a time.</p>
+</div>
+</div>
+</footer>
+</body></html>

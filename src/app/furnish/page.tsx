@@ -8,13 +8,8 @@ export const revalidate = 60;
 export default async function FurnishPage() {
   const allProducts = await getProducts();
 
-  // Filter products matching furniture, rugs, cushions, and lamps
-  const keywords = ["sofa", "rug", "cushion", "lamp", "notebook", "tote"];
-  const furnishProducts = allProducts.filter(p =>
-    keywords.some(k => p.name.toLowerCase().includes(k)) ||
-    p.categorySlug === "room-decor" || 
-    p.categorySlug === "lifestyle"
-  );
+  // Filter products belonging to the Furnish. brand
+  const furnishProducts = allProducts.filter(p => p.brand === "Furnish.");
 
   const displayProducts = furnishProducts.length > 0 ? furnishProducts : allProducts.slice(0, 4);
 

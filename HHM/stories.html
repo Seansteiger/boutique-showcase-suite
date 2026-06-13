@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Impact Stories - Hotel Hope Store</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "earth-brown": "#6F4E37",
+                        "surface-dim": "#e9d6cd",
+                        "inverse-on-surface": "#ffede5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5f402a",
+                        "primary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed": "#1d1b16",
+                        "secondary-fixed": "#ffdcc6",
+                        "charcoal-text": "#332F2C",
+                        "surface-container-high": "#f8e4da",
+                        "on-surface-variant": "#564338",
+                        "outline": "#897266",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff1ea",
+                        "inverse-primary": "#ffb689",
+                        "hope-orange": "#E87D2E",
+                        "on-background": "#231914",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dcc1b2",
+                        "tertiary-fixed-dim": "#cbc6bd",
+                        "tertiary-container": "#9d9991",
+                        "primary": "#984800",
+                        "secondary-container": "#ffd1b3",
+                        "surface-container": "#feeae0",
+                        "on-primary-fixed": "#321300",
+                        "surface-bright": "#fff8f5",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#f2dfd5",
+                        "surface-tint": "#984800",
+                        "on-primary-container": "#532400",
+                        "secondary": "#79573f",
+                        "secondary-fixed-dim": "#eabda0",
+                        "background": "#fff8f5",
+                        "heart-pink": "#E19BB9",
+                        "on-tertiary-container": "#34312c",
+                        "primary-container": "#e87d2e",
+                        "tertiary-fixed": "#e7e2d9",
+                        "primary-fixed-dim": "#ffb689",
+                        "on-secondary-container": "#7a5840",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#f2dfd5",
+                        "inverse-surface": "#392e28",
+                        "surface": "#fff8f5",
+                        "cream-surface": "#FFF9F0",
+                        "on-primary-fixed-variant": "#743500",
+                        "on-error": "#ffffff",
+                        "tertiary": "#615e57",
+                        "on-tertiary-fixed-variant": "#494640",
+                        "on-secondary-fixed": "#2d1604",
+                        "on-surface": "#231914"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "headline-xl-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-xl": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-xl-mobile": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+    </style>
+</head>
+<body class="bg-cream-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed w-full top-0 z-50 bg-cream-surface shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Logo -->
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">
+                Hotel Hope Store
+            </a>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-hope-orange transition-colors duration-200" href="#">Shop</a>
+
+<a class="font-label-lg text-label-lg text-hope-orange font-bold border-b-2 border-hope-orange pb-1 hover:text-hope-orange transition-colors duration-200" href="#">About</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-hope-orange transition-colors duration-200" href="#">Donate</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center space-x-4">
+<button aria-label="shopping_cart" class="text-primary hover:text-hope-orange transition-colors duration-200">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+</button>
+<button aria-label="person" class="text-primary hover:text-hope-orange transition-colors duration-200">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-[100px]">
+<!-- Section 1: The Hands Behind the Hope -->
+<section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 space-y-6">
+<span class="font-label-lg text-label-lg text-earth-brown uppercase tracking-wider bg-surface-container-high px-3 py-1 rounded-full">The Why</span>
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-primary">
+                        The Hands Behind the Hope
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        At Hotel Hope Ministries, every act of kindness becomes a stepping stone toward a brighter future. We exist to transform vulnerable lives with compassion, stability, and opportunity. 
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        From caring for abandoned and at-risk babies to empowering mothers in crisis and sustaining our mission through community-run charity shops, we believe that hope is not just given, it’s created together.
+                    </p>
+</div>
+<div class="md:col-span-7 relative mt-12 md:mt-0">
+<div class="relative z-10 w-4/5 ml-auto">
+<img alt="Caregiver and child" class="w-full h-auto rounded-xl shadow-sm object-cover aspect-[4/3]" src="https://lh3.googleusercontent.com/aida/AP1WRLtg49CaxpodIL1AbcnyXj7Ye5ImNWKFzp24GlWx7jhEPMv2_Eh9C-7jF7UGPqUPArrOSMgYJbUg1qpO4ZT5lnV0w0kvPozCGzhk18pK-pse2vr9ARJ_v1EKILmXywI0JPTROdp_ykb5tQVomgsL_fJH3Qbb_SExyDrxcp6J1WXleba6O_4TdeXW541Kqros-d2he9eEmrjn4ouxRrShCfQwREaxIV-arm_okN9-XXnE54pQgSp2lyMORQYH">
+</div>
+<div class="absolute bottom-[-10%] left-0 w-3/5 z-20">
+<div class="bg-white p-2 rounded-xl shadow-[0_10px_30px_rgba(232,125,46,0.1)]">
+<img alt="Community support" class="w-full h-auto rounded-lg object-cover aspect-square" src="https://lh3.googleusercontent.com/aida/AP1WRLubq3zo7q7GUFCUUJuHy2gla5Q7Mk7fe4Efk6uN3Z77Cn4HXMMphXm3bZwkJoORJSbvlqJioXh5ejCwPl9KQKsSoST7rr6dQW8O_yhVnHJ85uzzbil8XuYYgsZ3KI7CuJ7ZoYwLdjRo1oTOr1UFH-whfsxhHZT_C-TvqWM_nW0qmzcaZ9vCOkviQXbZ5sqV0WYrFwDVWBZh9poeD51SQs8QkTXeoBIBqab4xdTS2TXfZLc-Smll1y5sDop8">
+</div>
+</div>
+<!-- Decorative Blob -->
+<div class="absolute top-[-10%] right-[-5%] w-64 h-64 bg-surface-container-high organic-shape z-0 opacity-60"></div>
+</div>
+</div>
+</section>
+<!-- Section 2: Interactive Timeline -->
+<section class="py-20 bg-surface-bright px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[800px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">A Journey of Restoration</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Tracing the path from vulnerability to a secure, loving environment.</p>
+</div>
+<div class="relative border-l-2 border-earth-brown border-opacity-20 ml-6 md:ml-1/2 space-y-16">
+<!-- Node 1 -->
+<div class="relative pl-10">
+<div class="absolute left-[-11px] top-1 w-5 h-5 bg-hope-orange rounded-full ring-4 ring-cream-surface"></div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text mb-2">Immediate Safety</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Providing safe, loving care for abandoned and surrendered infants, ensuring they receive immediate support and stability.
+                        </p>
+</div>
+<!-- Node 2 -->
+<div class="relative pl-10">
+<div class="absolute left-[-11px] top-1 w-5 h-5 bg-surface-container-high border-2 border-earth-brown rounded-full ring-4 ring-cream-surface"></div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text mb-2">Nurture &amp; Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Our on-site Montessori creates a calm, child-centred environment where little ones explore, grow, and build confidence.
+                        </p>
+</div>
+<!-- Node 3 -->
+<div class="relative pl-10">
+<div class="absolute left-[-11px] top-1 w-5 h-5 bg-surface-container-high border-2 border-earth-brown rounded-full ring-4 ring-cream-surface"></div>
+<h3 class="font-headline-md text-headline-md text-charcoal-text mb-2">A Forever Family</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Working tirelessly towards long-term solutions, rewriting stories by placing children in permanent, loving families.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Testimonials -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary">Voices of Resilience</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Walking alongside mothers in crisis.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Testimonial Card 1 -->
+<div class="bg-white p-8 rounded-xl shadow-[0_8px_24px_rgba(111,78,55,0.05)] border border-earth-brown border-opacity-10 relative overflow-hidden">
+<span class="material-symbols-outlined text-[48px] text-surface-container-high absolute top-4 left-4 opacity-50" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<div class="relative z-10">
+<p class="font-headline-md text-headline-md italic text-charcoal-text mb-6">
+                            "They didn't just offer me things; they offered me dignity when I felt I had none left. I was able to make informed decisions for my baby's future."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-earth-brown font-bold font-label-lg">S.M</div>
+<div>
+<p class="font-label-lg text-label-lg text-primary">Supported Mother</p>
+<p class="font-body-md text-[12px] text-on-surface-variant">Counselling Program</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonial Card 2 -->
+<div class="bg-white p-8 rounded-xl shadow-[0_8px_24px_rgba(111,78,55,0.05)] border border-earth-brown border-opacity-10 relative overflow-hidden">
+<span class="material-symbols-outlined text-[48px] text-surface-container-high absolute top-4 left-4 opacity-50" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<div class="relative z-10">
+<p class="font-headline-md text-headline-md italic text-charcoal-text mb-6">
+                            "The support group helped me realise I wasn't alone. Today, my family is stronger, and we have a secure foundation to build upon."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-earth-brown font-bold font-label-lg">A.T</div>
+<div>
+<p class="font-label-lg text-label-lg text-primary">Community Member</p>
+<p class="font-body-md text-[12px] text-on-surface-variant">Family Strengthening</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Call to Action -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto bg-surface-container-low rounded-2xl p-12 text-center border border-earth-brown border-opacity-10 shadow-[0_10px_40px_rgba(232,125,46,0.05)]">
+<span class="material-symbols-outlined text-hope-orange text-[48px] mb-6" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Your purchase rewrites this story.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl mx-auto">
+                    Every item from Hotel Hope Interiors gives goods a second life and vulnerable families a second chance. Ready to help another?
+                </p>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-hope-orange text-white font-label-lg text-label-lg rounded-full hover:bg-primary transition-colors shadow-sm" href="#">
+                    Shop with Purpose
+                    <span class="material-symbols-outlined ml-2 text-[20px]">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-high border-t border-earth-brown border-opacity-10">
+<!-- Logo / Brand -->
+<div class="font-headline-md text-headline-md text-earth-brown mb-4 md:mb-0">
+            Hotel Hope Store
+        </div>
+<!-- Links -->
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-hope-orange underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-hope-orange underline transition-all" href="#">Shipping Info</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-hope-orange underline transition-all" href="#">Contact Us</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-hope-orange underline transition-all" href="#">Volunteer</a>
+</nav>
+<!-- Copyright -->
+<div class="font-body-md text-body-md text-earth-brown mt-4 md:mt-0 text-center md:text-right">
+            © 2024 Hotel Hope Ministries. Restoring dignity, one home at a time.
+        </div>
+</footer>
+</body></html>

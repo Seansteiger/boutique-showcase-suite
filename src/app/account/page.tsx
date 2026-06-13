@@ -3,7 +3,7 @@
 export const dynamic = 'force-dynamic';
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Order } from "@/types/database";
@@ -11,6 +11,10 @@ import { CouponWallet } from "@/components/CouponWallet";
 
 export default function AccountPage() {
     const router = useRouter();
+    const pathname = usePathname();
+    const prefix = pathname.startsWith("/food-co") ? "/food-co" :
+                   pathname.startsWith("/furnish") ? "/furnish" :
+                   pathname.startsWith("/home-appliances") ? "/home-appliances" : "";
     const [user, setUser] = useState<any>(null);
     const [orders, setOrders] = useState<Order[]>([]);
     const [loading, setLoading] = useState(true);
@@ -19,9 +23,10 @@ export default function AccountPage() {
         const checkUser = async () => {
             const savedUserStr = typeof window !== "undefined" ? localStorage.getItem("white_label_user") : null;
             if (!savedUserStr) {
-                router.push("/login");
+                router.push(`${prefix}/login`);
                 return;
             }
+
             const savedUser = JSON.parse(savedUserStr);
             setUser(savedUser);
 
@@ -44,13 +49,13 @@ export default function AccountPage() {
         };
 
         checkUser();
-    }, [router]);
+    }, [router, prefix]);
 
     const handleSignOut = async () => {
         const { logoutUser } = await import("@/app/actions/auth");
         await logoutUser();
         localStorage.removeItem("white_label_user");
-        router.push("/login");
+        router.push(`${prefix}/login`);
     };
 
     if (loading) return <div className="p-20 text-center">Loading account...</div>;

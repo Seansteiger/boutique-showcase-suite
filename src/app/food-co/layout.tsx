@@ -4,7 +4,7 @@ import { Bodoni_Moda, Hanken_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home } from "lucide-react";
+import { ShoppingBag, Menu, X, Trash2, Plus, Minus, Home, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 
@@ -85,6 +85,14 @@ export default function FoodCoLayout({
 
             {/* Utilitarian Actions */}
             <div className="flex items-center gap-4">
+              <Link
+                href="/food-co/account"
+                className="hidden md:flex p-2.5 text-[#1A1A1A] hover:text-[#7D8C7C] transition-colors rounded-lg"
+                aria-label="Account Profile"
+              >
+                <User className="h-5 w-5 stroke-[1.5]" />
+              </Link>
+
               <button
                 onClick={() => setIsOpen(true)}
                 className="relative p-2.5 text-[#1A1A1A] hover:text-[#7D8C7C] transition-colors rounded-lg"
@@ -126,6 +134,13 @@ export default function FoodCoLayout({
               className="text-xs font-semibold uppercase tracking-widest text-[#1A1A1A] hover:text-[#7D8C7C]"
             >
               Shop
+            </Link>
+            <Link
+              href="/food-co/account"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-xs font-semibold uppercase tracking-widest text-[#1A1A1A] hover:text-[#7D8C7C]"
+            >
+              Profile
             </Link>
 
           </nav>
@@ -183,6 +198,20 @@ export default function FoodCoLayout({
               </div>
               <span className="text-[8px] uppercase tracking-wider font-semibold">Cart</span>
             </button>
+
+            <Link
+              href="/food-co/account"
+              className={cn(
+                "flex flex-col items-center gap-1 transition-all duration-300 relative w-full",
+                pathname?.startsWith("/food-co/account") || pathname?.startsWith("/food-co/login") || pathname?.startsWith("/food-co/register") ? "text-white" : "text-white/60 hover:text-white"
+              )}
+            >
+              <User className="h-[20px] w-[20px] stroke-[1.5]" />
+              <span className="text-[8px] uppercase tracking-wider font-semibold">Profile</span>
+              {(pathname?.startsWith("/food-co/account") || pathname?.startsWith("/food-co/login") || pathname?.startsWith("/food-co/register")) && (
+                <span className="absolute -bottom-1 w-1 h-1 bg-white rounded-full" />
+              )}
+            </Link>
           </nav>
         </div>
       )}
@@ -202,8 +231,8 @@ export default function FoodCoLayout({
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest text-white mb-4">Catalog</h4>
               <ul className="space-y-2 text-xs text-white/60">
-                <li><Link href="/food-co" className="hover:text-white transition-colors">Pantry Pantry</Link></li>
-                <li><Link href="/food-co/shop" className="hover:text-white transition-colors">Gourmet Culinary</Link></li>
+                <li><Link href="/food-co" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/food-co/shop" className="hover:text-white transition-colors">Shop</Link></li>
               </ul>
             </div>
             <div>

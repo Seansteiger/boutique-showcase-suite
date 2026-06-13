@@ -8,22 +8,46 @@ export async function getStoreSettings(previewOverride?: string): Promise<ThemeS
   
   // 1. Resolve host subdomain if no preview override is active
   let resolvedSubdomain = previewOverride;
-  if (!resolvedSubdomain) {
-    try {
-      const headersList = await headers();
-      const host = headersList.get("host") || "";
-      if (host) {
-        const parts = host.split(".");
-        if (parts.length >= 3) {
-          const firstPart = parts[0].toLowerCase();
-          if (firstPart !== "www" && firstPart !== "admin" && firstPart !== "super-admin") {
-            resolvedSubdomain = firstPart;
+  let requestPathname = "";
+  try {
+    const headersList = await headers();
+    if (!resolvedSubdomain) {
+      resolvedSubdomain = headersList.get("x-subdomain") || "";
+      if (!resolvedSubdomain) {
+        const host = headersList.get("host") || "";
+        if (host) {
+          const parts = host.split(".");
+          if (parts.length >= 3) {
+            const firstPart = parts[0].toLowerCase();
+            if (firstPart !== "www" && firstPart !== "admin" && firstPart !== "super-admin") {
+              resolvedSubdomain = firstPart;
+            }
           }
         }
       }
-    } catch (e) {
-      // Ignore if headers() is called in a static generation or layout framework shell context
     }
+    requestPathname = headersList.get("x-pathname") || "";
+  } catch (e) {
+    // Ignore if headers() is called in a static generation or layout framework shell context
+  }
+
+  // 1.5. Detect brand name based on subdomain or pathname path
+  let detectedBrandName = "";
+  const lowercasePath = requestPathname.toLowerCase();
+  const lowercaseSub = (resolvedSubdomain || "").toLowerCase();
+
+  if (lowercasePath.startsWith("/food-co") || lowercaseSub === "foodco" || lowercaseSub === "food-co") {
+    detectedBrandName = "Food.co";
+  } else if (lowercasePath.startsWith("/furnish") || lowercaseSub === "furnish") {
+    detectedBrandName = "Furnish";
+  } else if (lowercasePath.startsWith("/home-appliances") || lowercaseSub === "home-appliances") {
+    detectedBrandName = "Home Appliances";
+  } else if (lowercasePath.startsWith("/invited") || lowercaseSub === "invited") {
+    detectedBrandName = "Invited";
+  } else if (lowercasePath.startsWith("/scented") || lowercaseSub === "scented") {
+    detectedBrandName = "SCENTED";
+  } else if (lowercasePath.startsWith("/hhm") || lowercaseSub === "hhm") {
+    detectedBrandName = "Hotel Hope Store";
   }
 
   // 2. Load baseline settings from Convex (so we keep operational values like API keys, currency rules, etc.)
@@ -54,7 +78,7 @@ export async function getStoreSettings(previewOverride?: string): Promise<ThemeS
 
   // 4. Build standard baseline fallback
   const baseSettings: ThemeSettings = {
-    brandName: dbSettings?.brandName || "SCENTED",
+    brandName: detectedBrandName || dbSettings?.brandName || "SCENTED",
     theme: {
       primaryColor: dbSettings?.theme?.primaryColor || "141 29% 15%",
       secondaryColor: dbSettings?.theme?.secondaryColor || "30 20% 98%",
@@ -118,7 +142,7 @@ export async function getStoreSettings(previewOverride?: string): Promise<ThemeS
     const overrides = tenant.themeOverrides || {};
     return {
       ...finalSettings,
-      brandName: tenant.name || preset.brandName,
+      brandName: detectedBrandName || tenant.name || preset.brandName,
       theme: {
         ...finalSettings.theme,
         ...preset.theme,
@@ -148,7 +172,7 @@ export async function getStoreSettings(previewOverride?: string): Promise<ThemeS
     const preset = themePresets[resolvedSubdomain.toLowerCase()];
     return {
       ...finalSettings,
-      brandName: preset.brandName,
+      brandName: detectedBrandName || preset.brandName,
       theme: { ...preset.theme },
       enabledWidgets: [...preset.enabledWidgets],
       layoutOrder: [...preset.layoutOrder],
@@ -159,6 +183,10 @@ export async function getStoreSettings(previewOverride?: string): Promise<ThemeS
       currencySymbol: preset.currencySymbol || finalSettings.currencySymbol,
       currencyMultiplier: preset.currencyMultiplier || finalSettings.currencyMultiplier,
     };
+  }
+
+  if (detectedBrandName) {
+    finalSettings.brandName = detectedBrandName;
   }
 
   return finalSettings as ThemeSettings;

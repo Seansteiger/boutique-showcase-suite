@@ -24,7 +24,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         href="/food-co/shop"
         className="text-xs font-semibold uppercase tracking-widest text-[#1A1A1A]/60 hover:text-[#7D8C7C] transition-colors flex items-center gap-1.5"
       >
-        <MoveLeft className="h-4 w-4" /> Back to Pantry
+        <MoveLeft className="h-4 w-4" /> Back to Shop
       </Link>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

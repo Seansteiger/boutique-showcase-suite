@@ -8,13 +8,8 @@ export const revalidate = 60;
 export default async function FoodCoPage() {
   const allProducts = await getProducts();
 
-  // Filter for kitchenware, pans, washing liquid, toilet tissue, etc.
-  const keywords = ["pan", "pot", "liquid", "tissue", "kettle", "coffee", "maker"];
-  const foodProducts = allProducts.filter(p =>
-    keywords.some(k => p.name.toLowerCase().includes(k)) ||
-    p.categorySlug === "kitchenware" ||
-    p.categorySlug === "hygiene"
-  );
+  // Filter products belonging to the Food.co brand
+  const foodProducts = allProducts.filter(p => p.brand === "Food.co");
 
   const displayProducts = foodProducts.length > 0 ? foodProducts : allProducts.slice(0, 4);
 
@@ -45,7 +40,7 @@ export default async function FoodCoPage() {
                 href="/food-co/shop"
                 className="bg-[#7D8C7C] text-white hover:bg-[#c5a059] transition-all px-8 py-4 uppercase text-[10px] font-semibold tracking-widest flex items-center gap-2 rounded-lg"
               >
-                Enter Pantry <MoveRight className="h-4 w-4" />
+                Shop Collection <MoveRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

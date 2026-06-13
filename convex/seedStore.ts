@@ -68,7 +68,15 @@ export default mutation({
       { name: "Room Decor", slug: "room-decor", parentId: undefined },
       { name: "Lifestyle", slug: "lifestyle", parentId: undefined },
       { name: "Artisanal Pantry", slug: "pantry", parentId: undefined },
-      { name: "Hygiene & Care", slug: "hygiene", parentId: undefined }
+      { name: "Hygiene & Care", slug: "hygiene", parentId: undefined },
+      { name: "Fresh Produce", slug: "produce", parentId: undefined },
+      { name: "Artisanal Bakery", slug: "bakery", parentId: undefined },
+      { name: "Organic Dairy", slug: "dairy", parentId: undefined },
+      { name: "Beverages", slug: "beverages", parentId: undefined },
+      { name: "Furniture", slug: "furniture", parentId: undefined },
+      { name: "Decor", slug: "decor", parentId: undefined },
+      { name: "Books", slug: "books", parentId: undefined },
+      { name: "Donation", slug: "donation", parentId: undefined }
     ];
 
     const slugToCategoryId: Record<string, string> = {};
@@ -91,8 +99,24 @@ export default mutation({
             ? "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=600"
             : cat.slug === "kitchenware"
             ? "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=600"
-            : cat.slug === "room-decor"
+            : cat.slug === "room-decor" || cat.slug === "furniture"
             ? "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=600"
+            : cat.slug === "produce"
+            ? "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=600"
+            : cat.slug === "bakery"
+            ? "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600"
+            : cat.slug === "dairy"
+            ? "https://images.unsplash.com/photo-1528750901443-e9c17cc97604?q=80&w=600"
+            : cat.slug === "beverages"
+            ? "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600"
+            : cat.slug === "pantry"
+            ? "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600"
+            : cat.slug === "decor"
+            ? "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=600"
+            : cat.slug === "books"
+            ? "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600"
+            : cat.slug === "donation"
+            ? "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=600"
             : "https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=600",
           createdAt: Date.now()
         });
@@ -294,90 +318,510 @@ export default mutation({
         imageUrls: ["https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=600"]
       },
 
-      // --- FOOD.CO BRAND PRODUCTS ---
+      // --- FOOD.CO BRAND PRODUCTS (30 Grocery Items) ---
       {
-        title: "Volcanic Stone Frying Pan",
-        slug: "volcanic-stone-frying-pan",
-        description: "Heavy organic iron skillet coated with a triple layer of micro-cracked volcanic stone. Safe, chemical-free non-stick capabilities with perfect thermal distribution.",
-        price: 950.00,
-        salePrice: 850.00,
-        categoryId: "kitchenware",
-        stockQuantity: 22,
-        isFeatured: true,
-        features: ["Natural volcanic stone coating", "PFOA & PTFE-free construction", "Solid cast iron core structure", "Ergonomic oak-accent handle"],
-        brand: "Food.co",
-        status: "published",
-        imageUrls: ["https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?q=80&w=600"]
-      },
-      {
-        title: "Ceramic Dutch Oven Pot",
-        slug: "ceramic-dutch-oven-pot",
-        description: "A gorgeous ceramic-coated dutch oven pot. Perfect for baking rustic sourdough loaves, slow simmering winter stews, and sealing natural nutrient profiles.",
-        price: 1550.00,
-        salePrice: undefined,
-        categoryId: "kitchenware",
-        stockQuantity: 15,
-        isFeatured: false,
-        features: ["Premium ceramic-enameled walls", "Condensed drip spikes inside lid", "High-heat resistant up to 260C", "Extra-wide structural loop handles"],
-        brand: "Food.co",
-        status: "published",
-        imageUrls: ["https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=600"]
-      },
-      {
-        title: "Extra Virgin Cold-Pressed Olive Oil",
+        title: "Cold-Pressed Extra Virgin Olive Oil",
         slug: "cold-pressed-olive-oil",
-        description: "Single-estate Coratina olives, harvested by hand and cold-pressed within 4 hours. Rich in polyphenols, presenting notes of fresh herbs, tomato vines, and peppery finish.",
+        description: "Premium single-estate Coratina olives, cold-pressed within hours of harvest. Exceptionally low acidity with a vibrant, peppery finish.",
         price: 320.00,
         salePrice: 280.00,
         categoryId: "pantry",
         stockQuantity: 45,
-        isFeatured: false,
-        features: ["500ml dark glass bottle protection", "Acidity levels below 0.2%", "Unfiltered, single estate batch", "Rich in heart-healthy polyphenols"],
+        isFeatured: true,
+        features: ["500ml dark glass bottle", "Acidity below 0.2%", "Rich in antioxidants"],
         brand: "Food.co",
         status: "published",
         imageUrls: ["https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=600"]
       },
       {
-        title: "Organic Raw Lavender Honey",
-        slug: "organic-lavender-honey",
-        description: "Pure, cold-extracted honey gathered from organic French lavender fields. Delightfully thick and aromatic with soft floral undertones and a buttery texture.",
-        price: 240.00,
+        title: "Raw Wildflower Blossom Honey",
+        slug: "raw-wildflower-honey",
+        description: "100% pure, unfiltered and cold-extracted honey gathered from local organic wildflower fields. Thick, aromatic, and naturally sweet.",
+        price: 195.00,
         salePrice: undefined,
         categoryId: "pantry",
         stockQuantity: 35,
-        isFeatured: false,
-        features: ["Raw, unpasteurized honey", "Sourced from wild fields of Provence", "Rich in trace minerals & enzymes", "Sustainable bee-keeper protection"],
+        isFeatured: true,
+        features: ["350g glass jar", "Raw & unpasteurized", "Sourced from local apiaries"],
         brand: "Food.co",
         status: "published",
         imageUrls: ["https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=600"]
       },
       {
-        title: "Eco-Friendly Dishwashing Liquid",
-        slug: "eco-dishwashing-liquid",
-        description: "Highly concentrated plant-derived dish soap. Scented naturally with organic cold-pressed lime and rosemary essential oils. Tough on oils, gentle on skin.",
-        price: 120.00,
-        salePrice: 95.00,
-        categoryId: "hygiene",
-        stockQuantity: 50,
+        title: "Aged Balsamic Vinegar of Modena",
+        slug: "aged-balsamic-vinegar",
+        description: "Authentic balsamic vinegar matured in oak casks. Rich, syrup-like density with a complex balance of sweet and tangy wood notes.",
+        price: 240.00,
+        salePrice: undefined,
+        categoryId: "pantry",
+        stockQuantity: 28,
         isFeatured: false,
-        features: ["100% plant-based surfactants", "Scented with pure essential oils", "Biodegradable, grey-water safe", "Cruelty-free formula"],
+        features: ["250ml bottle", "Aged for 12 years", "Modena IGP certified"],
         brand: "Food.co",
         status: "published",
-        imageUrls: ["https://images.unsplash.com/photo-1622445262465-2481c4574875?q=80&w=600"]
+        imageUrls: ["https://images.unsplash.com/photo-1620980753066-e82201b17b2b?q=80&w=600"]
       },
       {
-        title: "Unbleached Bamboo Toilet Tissue",
-        slug: "bamboo-toilet-tissue",
-        description: "Ultra soft, premium 3-ply toilet paper rolls formed from sustainably grown, unbleached organic bamboo. Free of chlorine, dyes, and chemical fragrances.",
-        price: 180.00,
-        salePrice: undefined,
-        categoryId: "hygiene",
-        stockQuantity: 40,
-        isFeatured: false,
-        features: ["100% forest-friendly bamboo", "Chlorine-free unbleached fibers", "3-ply ultra-absorbent texture", "Fully plastic-free packaging"],
+        title: "Organic White Truffle Oil",
+        slug: "organic-white-truffle-oil",
+        description: "Fragrant extra virgin olive oil infused with the intense essence of rare white truffles. Perfect for finishing pasta, risottos, and fries.",
+        price: 450.00,
+        salePrice: 380.00,
+        categoryId: "pantry",
+        stockQuantity: 15,
+        isFeatured: true,
+        features: ["100ml bottle", "Infused with real white truffles", "Bespoke culinary grade"],
         brand: "Food.co",
         status: "published",
-        imageUrls: ["https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=600"]
+        imageUrls: ["https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=600"]
+      },
+      {
+        title: "Fleur de Sel Sea Salt Flakes",
+        slug: "fleur-de-sel-salt",
+        description: "Delicate, hand-harvested sea salt crystals from coastal salt pans. Adds a clean, crunchy texture and mineral-rich finishing touch.",
+        price: 85.00,
+        salePrice: undefined,
+        categoryId: "pantry",
+        stockQuantity: 60,
+        isFeatured: false,
+        features: ["150g linen pouch", "100% natural finishing salt", "Rich in trace minerals"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1604838604753-f4c9700d4809?q=80&w=600"]
+      },
+      {
+        title: "Organic Maple Syrup Grade A",
+        slug: "organic-maple-syrup",
+        description: "Pure dark maple syrup harvested from Canadian maple forests. Rich, robust flavour that perfectly sweetens pancakes and desserts.",
+        price: 180.00,
+        salePrice: 155.00,
+        categoryId: "pantry",
+        stockQuantity: 30,
+        isFeatured: false,
+        features: ["250ml glass bottle", "100% pure maple sap", "Grade A Dark Robust"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=600"]
+      },
+      {
+        title: "Artisanal Sourdough Boule",
+        slug: "artisanal-sourdough-boule",
+        description: "Naturally fermented sourdough loaf baked on stone deck ovens. Crisp, blistered crust with a soft, open crumb and classic tangy crumb.",
+        price: 70.00,
+        salePrice: undefined,
+        categoryId: "bakery",
+        stockQuantity: 20,
+        isFeatured: true,
+        features: ["800g freshly baked loaf", "24-hour slow fermentation", "Stone-ground flour"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=600"]
+      },
+      {
+        title: "All-Butter French Croissants",
+        slug: "butter-french-croissants",
+        description: "Traditional flaky croissants laminated with premium cultured butter. Crispy on the outside, light and airy on the inside.",
+        price: 85.00,
+        salePrice: 75.00,
+        categoryId: "bakery",
+        stockQuantity: 25,
+        isFeatured: true,
+        features: ["Pack of 4 croissants", "Laminated with 84% butter fat", "Baked daily"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600"]
+      },
+      {
+        title: "Sourdough Cinnamon Rolls",
+        slug: "sourdough-cinnamon-rolls",
+        description: "Soft cinnamon buns crafted from enriched sweet sourdough, loaded with Ceylon cinnamon, and finished with a light vanilla glaze.",
+        price: 90.00,
+        salePrice: undefined,
+        categoryId: "bakery",
+        stockQuantity: 18,
+        isFeatured: false,
+        features: ["Pack of 2 large rolls", "Rich organic glaze", "Wild yeast dough"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600"]
+      },
+      {
+        title: "Gluten-Free Seeded Loaf",
+        slug: "gluten-free-seeded-loaf",
+        description: "A dense, nutrient-packed gluten-free bread loaded with organic pumpkin, sunflower, and flax seeds for a rich, nutty flavor.",
+        price: 80.00,
+        salePrice: undefined,
+        categoryId: "bakery",
+        stockQuantity: 15,
+        isFeatured: false,
+        features: ["500g sliced loaf", "Gluten-free certified", "High in dietary fiber"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600"]
+      },
+      {
+        title: "Heirloom Tomato Selection",
+        slug: "heirloom-tomato-selection",
+        description: "A colorful medley of vine-ripened organic heirloom tomatoes. Exceptionally sweet, juicy, and perfect for salads and caprese.",
+        price: 65.00,
+        salePrice: 55.00,
+        categoryId: "produce",
+        stockQuantity: 40,
+        isFeatured: true,
+        features: ["500g mixed pack", "Locally grown & organic", "Hand-harvested at peak ripeness"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1595855759920-86582396756a?q=80&w=600"]
+      },
+      {
+        title: "Organic Haas Avocados",
+        slug: "organic-haas-avocados",
+        description: "Premium buttery Haas avocados. Perfectly creamy texture, ideal for making fresh guacamole or spreading on sourdough toast.",
+        price: 75.00,
+        salePrice: undefined,
+        categoryId: "produce",
+        stockQuantity: 30,
+        isFeatured: true,
+        features: ["Pack of 3 avocados", "Certified organic", "Rich in healthy monounsaturated fats"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?q=80&w=600"]
+      },
+      {
+        title: "Fresh Wild Blueberries",
+        slug: "fresh-wild-blueberries",
+        description: "Plump, sweet wild blueberries packed with antioxidants. Great for breakfast bowls, smoothies, or baking pies.",
+        price: 60.00,
+        salePrice: undefined,
+        categoryId: "produce",
+        stockQuantity: 35,
+        isFeatured: false,
+        features: ["150g punnet", "Antioxidant-rich superfood", "Sourced from eco-friendly growers"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1498557850523-fd3d118b962e?q=80&w=600"]
+      },
+      {
+        title: "Organic Sweet Baby Spinach",
+        slug: "organic-baby-spinach",
+        description: "Tender, pre-washed organic baby spinach leaves. Perfect base for healthy green smoothies, salads, or quick pan sautés.",
+        price: 40.00,
+        salePrice: 32.00,
+        categoryId: "produce",
+        stockQuantity: 50,
+        isFeatured: false,
+        features: ["200g bag", "Triple-washed & ready to eat", "High in iron and vitamins"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=600"]
+      },
+      {
+        title: "Gala Apple Variety",
+        slug: "gala-apple-variety",
+        description: "Crisp, sweet organic Gala apples. Mild flavor with thin skin, making them the perfect fresh snack for any time of the day.",
+        price: 45.00,
+        salePrice: undefined,
+        categoryId: "produce",
+        stockQuantity: 45,
+        isFeatured: false,
+        features: ["1kg bag (approx. 6 apples)", "Grown in organic orchards", "Excellent source of fiber"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=600"]
+      },
+      {
+        title: "Organic Unsweetened Almond Milk",
+        slug: "organic-almond-milk",
+        description: "Creamy plant-based milk made from organic sprouted almonds. Absolutely free of gums, thickeners, or added sweeteners.",
+        price: 55.00,
+        salePrice: undefined,
+        categoryId: "dairy",
+        stockQuantity: 40,
+        isFeatured: false,
+        features: ["1L carton", "Zero additives or stabilizers", "Dairy-free & vegan friendly"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1568651343853-2198ec004909?q=80&w=600"]
+      },
+      {
+        title: "Aged Grass-Fed Cheddar Cheese",
+        slug: "aged-grassfed-cheddar",
+        description: "Sharp cheddar cheese aged for 18 months, made from pasture-raised grass-fed cows. Exceptional depth of rich dairy flavor.",
+        price: 110.00,
+        salePrice: 95.00,
+        categoryId: "dairy",
+        stockQuantity: 25,
+        isFeatured: true,
+        features: ["250g block", "18-month slow aging", "Pasture-raised milk source"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1618164435735-413d3b066c9a?q=80&w=600"]
+      },
+      {
+        title: "Salted Pasture Butter",
+        slug: "salted-pasture-butter",
+        description: "Rich, creamy butter churned from fresh pasture cream and sprinkled with delicate sea salt. Elevates any piece of warm toast.",
+        price: 65.00,
+        salePrice: undefined,
+        categoryId: "dairy",
+        stockQuantity: 35,
+        isFeatured: false,
+        features: ["250g block", "Minimum 82% milk fat", "Sprinkled with sea salt flakes"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?q=80&w=600"]
+      },
+      {
+        title: "Organic Greek Yogurt 1kg",
+        slug: "organic-greek-yogurt",
+        description: "Thick, strained organic Greek yogurt with live active cultures. Rich in protein and probiotics with a deliciously smooth taste.",
+        price: 75.00,
+        salePrice: 65.00,
+        categoryId: "dairy",
+        stockQuantity: 30,
+        isFeatured: false,
+        features: ["1kg tub", "Double-strained for extra thickness", "Live bacterial probiotics"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=600"]
+      },
+      {
+        title: "Single-Origin Espresso Roast",
+        slug: "single-origin-espresso",
+        description: "Light-medium roast espresso beans sourced from organic Colombian high-altitude farms. Notes of cocoa, brown sugar, and orange peel.",
+        price: 195.00,
+        salePrice: undefined,
+        categoryId: "beverages",
+        stockQuantity: 40,
+        isFeatured: true,
+        features: ["500g whole beans", "High-altitude Arabica variety", "Direct trade sourcing"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=600"]
+      },
+      {
+        title: "Ceremonial Grade Matcha Powder",
+        slug: "ceremonial-matcha-powder",
+        description: "Pure stone-ground green tea leaves sourced from Uji, Kyoto. Extremely rich in L-theanine for calm, sustained daytime focus.",
+        price: 290.00,
+        salePrice: 260.00,
+        categoryId: "beverages",
+        stockQuantity: 20,
+        isFeatured: true,
+        features: ["30g tin", "First-harvest young tea leaves", "Vibrant emerald green color"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=600"]
+      },
+      {
+        title: "Cold Brew Coffee Concentrate",
+        slug: "coldbrew-coffee-concentrate",
+        description: "Slow-steeped organic coffee concentrate. Incredibly smooth and low-acid, perfect for mixing with water or milk over ice.",
+        price: 135.00,
+        salePrice: undefined,
+        categoryId: "beverages",
+        stockQuantity: 24,
+        isFeatured: false,
+        features: ["750ml glass bottle", "Steeped for 18 hours", "100% organic beans"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600"]
+      },
+      {
+        title: "Premium Loose Leaf Earl Grey",
+        slug: "premium-earl-grey",
+        description: "Whole-leaf organic black tea scented with oil of Italian bergamot. A robust tea blend that offers a classic citrus fragrance.",
+        price: 95.00,
+        salePrice: undefined,
+        categoryId: "beverages",
+        stockQuantity: 30,
+        isFeatured: false,
+        features: ["100g loose leaf tin", "Cold-pressed bergamot oil", "Rich in natural flavonoids"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600"]
+      },
+      {
+        title: "Sparkling Apple Cider",
+        slug: "sparkling-apple-cider",
+        description: "Non-alcoholic sparkling cider pressed from organic honeycrisp apples. Crisp, bubbly, and festive without any added sugar.",
+        price: 90.00,
+        salePrice: 80.00,
+        categoryId: "beverages",
+        stockQuantity: 28,
+        isFeatured: false,
+        features: ["750ml bottle", "No sugar added", "100% organic apples"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1608885898957-a599fb15653c?q=80&w=600"]
+      },
+      {
+        title: "Organic Quinoa Grain 1kg",
+        slug: "organic-quinoa-grain",
+        description: "Triple-rinsed organic white quinoa grains. A complete plant protein that cooks up light and fluffy in just 15 minutes.",
+        price: 80.00,
+        salePrice: undefined,
+        categoryId: "pantry",
+        stockQuantity: 35,
+        isFeatured: false,
+        features: ["1kg pouch", "Saponin-free pre-washed", "Complete vegan amino acid profile"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=600"]
+      },
+      {
+        title: "Bronze-Cut Spaghetti Pasta",
+        slug: "bronze-cut-spaghetti",
+        description: "Artisanal pasta extruded through traditional bronze dies to create a rough texture that holds onto pasta sauces beautifully.",
+        price: 45.00,
+        salePrice: undefined,
+        categoryId: "pantry",
+        stockQuantity: 50,
+        isFeatured: false,
+        features: ["500g bag", "100% durum semolina flour", "Slow-dried at low heat"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1551462147-ff29053bfc14?q=80&w=600"]
+      },
+      {
+        title: "Raw Unsalted Almonds",
+        slug: "raw-unsalted-almonds",
+        description: "Crunchy, premium raw almonds harvested from local organic almond orchards. A nutritious and healthy high-protein snack.",
+        price: 120.00,
+        salePrice: 105.00,
+        categoryId: "pantry",
+        stockQuantity: 40,
+        isFeatured: false,
+        features: ["500g pack", "100% raw and natural", "Heart-healthy vitamin E"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1508061461508-cb18c242f556?q=80&w=600"]
+      },
+      {
+        title: "Organic Extra Virgin Coconut Oil",
+        slug: "organic-coconut-oil",
+        description: "Cold-pressed organic virgin coconut oil. Offers a fresh coconut aroma and taste, perfect for healthy baking and cooking.",
+        price: 130.00,
+        salePrice: undefined,
+        categoryId: "pantry",
+        stockQuantity: 32,
+        isFeatured: false,
+        features: ["500ml jar", "Unrefined & cold-pressed", "Made from fresh organic coconuts"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?q=80&w=600"]
+      },
+      {
+        title: "Artisanal Seed & Oat Crackers",
+        slug: "seed-oat-crackers",
+        description: "Crisp, stone-baked oat crackers loaded with sunflower, sesame, and poppy seeds. Perfectly complements cheese boards.",
+        price: 55.00,
+        salePrice: undefined,
+        categoryId: "bakery",
+        stockQuantity: 30,
+        isFeatured: false,
+        features: ["200g box", "Stone-baked grain base", "Loaded with super-seeds"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=600"]
+      },
+      {
+        title: "Dark Chocolate Sea Salt Bars",
+        slug: "dark-chocolate-sea-salt",
+        description: "Rich 70% dark Belgian chocolate blended with crispy sea salt crystals. An elegant, balanced treat for dark chocolate lovers.",
+        price: 70.00,
+        salePrice: 60.00,
+        categoryId: "pantry",
+        stockQuantity: 45,
+        isFeatured: false,
+        features: ["Pack of 3 bars (80g each)", "70% single-origin cacao", "Sprinkled with sea salt"],
+        brand: "Food.co",
+        status: "published",
+        imageUrls: ["https://images.unsplash.com/photo-1549007994-cb92ca47fe46?q=80&w=600"]
+      },
+      {
+        title: "Vintage Oak Sideboard",
+        slug: "vintage-oak-sideboard",
+        description: "Beautifully restored mid-century oak sideboard with brass hardware.",
+        price: 450.00,
+        salePrice: undefined,
+        categoryId: "furniture",
+        stockQuantity: 5,
+        isFeatured: true,
+        features: ["Restored mid-century solid oak", "Brass hardware accents", "Two storage cabinets and three drawers"],
+        brand: "Hotel Hope",
+        status: "published",
+        imageUrls: ["https://lh3.googleusercontent.com/aida/AP1WRLuT9IYxmrBcH1G7VXNvkYHNErdL8enk7WAN2gpAT3_Shu66GifxEdF3UVW3ZxbnYz_wOwvfas7aG5CxuWAr1vMW5pKij21mY_v9HPSsBZ0fZHAoxeIC3jUMTcxA6k_db67XA12RD_-ZED2kSCKOOLQJC3tE9G0uxQKLNOriEWw_Tj-81r98xP9I3j3gxrM7XkLSjvy95ymHy8im00YSDUy7swEuI7zsnDEMYIggUFK1CFHucdhruQ6HxIlC"]
+      },
+      {
+        title: "Handwoven Throw Blanket",
+        slug: "handwoven-throw-blanket",
+        description: "Locally sourced, organic cotton throw in warm earth tones.",
+        price: 65.00,
+        salePrice: undefined,
+        categoryId: "decor",
+        stockQuantity: 15,
+        isFeatured: true,
+        features: ["100% organic cotton", "Naturally dyed fibers", "Tassel edges"],
+        brand: "Hotel Hope",
+        status: "published",
+        imageUrls: ["https://lh3.googleusercontent.com/aida-public/AB6AXuDn81XAIw6ATdHS8W2yRzO9sLhcEhgrcRRf-8XV0xLqW4QcdbOGqouA42dseEBiTwn-rwDu6yghOqH_42kD7ooi8gDHOaUBEuXRoHf04aniF7qx3yVHkySba8EhA4w42ImbqIt2bREMHGHuZyd4PKF33CZAIPbzgqT7Y0uJ_CDujaV04KYll9kEW0V-QR2RghfD40jtDBXJ_3gep6LOi_46AkelNGCFEXccdxE0tEU9y1oZ0co_NQMc1ADfLwEsYms5vThRcOjkHYTK"]
+      },
+      {
+        title: "Antique Classic Literature Set",
+        slug: "antique-literature-set",
+        description: "A beautiful 5-piece collection of classic literature with leather bindings.",
+        price: 120.00,
+        salePrice: undefined,
+        categoryId: "books",
+        stockQuantity: 2,
+        isFeatured: false,
+        features: ["Leather-bound hardcovers", "Gold foil design detail", "Collectible classics"],
+        brand: "Hotel Hope",
+        status: "published",
+        imageUrls: ["https://lh3.googleusercontent.com/aida-public/AB6AXuBFo_1VkwivgNOKeTVjVq1T2zd4X33FiPm8tqJj5U9xXNzropcwVXkslW3H-q0gxpqWtuG4_dNsZPIx1SItPmw22RFWpn0-4YFbU89KNL2oSdvHWUgieX0rUPqIasOtVhWucvetLXUVfEQdMjOSREG_Fv11m-of-Dz3bli4CeEPjhtzi7xc19MWtbgpHElD3X_jApM_bwdGOU98LWl4PtFZtYolTmiCbeawE_bBSlM7umSCI7yydTInbiIZCFUIybPK2wvDqC8E7yZ2"]
+      },
+      {
+        title: "Ceramic Table Lamp",
+        slug: "ceramic-table-lamp",
+        description: "Hand-glazed ceramic lamp providing a warm, ambient glow.",
+        price: 85.00,
+        salePrice: undefined,
+        categoryId: "decor",
+        stockQuantity: 8,
+        isFeatured: false,
+        features: ["Hand-glazed stoneware", "Travertine cream style finish", "Linen shade included"],
+        brand: "Hotel Hope",
+        status: "published",
+        imageUrls: ["https://lh3.googleusercontent.com/aida-public/AB6AXuDFv2gfLRvdQ9K-bFkM1rpXDc3mUZreZoJTWibOz5cDEAnUdTICq_IgzJVMkwRe8zjgF1x7RfCsO1rsTCYchDLHpvPf0v6uhR0J4OPXWR3PFdSMWdlCgxys0mWI5inzzZcsI_wmm_Q3VNtlyUgrArG7IoXLPowEWbgdu055Vw5h4fJH6h-SpX2GSvgXux0cqiwd-QpxdgvyoYlFVCp7APdu5d5cDOHmVNCqSgC18wVw5jfKFT_9-tsdOakEmaPImoBzNeObQopaZa97"]
+      },
+      {
+        title: "Handwoven Storage Basket",
+        slug: "handwoven-storage-basket",
+        description: "Empowering mothers in crisis through local artisanal weaving.",
+        price: 350.00,
+        salePrice: undefined,
+        categoryId: "decor",
+        stockQuantity: 20,
+        isFeatured: false,
+        features: ["Handcrafted from elephant grass", "Durable handles", "Direct community support product"],
+        brand: "Hotel Hope",
+        status: "published",
+        imageUrls: ["https://lh3.googleusercontent.com/aida-public/AB6AXuCoJVbnrnP4IkRHh_ySbGb9lWbbYvRs8wU_qa5JIMwTibsT9rS_DrwtKE9pNiV8FL_1PB3GVZ9zdzLit9TYecQlO5iM2-y2eU3T_fD9SMkWdwsZG-O9xjhXUETVv5jcr44WWBu7IH7RgMf6sjRZCop7YjMO0luUunWwi6c0NrIn0eTuKMEO93fiborcHxq-XFcIRrlDzTN7a65GoaVfoU-8-MZqbm6bPW1z8GbERD0wANn0dhGYFvfxJ8S81RNDtTHoEm33lYfj7Ji3"]
+      },
+      {
+        title: "Provide a Week of Formula",
+        slug: "donation-week-of-formula",
+        description: "Direct support for abandoned babies to cover critical early feeding needs.",
+        price: 200.00,
+        salePrice: undefined,
+        categoryId: "donation",
+        stockQuantity: 9999,
+        isFeatured: false,
+        features: ["Provides formula for one baby for 7 days", "Purchase goes 100% directly to Nursery program"],
+        brand: "Hotel Hope",
+        status: "published",
+        imageUrls: []
       }
     ];
 
@@ -457,7 +901,8 @@ export default mutation({
       { name: "Slate & Co", subdomain: "slate", preset: "slate", sales: [3400, 1200, 5600, 2100, 4800, 1900] },
       { name: "L'Artelier Boutique", subdomain: "editorial", preset: "editorial", sales: [8500, 12000, 6500, 9300] },
       { name: "Oasis Co", subdomain: "sandstone", preset: "sandstone", sales: [1200, 2300, 1500, 3100, 900] },
-      { name: "Ocean Mist", subdomain: "ocean", preset: "ocean", sales: [2400, 1800, 3200, 1100, 2900] }
+      { name: "Ocean Mist", subdomain: "ocean", preset: "ocean", sales: [2400, 1800, 3200, 1100, 2900] },
+      { name: "Hotel Hope Store", subdomain: "hhm", preset: "hhm", sales: [450, 120, 630, 350, 200] }
     ];
 
     for (const tp of tenantPresets) {
@@ -500,6 +945,16 @@ export default mutation({
         borderWidth: "1px",
         shadowStyle: "ambient",
         cardStyle: "pill",
+        pageTexture: "flat"
+      } : tp.preset === "hhm" ? {
+        primaryColor: "#984800",
+        secondaryColor: "#FFF9F0",
+        accentColor: "#E87D2E",
+        fontFamily: "var(--font-libre-caslon-text), serif",
+        buttonRadius: "9999px",
+        borderWidth: "1px",
+        shadowStyle: "ambient",
+        cardStyle: "curved",
         pageTexture: "flat"
       } : {
         primaryColor: "141 29% 15%",
