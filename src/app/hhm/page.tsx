@@ -131,22 +131,27 @@ export default function HHMHomePage() {
 
               {/* Floating Glass Badge */}
               <div
-                className="absolute -bottom-6 -left-6 bg-white/85 backdrop-blur-md border border-[#6F4E37]/10 p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce"
-                style={{ animationDuration: "3s" }}
+                className="absolute -bottom-8 -left-8 bg-gradient-to-tr from-white/95 via-[#fffdfb]/90 to-[#fdf7f2]/95 backdrop-blur-md border border-[#6F4E37]/15 p-5 rounded-2xl shadow-[0_20px_50px_rgba(111,78,55,0.12)] flex items-center gap-4 group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(232,125,46,0.2)] animate-float"
               >
-                <div className="bg-[#E19BB9]/20 p-2 rounded-full text-[#E19BB9]">
-                  <span
-                    className="material-symbols-outlined"
-                    style={{ fontVariationSettings: '"FILL" 1' }}
-                  >
-                    volunteer_activism
-                  </span>
+                <div className="relative flex items-center justify-center">
+                  {/* Glowing/pulsing backing ring */}
+                  <div className="absolute inset-0 bg-[#E87D2E]/10 rounded-full scale-125 animate-ping opacity-75" style={{ animationDuration: '3s' }} />
+                  <div className="relative bg-[#E87D2E]/10 border border-[#E87D2E]/20 p-3 rounded-xl text-[#E87D2E] transition-transform duration-500 group-hover:rotate-12">
+                    <span
+                      className="material-symbols-outlined text-2xl block"
+                      style={{ fontVariationSettings: '"FILL" 1' }}
+                    >
+                      volunteer_activism
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-bold text-xs text-[#6F4E37] leading-tight">
+                <div className="flex flex-col">
+                  <span className="font-serif text-lg font-bold bg-gradient-to-r from-[#6F4E37] to-[#E87D2E] bg-clip-text text-transparent leading-none mb-0.5">
                     100% Proceeds
-                  </p>
-                  <p className="text-[10px] text-[#564338]">Go to our mission</p>
+                  </span>
+                  <span className="text-[10px] text-[#8C7565] uppercase tracking-wider font-bold">
+                    Direct Mission Impact
+                  </span>
                 </div>
               </div>
             </div>
