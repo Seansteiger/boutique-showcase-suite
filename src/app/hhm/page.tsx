@@ -221,7 +221,7 @@ export default function HHMHomePage() {
             <img
               alt="Handpicked Furniture"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              src="https://lh3.googleusercontent.com/aida/AP1WRLuT9IYxmrBcH1G7VXNvkYHNErdL8enk7WAN2gpAT3_Shu66GifxEdF3UVW3ZxbnYz_wOwvfas7aG5CxuWAr1vMW5pKij21mY_v9HPSsBZ0fZHAoxeIC3jUMTcxA6k_db67XA12RD_-ZED2kSCKOOLQJC3tE9G0uxQKLNOriEWw_Tj-81r98xP9I3j3gxrM7XkLSjvy95ymHy8im00YSDUy7swEuI7zsnDEMYIggUFK1CFHucdhruQ6HxIlC"
+              src="/images/hhm_furniture.png"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 w-full">
@@ -267,11 +267,18 @@ export default function HHMHomePage() {
             </Link>
 
             <Link
-              className="group block relative rounded-2xl overflow-hidden shadow-md bg-[#f8e4da] p-6 flex flex-col justify-between flex-1 min-h-[200px]"
+              className="group block relative rounded-2xl overflow-hidden shadow-md flex-1 min-h-[200px] flex flex-col justify-between p-6"
               href="/hhm/donate"
             >
-              <div className="flex justify-between items-start">
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-[#6F4E37] w-2/3 leading-tight">
+              <img
+                alt="Gifts of Hope"
+                className="w-full h-full absolute inset-0 object-cover transition-transform duration-700 group-hover:scale-105"
+                src="/images/hhm_gifts_hope.png"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              
+              <div className="relative z-10 flex justify-between items-start">
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-white w-2/3 leading-tight">
                   Gifts of Hope
                 </h3>
                 <span
@@ -281,8 +288,8 @@ export default function HHMHomePage() {
                   redeem
                 </span>
               </div>
-              <div className="mt-4">
-                <p className="text-[#564338] text-xs leading-relaxed mb-4">
+              <div className="relative z-10 mt-4">
+                <p className="text-white/90 text-xs leading-relaxed mb-4">
                   Meaningful gifts that support our on-site Montessori and mothers in crisis.
                 </p>
                 <span className="inline-flex items-center text-[#E87D2E] font-bold text-xs uppercase tracking-wider group-hover:gap-2 transition-all">
@@ -292,8 +299,6 @@ export default function HHMHomePage() {
                   </span>
                 </span>
               </div>
-              {/* Decorative element */}
-              <div className="absolute -bottom-10 -right-10 bg-[#E87D2E]/10 w-32 h-32 rounded-full blur-2xl pointer-events-none" />
             </Link>
           </div>
         </div>
