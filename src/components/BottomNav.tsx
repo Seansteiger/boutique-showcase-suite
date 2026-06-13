@@ -75,8 +75,8 @@ export function BottomNav() {
     <>
       <div 
         className={cn(
-          "fixed bottom-6 inset-x-4 z-[49] bg-background/80 backdrop-blur-md border border-accent/20 px-2 py-1 shadow-[0_8px_32px_rgba(0,0,0,0.15)] md:hidden transition-transform duration-300", 
-          isCartOpen && "translate-y-24"
+          "fixed bottom-6 left-1/2 -translate-x-1/2 w-[260px] z-[49] bg-background/80 backdrop-blur-md border border-accent/20 px-2 py-1 shadow-[0_8px_32px_rgba(0,0,0,0.15)] md:hidden transition-all duration-300", 
+          isCartOpen ? "translate-y-28 opacity-0" : "translate-y-0"
         )}
         style={{
           borderRadius: settings?.theme?.buttonRadius || "var(--radius, 1rem)"

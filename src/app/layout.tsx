@@ -109,15 +109,21 @@ export default async function RootLayout({
         ? "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05)"
         : "0 20px 40px -5px rgba(27, 48, 34, 0.08)"; // default ambient
 
+  // Helper to safely format raw HSL space variables from the database/settings into valid HSL CSS colors
+  const formatColor = (val: string | undefined, fallback: string) => {
+    if (!val) return fallback;
+    return val.includes(" ") && !val.startsWith("hsl") ? `hsl(${val})` : val;
+  };
+
   return (
     <html 
       lang="en" 
       className={cn("h-full", playfairDisplay.variable, hankenGrotesk.variable)}
       suppressHydrationWarning
       style={{
-        "--primary": settings.theme.primaryColor,
-        "--secondary": settings.theme.secondaryColor,
-        "--accent": (settings.theme as any).accentColor || "#D4AF37",
+        "--primary": formatColor(settings.theme.primaryColor, "#0F0F11"),
+        "--secondary": formatColor(settings.theme.secondaryColor, "#F5F5F7"),
+        "--accent": formatColor((settings.theme as any).accentColor, "#D4AF37"),
         "--radius": settings.theme.buttonRadius || "8px",
         "--font-sans": settings.theme.fontFamily,
         "--border-width": (settings.theme as any).borderWidth || "1px",
