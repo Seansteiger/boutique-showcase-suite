@@ -90,9 +90,10 @@ export default async function RootLayout({
 }>) {
   const categories = await getCategories();
 
-  // Fetch headers to resolve the server-side request pathname
+  // Fetch headers to resolve the server-side request pathname and subdomain
   const headersList = await headers();
   const requestPathname = headersList.get("x-pathname") || "";
+  const requestSubdomain = headersList.get("x-subdomain") || "";
 
   // 2. Fetch Convex Settings on the server and resolve active preview override
   const cookieStore = await cookies();
@@ -144,22 +145,22 @@ export default async function RootLayout({
             <CartProvider>
               <CartSync />
               <AnalyticsTracker />
-              <StoreLayout hideOnCheckout pathname={requestPathname}>
+              <StoreLayout hideOnCheckout pathname={requestPathname} subdomain={requestSubdomain}>
                 <Navbar initialCategories={categories} />
               </StoreLayout>
               <div className="flex-grow pb-24 md:pb-0">
                 {children}
               </div>
-              <StoreLayout showOnlyOnHome pathname={requestPathname}>
+              <StoreLayout showOnlyOnHome pathname={requestPathname} subdomain={requestSubdomain}>
                 <Footer />
               </StoreLayout>
-              <StoreLayout hideOnCheckout pathname={requestPathname}>
+              <StoreLayout hideOnCheckout pathname={requestPathname} subdomain={requestSubdomain}>
                 <BottomNav />
                 <AIAssistant />
                 <WhatsAppWidget />
               </StoreLayout>
               <PreviewBadge />
-              <StoreLayout hideOnCheckout pathname={requestPathname}>
+              <StoreLayout hideOnCheckout pathname={requestPathname} subdomain={requestSubdomain}>
                 <CartSheet />
               </StoreLayout>
               <Toaster />

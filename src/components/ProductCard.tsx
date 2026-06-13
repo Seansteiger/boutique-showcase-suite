@@ -655,7 +655,7 @@ export function ProductCard({ product, className, priority = false, showSaleBadg
                                 btnRadiusClass,
                                 isAdded 
                                     ? "bg-green-600 border-green-600 hover:bg-green-700 text-white" 
-                                    : "border-primary bg-primary text-secondary hover:bg-transparent hover:text-primary hover:border-primary"
+                                    : "border-accent bg-accent text-accent-foreground hover:bg-transparent hover:text-accent hover:border-accent"
                             )}
                             size="default"
                             disabled={isOutOfStock}
@@ -668,7 +668,7 @@ export function ProductCard({ product, className, priority = false, showSaleBadg
                                 "Sold Out"
                             ) : (
                                 <>
-                                    <ShoppingCart className="h-3.5 w-3.5 mr-1" /> Quick Add
+                                    <ShoppingCart className="h-3.5 w-3.5 mr-1" /> Add to Cart
                                 </>
                             )}
                         </Button>

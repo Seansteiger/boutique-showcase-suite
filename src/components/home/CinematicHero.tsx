@@ -342,7 +342,7 @@ export function CinematicHero() {
               className={cn("aspect-[1.3/1] md:aspect-[1.15/1] w-full overflow-hidden ambient-glow relative border border-border/10", cardRadiusClass)}
             >
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeCEiw9sFvspQLlQd6tM6-NYzZDpBaeOZU3e2puXRMrq33OcyEidqZDJKQGrTIUWMhv8XOSbJ3p13LEiT-Qw4zXpEz2UPUK6HmYWQ5vYlHOHieWxJ_N0X7kgxhwOVPS0-ItNeiMHzRXxTrrVDLPNpnSN8H6tj1ztLE9UQ7HjXGTIQXV6_2JZeW7_xKvwpUZWSFGf067MXo6LvyxhQZRCP1tSGUM_fbd_azFVXqBF9BxSid3EFI_kQ89qhg0wCy_jZsjBn79peLTLta"
+                src="/images/scented_hero_hd.png"
                 alt="SCENTED Atmosphere"
                 className="absolute inset-0 w-full h-full object-cover scale-[1.01] hover:scale-103 transition-transform duration-[2.5s] ease-out"
               />

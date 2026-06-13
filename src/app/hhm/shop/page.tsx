@@ -120,7 +120,7 @@ export default function HHMShopPage() {
                         type="checkbox"
                         checked={selectedCategories.includes(cat.slug)}
                         onChange={() => handleCategoryChange(cat.slug)}
-                        className="form-checkbox h-4 w-4 text-[#E87D2E] border-[#897266] rounded focus:ring-[#E87D2E]"
+                        className="accent-[#E87D2E] h-4 w-4 text-[#E87D2E] border-[#897266] rounded focus:ring-[#E87D2E]"
                       />
                       <span className="text-sm font-medium text-[#332F2C] group-hover:text-[#E87D2E] transition-colors">
                         {cat.name}

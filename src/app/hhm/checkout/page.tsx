@@ -416,7 +416,7 @@ export default function HHMCheckoutPage() {
                     <input
                       checked={heroUp}
                       onChange={(e) => setHeroUp(e.target.checked)}
-                      className="w-5 h-5 rounded border-[#6F4E37]/45 text-[#E87D2E] focus:ring-[#E87D2E] cursor-pointer"
+                      className="accent-[#E87D2E] w-5 h-5 rounded border-[#6F4E37]/45 text-[#E87D2E] focus:ring-[#E87D2E] cursor-pointer"
                       id="hero-up"
                       type="checkbox"
                     />
