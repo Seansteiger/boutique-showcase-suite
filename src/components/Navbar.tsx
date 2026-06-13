@@ -8,7 +8,6 @@ import { useCartStore } from "@/store/cart";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import { ModeToggle } from "@/components/mode-toggle";
-import { SearchAutocomplete } from "@/components/SearchAutocomplete";
 
 import { useStoreSettings } from "@/hooks/useStoreSettings";
 
@@ -93,7 +92,7 @@ export function Navbar({ initialCategories = [] }: { initialCategories?: any[] }
             {/* Translucent Minimal iOS App Header for Mobile Viewports */}
             {isAppHeaderBlur && (
                 <div className="sticky top-0 z-[49] w-full backdrop-blur-xl bg-background/80 border-b border-border/10 py-3.5 px-6 flex items-center justify-between md:hidden">
-                    <Link href="/scented" className="font-serif italic text-2xl text-primary font-medium tracking-wide absolute left-1/2 -translate-x-1/2">
+                    <Link href="/scented" className="font-serif italic text-2xl text-accent font-medium tracking-wide absolute left-1/2 -translate-x-1/2">
                         {brandName}
                     </Link>
                     <div className="flex items-center space-x-4 shrink-0 ml-auto">
@@ -141,7 +140,7 @@ export function Navbar({ initialCategories = [] }: { initialCategories?: any[] }
 
                                 <Link 
                                     href="/scented" 
-                                    className="font-serif italic font-normal text-2xl md:text-3.5xl text-primary absolute left-1/2 -translate-x-1/2 select-none hover:opacity-85 transition-opacity"
+                                    className="font-serif italic font-normal text-2xl md:text-3.5xl text-accent absolute left-1/2 -translate-x-1/2 select-none hover:opacity-85 transition-opacity"
                                 >
                                     {brandName}
                                 </Link>
@@ -153,7 +152,7 @@ export function Navbar({ initialCategories = [] }: { initialCategories?: any[] }
                             <>
                                 <Link 
                                     href="/scented" 
-                                    className="font-serif italic font-black text-2xl md:text-3.5xl text-primary tracking-wider select-none hover:opacity-85"
+                                    className="font-serif italic font-black text-2xl md:text-3.5xl text-accent tracking-wider select-none hover:opacity-85"
                                 >
                                     {brandName}.
                                 </Link>
@@ -176,7 +175,7 @@ export function Navbar({ initialCategories = [] }: { initialCategories?: any[] }
                         {navbarLayout === "minimal" && (
                             <>
                                 <div className="flex items-center space-x-8">
-                                    <Link href="/scented" className="font-sans font-black tracking-tighter text-xl text-primary uppercase">
+                                    <Link href="/scented" className="font-sans font-black tracking-tighter text-xl text-accent uppercase">
                                         {brandName}
                                     </Link>
                                     <div className="hidden lg:flex items-center space-x-6 font-body text-xs tracking-wider text-muted-foreground">
@@ -196,10 +195,6 @@ export function Navbar({ initialCategories = [] }: { initialCategories?: any[] }
 
                         {/* Right-Aligned Search, Currency & Shopping Actions */}
                         <div className="flex items-center space-x-2 md:space-x-3 shrink-0 ml-auto">
-                            {/* Desktop Search Component */}
-                            <div className="hidden sm:block w-40 md:w-56">
-                                <SearchAutocomplete onSelect={() => {}} />
-                            </div>
 
                             {/* Dynamic Currency Selector Badge */}
                             {mounted && (

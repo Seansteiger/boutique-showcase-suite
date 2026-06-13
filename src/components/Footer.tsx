@@ -28,7 +28,7 @@ export function Footer() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
                     <div className="col-span-1 md:col-span-4 space-y-4">
-                        <Link href="/" className="font-serif italic text-3xl text-primary font-normal tracking-wide hover:opacity-85 transition-opacity inline-block">
+                        <Link href="/" className="font-serif italic text-3xl text-accent font-normal tracking-wide hover:opacity-85 transition-opacity inline-block">
                             {brandName}
                         </Link>
                         <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">

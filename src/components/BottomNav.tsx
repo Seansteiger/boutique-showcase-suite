@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Home, Search, User, X, ShoppingBag } from "lucide-react";
+import { Home, User, X, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 import { useStoreSettings } from "@/hooks/useStoreSettings";
 import { motion, AnimatePresence } from "framer-motion";
-import { SearchAutocomplete } from "./SearchAutocomplete";
 
 export function BottomNav() {
   const pathname = usePathname();
@@ -16,7 +15,6 @@ export function BottomNav() {
   const { isOpen: isCartOpen, setIsOpen } = useCartStore();
   const [user, setUser] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // Convex settings
   const settings = useStoreSettings();
@@ -31,11 +29,6 @@ export function BottomNav() {
       setUser(JSON.parse(savedUser));
     }
   }, []);
-
-  // Close search drawer on navigation to prevent stuck overlay
-  useEffect(() => {
-    setIsSearchOpen(false);
-  }, [pathname]);
 
   // Determine dynamic Home link based on subdomain vs subdirectory
   const [homeHref, setHomeHref] = useState("/scented");
@@ -69,12 +62,6 @@ export function BottomNav() {
       href: "/shop",
       icon: ShoppingBag,
       action: null
-    },
-    {
-      label: "Search",
-      href: "#",
-      icon: Search,
-      action: () => setIsSearchOpen(true)
     },
     {
       label: "Profile",
@@ -156,50 +143,7 @@ export function BottomNav() {
         </div>
       </div>
 
-      {/* Dynamic Native Fullscreen Search Sheet */}
-      <AnimatePresence>
-        {isSearchOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: "100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 220 }}
-            className="fixed inset-0 z-50 bg-background flex flex-col p-6 md:hidden overflow-y-auto"
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-light tracking-[0.2em] uppercase text-foreground">Search</h2>
-              <button 
-                onClick={() => setIsSearchOpen(false)}
-                className="p-1 rounded-full bg-secondary hover:bg-secondary/80 focus:outline-none"
-              >
-                <X className="h-5 w-5 text-foreground" />
-              </button>
-            </div>
-            
-            <div className="flex-grow space-y-4">
-              <SearchAutocomplete onSelect={() => setIsSearchOpen(false)} />
-              
-              <div className="pt-6">
-                <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-3">Popular Searches</h3>
-                <div className="flex flex-wrap gap-2">
-                  {["Oud", "Sandalwood", "Bougies", "Cerise"].map((tag) => (
-                    <button
-                      key={tag}
-                      onClick={() => {
-                        setIsSearchOpen(false);
-                        router.push(`/shop?search=${tag}`);
-                      }}
-                      className="px-3 py-1.5 rounded-full bg-secondary text-xs font-medium text-foreground hover:bg-muted transition-colors"
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
     </>
   );
 }
