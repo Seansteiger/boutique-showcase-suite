@@ -1,8 +1,8 @@
 const https = require('https');
 
 const API_TOKEN = process.env.CLOUDFLARE_API_TOKEN || 'YOUR_API_TOKEN';
-const DOMAIN = 'steigeronline.co.za';
-const SUBDOMAINS = ['scented', 'furnish', 'foodco', 'showcase', 'invited'];
+const DOMAIN = process.env.CLOUDFLARE_DOMAIN || 'seansteiger.co.za';
+const SUBDOMAINS = process.env.CLOUDFLARE_SUBDOMAINS ? process.env.CLOUDFLARE_SUBDOMAINS.split(',') : ['hhm'];
 const TARGET = 'cname.vercel-dns.com';
 
 function request(options, data = null) {
