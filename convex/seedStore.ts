@@ -751,7 +751,7 @@ export default mutation({
         features: ["Restored mid-century solid oak", "Brass hardware accents", "Two storage cabinets and three drawers"],
         brand: "Hotel Hope",
         status: "published",
-        imageUrls: ["https://lh3.googleusercontent.com/aida/AP1WRLuT9IYxmrBcH1G7VXNvkYHNErdL8enk7WAN2gpAT3_Shu66GifxEdF3UVW3ZxbnYz_wOwvfas7aG5CxuWAr1vMW5pKij21mY_v9HPSsBZ0fZHAoxeIC3jUMTcxA6k_db67XA12RD_-ZED2kSCKOOLQJC3tE9G0uxQKLNOriEWw_Tj-81r98xP9I3j3gxrM7XkLSjvy95ymHy8im00YSDUy7swEuI7zsnDEMYIggUFK1CFHucdhruQ6HxIlC"]
+        imageUrls: ["/images/hhm_furniture.png"]
       },
       {
         title: "Handwoven Throw Blanket",

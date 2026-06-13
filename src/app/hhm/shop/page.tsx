@@ -171,7 +171,7 @@ export default function HHMShopPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
                 {filteredProducts.map((product: any) => {
                   const supportText = getSupportText(product.slug);
                   const impactText = getQuickImpactText(product.slug);
@@ -192,60 +192,60 @@ export default function HHMShopPage() {
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center bg-[#f8e4da] text-[#E87D2E]">
-                            <span className="material-symbols-outlined text-[48px]" style={{ fontVariationSettings: '"FILL" 1' }}>
+                            <span className="material-symbols-outlined text-[32px] md:text-[48px]" style={{ fontVariationSettings: '"FILL" 1' }}>
                               favorite
                             </span>
                           </div>
                         )}
-                        <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-[#6F4E37]/20 flex items-center gap-1">
+                        <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-white/90 backdrop-blur-sm px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-[#6F4E37]/20 flex items-center gap-1">
                           <span
-                            className="material-symbols-outlined text-[16px] text-[#E87D2E]"
+                            className="material-symbols-outlined text-[12px] md:text-[16px] text-[#E87D2E]"
                             style={{ fontVariationSettings: "'FILL' 1" }}
                           >
                             favorite
                           </span>
-                          <span className="font-semibold text-[10px] text-[#6F4E37] uppercase tracking-wider">
+                          <span className="font-semibold text-[8px] md:text-[10px] text-[#6F4E37] uppercase tracking-wider">
                             {supportText}
                           </span>
                         </div>
 
                         {/* Hover Impact Overlay */}
-                        <div className="absolute inset-0 bg-[#6F4E37]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center z-20">
+                        <div className="absolute inset-0 bg-[#6F4E37]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 md:p-6 text-center z-20">
                           <span
-                            className="material-symbols-outlined text-[40px] text-[#E87D2E] mb-2"
+                            className="material-symbols-outlined text-[24px] md:text-[40px] text-[#E87D2E] mb-1 md:mb-2"
                             style={{ fontVariationSettings: "'FILL' 1" }}
                           >
                             volunteer_activism
                           </span>
-                          <p className="font-serif text-[#FFF9F0] text-lg font-bold mb-1">
+                          <p className="font-serif text-[#FFF9F0] text-sm md:text-lg font-bold mb-0.5">
                             Quick Impact
                           </p>
-                          <p className="text-xs text-[#FFF9F0]/90 leading-relaxed mb-6">
+                          <p className="text-[9px] md:text-xs text-[#FFF9F0]/90 leading-relaxed mb-4 md:mb-6 line-clamp-2 md:line-clamp-none">
                             {impactText}
                           </p>
                           <button
                             onClick={(e) => handleAddToCart(product, e)}
-                            className="bg-[#E87D2E] text-white font-bold text-xs uppercase tracking-wider px-6 py-2.5 rounded-full hover:bg-white hover:text-[#E87D2E] transition-colors"
+                            className="bg-[#E87D2E] text-white font-bold text-[9px] md:text-xs uppercase tracking-wider px-4 py-2 md:px-6 md:py-2.5 rounded-full hover:bg-white hover:text-[#E87D2E] transition-colors"
                           >
                             Add to Cart
                           </button>
                         </div>
                       </div>
 
-                      <div className="p-4 flex flex-col flex-grow">
-                        <div className="flex justify-between items-start mb-2 gap-2">
-                          <h3 className="font-serif text-[#332F2C] text-lg font-bold leading-tight line-clamp-1">
+                      <div className="p-3 md:p-4 flex flex-col flex-grow">
+                        <div className="flex flex-col sm:flex-row justify-between items-start mb-1 sm:mb-2 gap-1 sm:gap-2">
+                          <h3 className="font-serif text-[#332F2C] text-sm md:text-lg font-bold leading-tight line-clamp-1">
                             {product.title}
                           </h3>
-                          <span className="font-serif font-bold text-[#E87D2E] text-lg whitespace-nowrap">
+                          <span className="font-serif font-bold text-[#E87D2E] text-sm md:text-lg whitespace-nowrap">
                             R{product.price}
                           </span>
                         </div>
-                        <p className="text-xs text-[#564338] mb-4 line-clamp-2 leading-relaxed">
+                        <p className="text-[10px] md:text-xs text-[#564338] mb-3 line-clamp-2 leading-relaxed">
                           {product.description}
                         </p>
                         <div className="mt-auto flex flex-wrap gap-2">
-                          <span className="bg-[#f8e4da] text-[#6F4E37] px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider">
+                          <span className="bg-[#f8e4da] text-[#6F4E37] px-2 py-0.5 md:px-2.5 md:py-1 rounded text-[9px] md:text-[10px] font-bold uppercase tracking-wider">
                             {product.categories?.name || "Uncategorized"}
                           </span>
                         </div>
@@ -254,6 +254,7 @@ export default function HHMShopPage() {
                   );
                 })}
               </div>
+
             )}
           </div>
         </div>

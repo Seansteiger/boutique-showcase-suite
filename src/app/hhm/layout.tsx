@@ -104,20 +104,57 @@ export default function HHMLayout({ children }: { children: React.ReactNode }) {
             >
               Donate
             </Link>
-
-            {/* Mobile Nav Menu Trigger (simply links to shop/donate for mobile simplicity) */}
-            <Link
-              href="/hhm/shop"
-              className="md:hidden text-[#984800] p-2 flex items-center"
-            >
-              <span className="material-symbols-outlined">menu</span>
-            </Link>
           </div>
         </div>
       </header>
-
+ 
       {/* Main Content */}
-      <main className="flex-grow flex flex-col">{children}</main>
+      <main className="flex-grow flex flex-col pb-24 md:pb-0">{children}</main>
+
+      {/* Floating Mobile Bottom Navigation */}
+      <div className="fixed bottom-6 left-4 right-4 z-50 md:hidden flex justify-around items-center bg-[#FFF9F0]/85 backdrop-blur-xl border border-[#6F4E37]/15 py-3 px-2 rounded-2xl shadow-[0_12px_45px_-5px_rgba(111,78,55,0.2)] max-w-md mx-auto">
+        {[
+          { name: "Home", href: "/hhm", icon: "home" },
+          { name: "Shop", href: "/hhm/shop", icon: "storefront" },
+          { name: "About", href: "/hhm/stories", icon: "menu_book" },
+          { name: "Cart", href: "/hhm/cart", icon: "shopping_cart", showBadge: true },
+          { name: "Donate", href: "/hhm/donate", icon: "volunteer_activism" },
+        ].map((link) => {
+          const isActive = pathname === link.href;
+          return (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={cn(
+                "flex flex-col items-center justify-center relative py-1 px-3 rounded-xl transition-all duration-300",
+                isActive 
+                  ? "text-[#E87D2E] scale-105" 
+                  : "text-[#8C7565] hover:text-[#E87D2E]"
+              )}
+            >
+              {isActive && (
+                <span className="absolute inset-0 bg-[#E87D2E]/10 rounded-xl -z-10 animate-fade-in" />
+              )}
+              
+              <div className="relative flex items-center">
+                <span className="material-symbols-outlined text-[22px]">
+                  {link.icon}
+                </span>
+                
+                {link.showBadge && mounted && cartCount > 0 && (
+                  <span className="absolute -top-1.5 -right-2 bg-[#E87D2E] text-white text-[9px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center border-2 border-[#FFF9F0] shadow-sm animate-pulse">
+                    {cartCount}
+                  </span>
+                )}
+              </div>
+              <span className="text-[9px] font-bold uppercase tracking-wider mt-1 font-sans">
+                {link.name}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+
 
       {/* Footer */}
       <footer className="bg-[#f8e4da] border-t border-[#6F4E37]/10 mt-auto">
