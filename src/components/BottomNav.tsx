@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Home, Search, ShoppingCart, User, X, ShoppingBag } from "lucide-react";
+import { Home, Search, User, X, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
@@ -17,7 +17,6 @@ export function BottomNav() {
   const [user, setUser] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const cartCount = useCartStore((state) => state.items.reduce((count, item) => count + item.quantity, 0));
 
   // Convex settings
   const settings = useStoreSettings();
@@ -33,6 +32,11 @@ export function BottomNav() {
     }
   }, []);
 
+  // Close search drawer on navigation to prevent stuck overlay
+  useEffect(() => {
+    setIsSearchOpen(false);
+  }, [pathname]);
+
   // Determine dynamic Home link based on subdomain vs subdirectory
   const [homeHref, setHomeHref] = useState("/scented");
   useEffect(() => {
@@ -47,7 +51,13 @@ export function BottomNav() {
   if (!mounted) return null;
 
   // Setup navigation items
-  const navItems = [
+  const navItems: {
+    label: string;
+    href: string;
+    icon: any;
+    action: (() => void) | null;
+    count?: number;
+  }[] = [
     {
       label: "Home",
       href: homeHref,
@@ -65,13 +75,6 @@ export function BottomNav() {
       href: "#",
       icon: Search,
       action: () => setIsSearchOpen(true)
-    },
-    {
-      label: "Cart",
-      href: "#", // Prevent navigation
-      icon: ShoppingCart,
-      action: () => setIsOpen(true),
-      count: cartCount
     },
     {
       label: "Profile",
@@ -161,7 +164,7 @@ export function BottomNav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 220 }}
-            className="fixed inset-0 z-50 bg-background flex flex-col p-6 md:hidden"
+            className="fixed inset-0 z-50 bg-background flex flex-col p-6 md:hidden overflow-y-auto"
           >
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-light tracking-[0.2em] uppercase text-foreground">Search</h2>

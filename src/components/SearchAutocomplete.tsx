@@ -127,7 +127,7 @@ export function SearchAutocomplete({ onSelect, className }: SearchAutocompletePr
 
             {/* Results Dropdown */}
             {isOpen && (results.length > 0 || (query.length >= 2 && !isLoading)) && (
-                <div className="absolute top-full mt-2 w-[90vw] left-1/2 -translate-x-1/2 md:w-full md:left-0 md:translate-x-0 max-w-[450px] rounded-xl border bg-popover shadow-2xl overflow-hidden z-[60] animate-in fade-in zoom-in-95 duration-150">
+                <div className="relative mt-3 w-full md:absolute md:top-full md:mt-2 md:left-0 md:translate-x-0 md:w-full max-w-[450px] rounded-xl border bg-popover shadow-2xl overflow-hidden z-[60] animate-in fade-in zoom-in-95 duration-150">
                     <div className="max-h-[360px] overflow-y-auto p-1.5 scrollbar-hide">
                         {results.length > 0 ? (
                             <div className="space-y-1">
